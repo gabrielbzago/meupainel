@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Zbee • Planos, Consultoria e Suporte</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Descubra, Otimize e Domine o YouTube com o Zbee! Planos, consultorias e suporte para YouTubers.">
+  <link rel="icon" href="logo.png" />
+  <style>
+    body {
+      background: #181818;
+      color: #FFD700;
+      font-family: 'Inter', Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      min-height: 100vh;
+    }
+    .bg-logo {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      width: 65vw;
+      min-width: 400px;
+      max-width: 1000px;
+      opacity: 0.06;
+      pointer-events: none;
+      transform: translate(-50%,-50%);
+      z-index: 0;
+      filter: blur(0.4px);
+    }
+    .header {
+      background: #121212;
+      padding: 32px 0 18px 0;
+      text-align: center;
+      position: relative;
+      z-index: 2;
+    }
+    .header img {
+      width: 105px;
+      border-radius: 10px;
+      box-shadow: 0 2px 24px #FFD70044;
+    }
+    .header h1 {
+      margin: 16px 0 0 0;
+      font-size: 2.1rem;
+      letter-spacing: 1.2px;
+    }
+    .header p {
+      color: #fffad1;
+      font-size: 1.07rem;
+      margin-top: 6px;
+      margin-bottom: 0;
+    }
+    .youtube-link {
+      display: inline-block;
+      margin-top: 10px;
+      padding: 6px 16px 6px 38px;
+      background: #222;
+      border-radius: 5px;
+      color: #FFD700;
+      text-decoration: none;
+      font-weight: bold;
+      background-image: url('https://cdn-icons-png.flaticon.com/512/1384/1384060.png');
+      background-size: 25px 25px;
+      background-repeat: no-repeat;
+      background-position: 6px center;
+      transition: background 0.2s;
+      box-shadow: 0 0 6px #FFD70033;
+    }
+    .youtube-link:hover { background: #FFD700; color: #181818; }
+    .table-container {
+      width: 98%;
+      max-width: 1100px;
+      margin: 34px auto 22px auto;
+      background: #232323;
+      border-radius: 16px;
+      box-shadow: 0 2px 24px #FFD70022;
+      padding: 24px 16px;
+      position: relative;
+      z-index: 2;
+    }
+    h2 {
+      text-align: center;
+      margin-bottom: 30px;
+      font-size: 2.0rem;
+      color: #FFD700;
+      letter-spacing: 1.2px;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 1.04rem;
+      background: #1a1a1a;
+      border-radius: 12px;
+      overflow: hidden;
+    }
+    th, td {
+      padding: 13px 10px;
+      text-align: center;
+      border-bottom: 1px solid #292929;
+    }
+    th {
+      background: #222;
+      color: #FFD700;
+      font-size: 1.04rem;
+      font-weight: bold;
+      border-bottom: 2.5px solid #FFD70033;
+    }
+    tr:last-child td { border-bottom: none; }
+    td:first-child, th:first-child { text-align: left; }
+    .price { font-size: 1.15rem; font-weight: bold; color: #FFD700; }
+    .btn-plano {
+      background: #FFD700;
+      color: #1a1a1a;
+      font-weight: bold;
+      padding: 10px 25px;
+      border: none;
+      border-radius: 8px;
+      font-size: 1rem;
+      margin-top: 8px;
+      margin-bottom: 8px;
+      cursor: pointer;
+      transition: background 0.2s, color 0.2s;
+      box-shadow: 0 2px 8px #FFD70022;
+      text-decoration: none;
+      display: inline-block;
+    }
+    .btn-plano:hover {
+      background: #fff;
+      color: #FFD700;
+    }
+    .grafico-barra {
+      background: #FFD70033;
+      height: 16px;
+      border-radius: 8px;
+      width: 100%;
+      position: relative;
+      margin: 7px 0;
+    }
+    .grafico-barra span {
+      display: block;
+      height: 100%;
+      border-radius: 8px;
+      background: linear-gradient(90deg, #FFD700, #00ff99);
+    }
+    .badge {
+      background: #FFD700;
+      color: #1a1a1a;
+      border-radius: 12px;
+      padding: 2px 14px;
+      font-size: 0.9rem;
+      margin-left: 7px;
+      font-weight: bold;
+    }
+    .highlight {
+      color: #00ff99;
+      font-weight: bold;
+      letter-spacing: 0.3px;
+    }
+    .diferenciais {
+      margin: 40px auto 25px auto;
+      padding: 20px;
+      max-width: 1020px;
+      border-radius: 12px;
+      background: #232323;
+      box-shadow: 0 2px 14px #FFD70022;
+      position: relative;
+      z-index: 2;
+    }
+    .diferenciais h3 {
+      color: #FFD700;
+      font-size: 1.2rem;
+      margin-bottom: 13px;
+    }
+    .diferenciais ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      color: #FFF;
+      font-size: 1.04rem;
+    }
+    .diferenciais li {
+      margin-bottom: 7px;
+      padding-left: 32px;
+      position: relative;
+      line-height: 1.7;
+    }
+    .diferenciais li::before {
+      content: "⭐";
+      color: #FFD700;
+      font-size: 1.1em;
+      position: absolute;
+      left: 0;
+    }
+    /* Consultoria */
+    .consultoria-section {
+      margin: 48px auto 28px auto;
+      max-width: 1050px;
+      background: #232323;
+      border-radius: 14px;
+      padding: 35px 10px 32px 10px;
+      text-align: center;
+      box-shadow: 0 2px 16px #FFD7001b;
+      z-index: 2;
+      position: relative;
+    }
+    .consultoria-section h2 {
+      color: #FFD700;
+      font-size: 2rem;
+      margin-bottom: 16px;
+      margin-top: 0;
+    }
+    .consultoria-cards {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 28px;
+      justify-content: center;
+      margin: 0 auto;
+      z-index: 2;
+    }
+    .consultoria-card {
+      background: #191919;
+      padding: 20px 18px 23px 18px;
+      border-radius: 14px;
+      min-width: 260px;
+      max-width: 325px;
+      margin-bottom: 18px;
+      box-shadow: 0 2px 8px #FFD70025;
+      text-align: center;
+      z-index: 2;
+    }
+    .consultoria-card h3 {
+      color: #FFD700;
+      margin-top: 2px;
+      margin-bottom: 11px;
+    }
+    .consultoria-card p { color: #fff; }
+    .consultoria-card .valor {
+      color: #FFD700;
+      font-size: 2em;
+      margin-bottom: 11px;
+      font-weight: bold;
+   }
+
+    .consultoria-card .valor {
+      color: #FFD700;
+      font-size: 2em;
+      margin-bottom: 11px;
+      font-weight: bold;
+    }
+
+.simbol-sim {
+  color: #00ff99 !important;
+  font-size: 1.4em;
+  font-weight: bold;
+}
+.simbol-nao {
+  color: #ff4c4c !important;
+  font-size: 1.4em;
+  font-weight: bold;
+}
+
+    .consultoria-card .btn-plano { margin-top: 10px; }
+    .contatos {
+      margin: 40px auto 15px auto;
+      text-align: center;
+      color: #fffad1;
+      z-index: 2;
+      position: relative;
+    }
+    .contatos a {
+      color: #FFD700;
+      text-decoration: none;
+      font-weight: bold;
+      margin: 0 10px;
+      transition: color 0.2s;
+    }
+    .contatos a:hover { color: #00ff99; }
+    @media (max-width:900px) {
+      .consultoria-cards { flex-direction: column; align-items: center; }
+    }
+    @media (max-width:700px) {
+      .table-container, .diferenciais, .consultoria-section { padding: 10px 2px; }
+      th, td { font-size: 0.96rem; padding: 9px 3px; }
+      .header h1 { font-size: 1.1rem; }
+      .consultoria-section h2 { font-size: 1.2rem; }
+    }
+  </style>
+</head>
+<body>
+  <!-- Logo gigante no fundo -->
+  <img src="logo.png" class="bg-logo" alt="Logo Zbee">
+
+  <div class="header">
+    <img src="logo.png" alt="Logo Zbee">
+    <h1>Zbee — Descubra, Otimize e Domine o YouTube</h1>
+    <p>Extensão de SEO + IA para YouTube • Desenvolvido por Gabriel B. Zago</p>
+    <a class="youtube-link" href="https://www.youtube.com/@gabrielbzago" target="_blank">Meu Canal no YouTube</a>
+  </div>
+
+  <div class="table-container">
+    <h2>Compare os Planos Zbee</h2>
+    <table>
+      <tr>
+        <th>Plano</th>
+        <th>Valor</th>
+        <th>Consultas SEO/dia</th>
+        <th>Painel Summary</th>
+        <th>Painel SEO Explorer</th>
+        <th>Aba Roteiros</th>
+        <th>Shorts & Vlogs</th>
+        <th>Aba IA</th>
+        <th>Afiliado</th>
+        <th></th>
+      </tr>
+      <tr>
+       <tr>
+  <td>Free <span class="badge">Grátis</span></td>
+  <td class="price">R$0</td>
+  <td>
+    <div class="grafico-barra"><span style="width:13%"></span></div>
+    10
+  </td>
+  <td>10 consultas</td>
+  <td>Parcial</td>
+  <td><span class="simbol-sim">✓</span></td>
+  <td><span class="simbol-nao">✗</span></td>
+  <td><span class="simbol-nao">✗</span></td>
+  <td><span class="simbol-nao">✗</span></td>
+  <td>
+    <a class="btn-plano" href="https://www.youtube.com/@gabrielbzago?sub_confirmation=1" target="_blank">Inscreva-se</a>
+  </td>
+</tr>
+<tr>
+  <td>Start</td>
+  <td class="price">R$9,90/mês</td>
+  <td>
+    <div class="grafico-barra"><span style="width:30%"></span></div>
+    25
+  </td>
+  <td>25 consultas</td>
+  <td>Parcial</td>
+  <td><span class="simbol-sim">✓</span></td>
+  <td><span class="simbol-nao">✗</span></td>
+  <td><span class="simbol-nao">✗</span></td>
+  <td><span class="simbol-nao">✗</span></td>
+  <td>
+    <a class="btn-plano" href="LINK_PAGAMENTO_START" target="_blank">Assinar Start</a>
+  </td>
+</tr>
+<tr>
+  <td>Membro</td>
+  <td class="price">R$14,90/mês</td>
+  <td>
+    <div class="grafico-barra"><span style="width:50%"></span></div>
+    30
+  </td>
+  <td>30 consultas</td>
+  <td><span class="highlight">Completo</span></td>
+  <td><span class="simbol-sim">✓</span></td>
+  <td><span class="simbol-sim">✓</span></td>
+  <td><span class="simbol-nao">✗</span></td>
+  <td><span class="simbol-nao">✗</span></td>
+  <td>
+    <a class="btn-plano" href="https://www.youtube.com/@gabrielbzago/join" target="_blank">Ser Membro</a>
+  </td>
+</tr>
+<tr>
+  <td>Pro <span class="badge">Popular</span></td>
+  <td class="price">R$49,90/mês</td>
+  <td>
+    <div class="grafico-barra"><span style="width:90%"></span></div>
+    50
+  </td>
+  <td>50 Consultas</td>
+  <td><span class="highlight">Completo</span></td>
+  <td><span class="simbol-sim">✓</span></td>
+  <td><span class="simbol-sim">✓</span></td>
+  <td><span class="simbol-nao">✗</span></td>
+  <td>20%</td>
+  <td>
+    <a class="btn-plano" href="LINK_PAGAMENTO_PRO" target="_blank">Assinar Pro</a>
+  </td>
+</tr>
+<tr>
+  <td>Expert <span class="badge">Profissional</span></td>
+  <td class="price">R$99,90/mês</td>
+  <td>
+    <div class="grafico-barra"><span style="width:100%"></span></div>
+    Ilimitado
+  </td>
+  <td>Ilimitado</td>
+  <td><span class="highlight">Completo</span></td>
+  <td><span class="simbol-sim">✓</span></td>
+  <td><span class="simbol-sim">✓</span></td>
+  <td><span class="simbol-sim">✓</span></td>
+  <td>20%</td>
+  <td>
+    <a class="btn-plano" href="LINK_PAGAMENTO_EXPERT" target="_blank">Assinar Expert</a>
+  </td>
+</tr>
+    </table>
+    <p style="color:#fff; text-align:center; font-size:1.05em; margin-top:18px;">
+      <b>⚡ Todos os planos Pro e Expert dão direito a comissões de afiliado Zbee!</b>
+    </p>
+  </div>
+
+  <div class="diferenciais">
+    <h3>Diferenciais do Zbee:</h3>
+    <ul>
+      <li>Desenvolvido por um especialista em YouTube e SEO (<a style="color:#FFD700;" href="https://www.youtube.com/@gabrielbzago" target="_blank">Gabriel B. Zago</a>).</li>
+      <li>Extensão 100% segura e atualizada com as tendências do YouTube em 2025.</li>
+      <li>Checklists, IA, gráficos de concorrência e volume, sugestões de títulos e tags, e muito mais.</li>
+      <li>Painéis exclusivos de Shorts, Vlogs e Resumo do vídeo.</li>
+      <li>Receba comissões de 20% como afiliado dos planos Pro/Expert.</li>
+      <li>Plano Free: basta estar inscrito no canal para usar as funções básicas.</li>
+      <li>Atendimento direto e suporte prioritário nos planos Pro e Expert.</li>
+      <li>Novos recursos e integrações liberados primeiro para assinantes Expert.</li>
+      <li>Pagamentos seguros via Mercado Pago e YouTube.</li>
+    </ul>
+  </div>
+
+  <div class="consultoria-section" id="consultoria">
+    <h2>🚀 Consultoria e Mentoria YouTube com Gabriel Zago</h2>
+    <p style="color:#fff;font-size:1.15em;max-width:670px;margin:0 auto 18px auto;">
+      Quer acelerar o crescimento do seu canal?<br>
+      Agende uma sessão de mentoria individual ou consultoria PRO e receba análise completa, plano de ação, e suporte direto.<br>
+      <span style="color:#FFD700">Bônus: nos planos PRO, ganhe 1 mês de Zbee Pro grátis!</span>
+    </p>
+    <div class="consultoria-cards">
+      <div class="consultoria-card">
+        <h3>Sessão Única</h3>
+        <p>1h ao vivo para análise do canal + plano de ação</p>
+        <div class="valor">R$ 120</div>
+        <a href="https://wa.me/SEUNUMERO?text=Quero%20sessao%20unica%20YouTube" target="_blank" class="btn-plano">Agendar sessão</a>
+      </div>
+      <div class="consultoria-card">
+        <h3>Pacote 3 Sessões</h3>
+        <p>3x 1h + acompanhamento prático por WhatsApp</p>
+        <div class="valor">R$ 320</div>
+        <a href="https://wa.me/SEUNUMERO?text=Quero%20pacote%20consultoria%20YouTube" target="_blank" class="btn-plano">Agendar pacote</a>
+      </div>
+      <div class="consultoria-card">
+        <h3>Consultoria PRO + Zbee Pro</h3>
+        <p>Acompanhamento VIP + 1 mês de Zbee Pro liberado</p>
+        <div class="valor">R$ 480</div>
+        <a href="https://wa.me/SEUNUMERO?text=Quero%20consultoria%20PRO%20YouTube%20com%20Zbee" target="_blank" class="btn-plano">Agendar PRO</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="contatos" id="contatos">
+    <h3 style="color:#FFD700;">Contato e Suporte</h3>
+    <p>
+      <b>Suporte Zbee:</b> 
+      <a href="mailto:zbee.suporte@gmail.com">zbee.suporte@gmail.com</a>
+      &nbsp;|&nbsp;
+      <a href="https://wa.me/SEUNUMERO?text=Suporte%20Zbee" target="_blank">WhatsApp</a>
+    </p>
+    <p>
+      <b>Consultorias:</b> 
+      <a href="mailto:gabrielzago.consultoria@gmail.com">gabrielzago.consultoria@gmail.com</a>
+      &nbsp;|&nbsp;
+      <a href="https://wa.me/SEUNUMERO?text=Consultoria%20YouTube" target="_blank">WhatsApp</a>
+    </p>
+  </div>
+
+  <footer style="text-align:center; color:#FFD700; font-size:0.99em; margin-top:30px; margin-bottom:22px;position:relative;z-index:3;">
+    Zbee — Otimize e Domine o YouTube • Desenvolvido por Gabriel Zago — <a href="https://www.youtube.com/@gabrielbzago" style="color:#FFD700;">@gabrielbzago</a>
+  </footer>
+</body>
+</html>
