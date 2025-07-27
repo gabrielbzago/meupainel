@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <title>Obrigado • Zbee</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Obrigado por assinar o Zbee!">
+  <link rel="icon" href="logo.png" />
+  <style>
+    body {
+      background: #181818;
+      color: #FFD700;
+      font-family: 'Inter', Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      text-align: center;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+    img.logo {
+      width: 110px;
+      margin-bottom: 18px;
+      border-radius: 10px;
+      box-shadow: 0 0 24px #FFD70055;
+    }
+    h1 {
+      font-size: 2.2rem;
+      margin-bottom: 10px;
+    }
+    p {
+      font-size: 1.1rem;
+      color: #fffad1;
+      max-width: 600px;
+      margin: 0 auto 22px auto;
+      line-height: 1.6;
+    }
+    .btn-voltar {
+      display: inline-block;
+      background: #FFD700;
+      color: #181818;
+      font-weight: bold;
+      padding: 10px 24px;
+      font-size: 1rem;
+      border-radius: 8px;
+      text-decoration: none;
+      box-shadow: 0 2px 8px #FFD70033;
+      transition: background 0.2s, color 0.2s;
+    }
+    .btn-voltar:hover {
+      background: #fff;
+      color: #FFD700;
+    }
+    .plano-nome {
+      color: #FFD700;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <img src="logo.png" alt="Logo Zbee" class="logo" />
+  <h1>✅ Pagamento Confirmado!</h1>
+  <p>
+    Obrigado por assinar o plano <span class="plano-nome" id="plano">Zbee</span>.<br>
+    Seu acesso será ativado automaticamente em até <strong>5 minutos</strong>.<br>
+    Você já pode fechar esta página ou clicar abaixo para retornar ao site.
+  </p>
+  <a href="https://zbee.app.br" class="btn-voltar">Voltar ao site</a>
+
+  <script>
+    const urlParams = new URLSearchParams(window.location.search);
+    const plano = urlParams.get("plano");
+
+    const nomesPlanos = {
+      pro: "Zbee Pro",
+      expert: "Zbee Expert",
+      start: "Zbee Start",
+      free: "Zbee Gratuito",
+      default: "Zbee"
+    };
+
+    document.getElementById("plano").textContent = nomesPlanos[plano?.toLowerCase()] || nomesPlanos.default;
+  </script>
+</body>
+</html>
