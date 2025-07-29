@@ -270,6 +270,32 @@
       z-index: 2;
       position: relative;
     }
+.navbar {
+  background: #121212;
+  display: flex;
+  justify-content: center;
+  gap: 18px;
+  padding: 10px 0 7px 0;
+  box-shadow: 0 2px 12px #FFD70022;
+  border-bottom: 2px solid #FFD70022;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+.nav-link {
+  color: #FFD700;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1.04em;
+  padding: 7px 18px;
+  border-radius: 7px;
+  transition: background 0.15s, color 0.15s;
+}
+.nav-link:hover, .nav-link.active {
+  background: #FFD700;
+  color: #181818;
+}
+
     .contatos a {
       color: #FFD700;
       text-decoration: none;
@@ -290,6 +316,14 @@
   </style>
 </head>
 <body>
+<div class="navbar">
+  <a href="index.html" class="nav-link">🏠 Início</a>
+  <a href="privacy.html" class="nav-link">🔒 Privacidade</a>
+  <a href="updates.html" class="nav-link">📝 Atualizações</a>
+  <a href="checkout.html" class="nav-link">💳 Planos</a>
+  <a href="https://www.youtube.com/@gabrielbzago" class="nav-link" target="_blank">🎥 Canal YouTube</a>
+</div>
+
   <!-- Logo gigante no fundo -->
   <img src="logo.png" class="bg-logo" alt="Logo Zbee">
 
@@ -532,9 +566,5 @@
   &nbsp;|&nbsp;
   <a href="privacy.html" style="color:#FFD700;text-decoration:underline dotted;">Política de Privacidade</a>
 </footer>
-
-  <footer style="text-align:center; color:#FFD700; font-size:0.99em; margin-top:30px; margin-bottom:22px;position:relative;z-index:3;">
-    Zbee — Otimize e Domine o YouTube • Desenvolvido por Gabriel Zago — <a href="https://www.youtube.com/@gabrielbzago" style="color:#FFD700;">@gabrielbzago</a>
-  </footer>
 </body>
 </html>
