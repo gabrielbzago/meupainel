@@ -9,6 +9,7 @@
   <link rel="icon" href="logo.png" />
   <style>
 
+    html { scroll-behavior: smooth; }
     body {
       background: #181818;
       color: #FFD700;
@@ -320,8 +321,10 @@
   <a href="index.html" class="nav-link">🏠 Início</a>
   <a href="privacy.html" class="nav-link">🔒 Privacidade</a>
   <a href="updates.html" class="nav-link">📝 Atualizações</a>
-  <a href="checkout.html" class="nav-link">💳 Planos</a>
+  <a href="#planos" class="nav-link">💳 Planos</a>
   <a href="https://www.youtube.com/@gabrielbzago" class="nav-link" target="_blank">🎥 Canal YouTube</a>
+  <a href="#consultoria" class="nav-link">📌 Consultorias</a>
+  <a href="#contatos" class="nav-link">📞 Suporte</a>
 </div>
 
   <!-- Logo gigante no fundo -->
@@ -332,15 +335,15 @@
     <h1>Zbee — Descubra, Otimize e Domine o YouTube</h1>
     <p>Extensão de SEO + IA para YouTube • Desenvolvido por Gabriel B. Zago</p>
    <a class="youtube-link" href="https://www.youtube.com/@gabrielbzago" target="_blank">Meu Canal no YouTube</a>
-<a class="btn-plano" href="https://chrome.google.com/webstore/detail/zbee-seo-analyzer/YOUR_ID_AQUI" target="_blank" style="margin-left:18px;font-size:1.06em;padding:8px 32px;box-shadow:0 2px 8px #FFD70055;">
+<a class="btn-plano" href="https://chromewebstore.google.com/detail/zbee-seo-analyzer-for-you/lgddmmhnmkmkfhaodogcoecdecegemgk?authuser=0&hl=pt-PT" target="_blank" style="margin-left:18px;font-size:1.06em;padding:8px 32px;box-shadow:0 2px 8px #FFD70055;">
   🚀 Comece Grátis
 </a>
   </div>
 <div style="text-align:center;margin:40px auto;">
-  <iframe width="420" height="236" src="https://www.youtube.com/embed/SEU_VIDEO_ID" title="Demonstração Zbee" frameborder="0" style="border-radius:14px;box-shadow:0 2px 18px #FFD70033;" allowfullscreen></iframe>
+  <iframe width="420" height="236" src="https://www.youtube.com/watch?v=Is3DhxpOsXU" title="Demonstração Zbee" frameborder="0" style="border-radius:14px;box-shadow:0 2px 18px #FFD70033;" allowfullscreen></iframe>
   <div style="color:#FFD700;margin-top:9px;font-weight:bold;">Veja o Zbee em ação!</div>
 </div>
-  <div class="table-container">
+  <div class="table-container" id="planos" style="scroll-margin-top:80px;">
     <h2>Compare os Planos Zbee</h2>
     <table>
       <tr>
@@ -515,34 +518,43 @@
     </ul>
   </div>
 
-  <div class="consultoria-section" id="consultoria">
-    <h2>🚀 Consultoria e Mentoria YouTube com Gabriel Zago</h2>
-    <p style="color:#fff;font-size:1.15em;max-width:670px;margin:0 auto 18px auto;">
-      Quer acelerar o crescimento do seu canal?<br>
-      Agende uma sessão de mentoria individual ou consultoria PRO e receba análise completa, plano de ação, e suporte direto.<br>
-      <span style="color:#FFD700">Bônus: nos planos PRO, ganhe 1 mês de Zbee Pro grátis!</span>
-    </p>
-    <div class="consultoria-cards">
-      <div class="consultoria-card">
-        <h3>Sessão Única</h3>
-        <p>1h ao vivo para análise do canal + plano de ação</p>
-        <div class="valor">R$ 120</div>
-        <a href="https://wa.me/SEUNUMERO?text=Quero%20sessao%20unica%20YouTube" target="_blank" class="btn-plano">Agendar sessão</a>
-      </div>
-      <div class="consultoria-card">
-        <h3>Pacote 3 Sessões</h3>
-        <p>3x 1h + acompanhamento prático por WhatsApp</p>
-        <div class="valor">R$ 320</div>
-        <a href="https://wa.me/SEUNUMERO?text=Quero%20pacote%20consultoria%20YouTube" target="_blank" class="btn-plano">Agendar pacote</a>
-      </div>
-      <div class="consultoria-card">
-        <h3>Consultoria PRO + Zbee Pro</h3>
-        <p>Acompanhamento VIP + 1 mês de Zbee Pro liberado</p>
-        <div class="valor">R$ 480</div>
-        <a href="https://wa.me/SEUNUMERO?text=Quero%20consultoria%20PRO%20YouTube%20com%20Zbee" target="_blank" class="btn-plano">Agendar PRO</a>
-      </div>
+<div class="consultoria-section" id="consultoria">
+  <h2>🚀 Consultoria e Mentoria YouTube com Gabriel Zago</h2>
+  <p style="color:#fff;font-size:1.15em;max-width:700px;margin:0 auto 20px auto;">
+    Está pronto para transformar seu canal em um projeto de sucesso?<br>
+    Com a <strong>mentoria personalizada</strong> do Gabriel Zago, você vai receber:
+    <ul style="color:#fff;list-style-type:disc;padding-left:20px;margin:15px 0;">
+      <li>Análise estratégica completa do seu canal</li>
+      <li>Plano de ação sob medida para o seu nicho</li>
+      <li>Acompanhamento direto via WhatsApp</li>
+      <li>Dicas práticas de otimização e crescimento orgânico</li>
+    </ul>
+    <span style="color:#FFD700;font-weight:bold;">Bônus exclusivo:</span> Nos planos PRO, você ainda recebe <strong>1 mês de acesso ao Zbee Pro</strong>, a ferramenta que vai turbinar suas publicações e análises!
+  </p>
+
+  <div class="consultoria-cards">
+    <div class="consultoria-card">
+      <h3>Sessão Única</h3>
+      <p>Encontro de 1h ao vivo com diagnóstico completo + plano de ação prático</p>
+      <div class="valor">R$ 120</div>
+      <a href="https://wa.me/19992036896?text=Quero%20sessao%20unica%20YouTube" target="_blank" class="btn-plano">Agendar sessão</a>
+    </div>
+
+    <div class="consultoria-card">
+      <h3>Pacote 3 Sessões</h3>
+      <p>Três sessões de 1h com acompanhamento contínuo via WhatsApp</p>
+      <div class="valor">R$ 320</div>
+      <a href="https://wa.me/19992036896?text=Quero%20pacote%20consultoria%20YouTube" target="_blank" class="btn-plano">Agendar pacote</a>
+    </div>
+
+    <div class="consultoria-card">
+      <h3>Consultoria PRO + Zbee Pro</h3>
+      <p>Mentoria premium com suporte intensivo + 1 mês de Zbee Pro incluso</p>
+      <div class="valor">R$ 480</div>
+      <a href="https://wa.me/19992036896?text=Quero%20consultoria%20PRO%20YouTube%20com%20Zbee" target="_blank" class="btn-plano">Agendar PRO</a>
     </div>
   </div>
+</div>
 
   <div class="contatos" id="contatos">
     <h3 style="color:#FFD700;">Contato e Suporte</h3>
