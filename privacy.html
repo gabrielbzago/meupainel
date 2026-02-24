@@ -142,52 +142,58 @@
 
   <div class="container">
     <div class="atualizacao"><b>Última atualização:</b> 22/02/2026</div>
+    
     <div class="resumo">
-      A extensão TubeX utiliza autenticação Google apenas para validar inscrição no canal e analisar dados públicos do YouTube. Não coletamos, vendemos ou compartilhamos dados pessoais com terceiros. Seu e-mail é usado apenas para validação do plano e geração do link de afiliado. Sua privacidade é prioridade total.
+      A extensão TubeX utiliza autenticação Google (OAuth2) para validar inscrição no canal do YouTube, verificar plano de assinatura e liberar funcionalidades.
+      Não vendemos, não compartilhamos e não armazenamos permanentemente dados pessoais.
     </div>
 
     <div class="bloco">
-      <h2>1. Informações coletadas</h2>
+      <h2>1. Dados pessoais processados</h2>
       <ul>
-        <li><b>Conta Google:</b> Apenas seu e-mail e status de inscrição no canal são consultados, nunca armazenados permanentemente em nossos servidores.</li>
-        <li><b>Dados do YouTube:</b> Somente dados públicos de vídeos, títulos, tags e estatísticas são analisados pela extensão, conforme permissões do OAuth2 e API do YouTube.</li>
-        <li><b>Planos &amp; Assinaturas:</b> O seu e-mail pode ser usado para validação de planos via Google Sheets/Mercado Pago, mas nunca divulgado ou compartilhado.</li>
+        <li><b>Conta Google:</b> endereço de e-mail utilizado exclusivamente para autenticação OAuth2, validação de inscrição no canal e verificação de plano.</li>
+        <li>Esses dados são processados temporariamente durante a sessão e não são armazenados de forma permanente.</li>
       </ul>
     </div>
+
     <div class="bloco">
-      <h2>2. Uso das informações</h2>
+      <h2>2. Finalidade do uso dos dados</h2>
       <ul>
-        <li><b>Acesso a planos:</b> Seu e-mail é utilizado exclusivamente para verificar seu plano na planilha Google Sheets e liberar funcionalidades conforme o tipo de assinatura.</li>
-        <li><b>Recursos da extensão:</b> Usamos o token OAuth2 apenas localmente. Seus dados não são transferidos para servidores de terceiros, exceto Google Sheets para controle de planos e Mercado Pago para pagamentos.</li>
+        <li>Autenticar o usuário com sua conta Google.</li>
+        <li>Validar inscrição no canal do YouTube.</li>
+        <li>Verificar plano de acesso (Free, Start, Member, Pro, Expert).</li>
+        <li>Gerar análises de SEO, títulos, descrições e thumbnails por IA.</li>
       </ul>
     </div>
+
     <div class="bloco">
-      <h2>3. Compartilhamento de dados</h2>
+      <h2>3. Domínios e serviços utilizados</h2>
       <ul>
-        <li><b>Nunca vendemos ou compartilhamos seus dados pessoais.</b></li>
-        <li>Nenhum dado sensível é compartilhado com terceiros, apenas o mínimo necessário para processar pagamentos e validar o plano, via APIs oficiais Google/Mercado Pago.</li>
+        <li>youtube.com e studio.youtube.com — interação com a interface do YouTube.</li>
+        <li>googleapis.com — autenticação OAuth2 e APIs do YouTube.</li>
+        <li>script.google.com — validação de planos via Google Sheets.</li>
+        <li>api.openai.com — geração de conteúdo por inteligência artificial.</li>
+        <li>mercadopago.com — validação de pagamentos (quando aplicável).</li>
       </ul>
     </div>
+
     <div class="bloco">
-      <h2>4. Segurança</h2>
+      <h2>4. Retenção e exclusão de dados</h2>
       <ul>
-        <li>Toda autenticação é feita por OAuth2 do Google, garantindo máxima proteção e privacidade.</li>
-        <li>A API Key da extensão é usada somente para consulta pública de dados do YouTube, em conformidade com a política do Google.</li>
+        <li>Não armazenamos dados pessoais permanentemente.</li>
+        <li>A desinstalação da extensão remove todos os dados locais.</li>
+        <li>O usuário pode solicitar exclusão de dados pelo e-mail de suporte.</li>
       </ul>
     </div>
+
     <div class="bloco">
-      <h2>5. Direitos do usuário</h2>
+      <h2>5. Compartilhamento de dados</h2>
       <ul>
-        <li>Você pode solicitar a exclusão de qualquer informação vinculada ao seu e-mail a qualquer momento, basta entrar em contato pelo suporte.</li>
-        <li>Para remover todos os dados, basta desinstalar a extensão. Não mantemos nenhum dado após a remoção.</li>
+        <li>Não vendemos nem compartilhamos dados pessoais.</li>
+        <li>Dados são utilizados apenas com serviços essenciais descritos nesta política.</li>
       </ul>
     </div>
-    <div class="bloco">
-      <h2>6. Alterações nesta política</h2>
-      <ul>
-        <li>Podemos atualizar esta política ocasionalmente. Sempre publicaremos a versão mais recente neste link.</li>
-      </ul>
-    </div>
+
     <div class="contato">
       <h3>Contato e Suporte</h3>
       <p>
