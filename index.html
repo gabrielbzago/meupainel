@@ -1,604 +1,341 @@
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
+<meta charset="utf-8"/>
+<title>⚡TubeX • Planos, Consultoria e Suporte</title>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<meta name="description" content="Descubra, Otimize e Domine o YouTube com o TubeX!"/>
+<link rel="icon" href="logo.png"/>
 
-  <meta charset="UTF-8">
-  <title>⚡TubeX • Planos, Consultoria e Suporte</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Descubra, Otimize e Domine o YouTube com o ⚡TubeX! Planos, consultorias e suporte para YouTubers.">
-  <link rel="icon" href="logo.png" />
-  <style>
+<style>
 
-    html { scroll-behavior: smooth; }
-    body {
-      background: #181818;
-      color: #FFD700;
-      font-family: 'Inter', Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      min-height: 100vh;
-    }
-    .bg-logo {
-      position: fixed;
-      top: 50%;
-      left: 50%;
-      width: 65vw;
-      min-width: 400px;
-      max-width: 1000px;
-      opacity: 0.06;
-      pointer-events: none;
-      transform: translate(-50%,-50%);
-      z-index: 0;
-      filter: blur(0.4px);
-    }
-    .header {
-      background: #121212;
-      padding: 32px 0 18px 0;
-      text-align: center;
-      position: relative;
-      z-index: 2;
-    }
-    .header img {
-      width: 105px;
-      border-radius: 10px;
-      box-shadow: 0 2px 24px #FFD70044;
-    }
-    .header h1 {
-      margin: 16px 0 0 0;
-      font-size: 2.1rem;
-      letter-spacing: 1.2px;
-    }
-    .header p {
-      color: #fffad1;
-      font-size: 1.07rem;
-      margin-top: 6px;
-      margin-bottom: 0;
-    }
-    .youtube-link {
-      display: inline-block;
-      margin-top: 10px;
-      padding: 6px 16px 6px 38px;
-      background: #222;
-      border-radius: 5px;
-      color: #FFD700;
-      text-decoration: none;
-      font-weight: bold;
-      background-image: url('https://cdn-icons-png.flaticon.com/512/1384/1384060.png');
-      background-size: 25px 25px;
-      background-repeat: no-repeat;
-      background-position: 6px center;
-      transition: background 0.2s;
-      box-shadow: 0 0 6px #FFD70033;
-    }
-    .youtube-link:hover { background: #FFD700; color: #181818; }
-    .table-container {
-      width: 98%;
-      max-width: 1100px;
-      margin: 34px auto 22px auto;
-      background: #232323;
-      border-radius: 16px;
-      box-shadow: 0 2px 24px #FFD70022;
-      padding: 24px 16px;
-      position: relative;
-      z-index: 2;
-    }
-    h2 {
-      text-align: center;
-      margin-bottom: 30px;
-      font-size: 2.0rem;
-      color: #FFD700;
-      letter-spacing: 1.2px;
-    }
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      font-size: 1.04rem;
-      background: #1a1a1a;
-      border-radius: 12px;
-      overflow: hidden;
-    }
-    th, td {
-      padding: 13px 10px;
-      text-align: center;
-      border-bottom: 1px solid #292929;
-    }
-    th {
-      background: #222;
-      color: #FFD700;
-      font-size: 1.04rem;
-      font-weight: bold;
-      border-bottom: 2.5px solid #FFD70033;
-    }
-    tr:last-child td { border-bottom: none; }
-    td:first-child, th:first-child { text-align: left; }
-    .price { font-size: 1.15rem; font-weight: bold; color: #FFD700; }
-    .btn-plano {
-      background: #FFD700;
-      color: #1a1a1a;
-      font-weight: bold;
-      padding: 10px 25px;
-      border: none;
-      border-radius: 8px;
-      font-size: 1rem;
-      margin-top: 8px;
-      margin-bottom: 8px;
-      cursor: pointer;
-      transition: background 0.2s, color 0.2s;
-      box-shadow: 0 2px 8px #FFD70022;
-      text-decoration: none;
-      display: inline-block;
-    }
-    .btn-plano:hover {
-      background: #fff;
-      color: #FFD700;
-    }
-    .grafico-barra {
-      background: #FFD70033;
-      height: 16px;
-      border-radius: 8px;
-      width: 100%;
-      position: relative;
-      margin: 7px 0;
-    }
-    .grafico-barra span {
-      display: block;
-      height: 100%;
-      border-radius: 8px;
-      background: linear-gradient(90deg, #FFD700, #00ff99);
-    }
-    .badge {
-      background: #FFD700;
-      color: #1a1a1a;
-      border-radius: 12px;
-      padding: 2px 14px;
-      font-size: 0.9rem;
-      margin-left: 7px;
-      font-weight: bold;
-    }
-    .highlight {
-      color: #00ff99;
-      font-weight: bold;
-      letter-spacing: 0.3px;
-    }
-    .diferenciais {
-      margin: 40px auto 25px auto;
-      padding: 20px;
-      max-width: 1020px;
-      border-radius: 12px;
-      background: #232323;
-      box-shadow: 0 2px 14px #FFD70022;
-      position: relative;
-      z-index: 2;
-    }
-    .diferenciais h3 {
-      color: #FFD700;
-      font-size: 1.2rem;
-      margin-bottom: 13px;
-    }
-    .diferenciais ul {
-      list-style: none;
-      margin: 0;
-      padding: 0;
-      color: #FFF;
-      font-size: 1.04rem;
-    }
-    .diferenciais li {
-      margin-bottom: 7px;
-      padding-left: 32px;
-      position: relative;
-      line-height: 1.7;
-    }
-    .diferenciais li::before {
-      content: "⭐";
-      color: #FFD700;
-      font-size: 1.1em;
-      position: absolute;
-      left: 0;
-    }
-    /* Consultoria */
-    .consultoria-section {
-      margin: 48px auto 28px auto;
-      max-width: 1050px;
-      background: #232323;
-      border-radius: 14px;
-      padding: 35px 10px 32px 10px;
-      text-align: center;
-      box-shadow: 0 2px 16px #FFD7001b;
-      z-index: 2;
-      position: relative;
-    }
-    .consultoria-section h2 {
-      color: #FFD700;
-      font-size: 2rem;
-      margin-bottom: 16px;
-      margin-top: 0;
-    }
-    .consultoria-cards {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 28px;
-      justify-content: center;
-      margin: 0 auto;
-      z-index: 2;
-    }
-    .consultoria-card {
-      background: #191919;
-      padding: 20px 18px 23px 18px;
-      border-radius: 14px;
-      min-width: 260px;
-      max-width: 325px;
-      margin-bottom: 18px;
-      box-shadow: 0 2px 8px #FFD70025;
-      text-align: center;
-      z-index: 2;
-    }
-    .consultoria-card h3 {
-      color: #FFD700;
-      margin-top: 2px;
-      margin-bottom: 11px;
-    }
-    .consultoria-card p { color: #fff; }
-    .consultoria-card .valor {
-      color: #FFD700;
-      font-size: 2em;
-      margin-bottom: 11px;
-      font-weight: bold;
-   }
-
-    .consultoria-card .valor {
-      color: #FFD700;
-      font-size: 2em;
-      margin-bottom: 11px;
-      font-weight: bold;
-    }
-
-.simbol-sim {
-  color: #00ff99 !important;
-  font-size: 1.4em;
-  font-weight: bold;
-}
-.simbol-nao {
-  color: #ff4c4c !important;
-  font-size: 1.4em;
-  font-weight: bold;
+body{
+background:#0f0f0f;
+color:#fff;
+font-family:Inter,Arial,sans-serif;
+margin:0;
 }
 
-    .consultoria-card .btn-plano { margin-top: 10px; }
-    .contatos {
-      margin: 40px auto 15px auto;
-      text-align: center;
-      color: #fffad1;
-      z-index: 2;
-      position: relative;
-    }
-.navbar {
-  background: #121212;
-  display: flex;
-  justify-content: center;
-  gap: 18px;
-  padding: 10px 0 7px 0;
-  box-shadow: 0 2px 12px #FFD70022;
-  border-bottom: 2px solid #FFD70022;
-  position: sticky;
-  top: 0;
-  z-index: 10;
-}
-.nav-link {
-  color: #FFD700;
-  text-decoration: none;
-  font-weight: bold;
-  font-size: 1.04em;
-  padding: 7px 18px;
-  border-radius: 7px;
-  transition: background 0.15s, color 0.15s;
-}
-.nav-link:hover, .nav-link.active {
-  background: #FFD700;
-  color: #181818;
+/* NAVBAR (mantida igual estrutura original) */
+
+.navbar{
+background:#121212;
+display:flex;
+justify-content:center;
+gap:18px;
+padding:12px 0;
+border-bottom:2px solid #FFD70022;
+position:sticky;
+top:0;
+z-index:20;
 }
 
-    .contatos a {
-      color: #FFD700;
-      text-decoration: none;
-      font-weight: bold;
-      margin: 0 10px;
-      transition: color 0.2s;
-    }
-    .contatos a:hover { color: #00ff99; }
-    @media (max-width:900px) {
-      .consultoria-cards { flex-direction: column; align-items: center; }
-    }
-    @media (max-width:700px) {
-      .table-container, .diferenciais, .consultoria-section { padding: 10px 2px; }
-      th, td { font-size: 0.96rem; padding: 9px 3px; }
-      .header h1 { font-size: 1.1rem; }
-      .consultoria-section h2 { font-size: 1.2rem; }
-    }
-  </style>
+.nav-link{
+color:#FFD700;
+text-decoration:none;
+font-weight:bold;
+padding:8px 18px;
+border-radius:8px;
+}
+
+.nav-link:hover{
+background:#FFD700;
+color:#111;
+}
+
+/* HERO */
+
+.hero{
+text-align:center;
+padding:70px 20px 40px;
+background:linear-gradient(180deg,#0f0f0f,#161616);
+}
+
+.hero img{
+width:110px;
+border-radius:10px;
+box-shadow:0 6px 25px #FFD70044;
+}
+
+.hero h1{
+color:#FFD700;
+margin-top:20px;
+}
+
+.hero p{
+max-width:700px;
+margin:auto;
+opacity:.9;
+}
+
+.btn{
+background:#FFD700;
+color:#111;
+padding:12px 26px;
+border-radius:10px;
+font-weight:bold;
+text-decoration:none;
+display:inline-block;
+margin:10px;
+}
+
+/* FEATURES */
+
+.section{
+max-width:1100px;
+margin:auto;
+padding:60px 20px;
+}
+
+.features{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:22px;
+}
+
+.feature{
+background:#181818;
+padding:22px;
+border-radius:14px;
+box-shadow:0 10px 25px #000;
+}
+
+.feature h3{
+color:#FFD700;
+}
+
+/* PLANOS */
+
+.plan-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:28px;
+max-width:1100px;
+margin:auto;
+}
+
+.plan-card{
+background:#181818;
+padding:30px;
+border-radius:16px;
+text-align:center;
+box-shadow:0 10px 25px #000;
+transition:.25s;
+}
+
+.plan-card:hover{
+transform:translateY(-6px);
+box-shadow:0 20px 40px #000;
+}
+
+.plan-card h3{
+color:#FFD700;
+font-size:1.4rem;
+}
+
+.price{
+font-size:2rem;
+margin:16px 0;
+}
+
+/* CONSULTORIA */
+
+.cards{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+gap:30px;
+max-width:900px;
+margin:auto;
+}
+
+.card{
+background:#181818;
+padding:28px;
+border-radius:14px;
+text-align:center;
+box-shadow:0 10px 25px #000;
+}
+
+.card h3{
+color:#FFD700;
+}
+
+/* FAQ */
+
+.faq{
+background:#181818;
+border-radius:14px;
+padding:30px;
+max-width:900px;
+margin:auto;
+}
+
+footer{
+text-align:center;
+padding:30px;
+color:#FFD700;
+}
+
+</style>
 </head>
+
 <body>
 
-
 <div class="navbar">
-  <a href="index.html" class="nav-link">🏠 Início</a>
-  <a href="privacy.html" class="nav-link">🔒 Privacidade</a>
-  <a href="updates.html" class="nav-link">📝 Atualizações</a>
-  <a href="#planos" class="nav-link">💳 Planos</a>
-  <a href="https://www.youtube.com/@gabrielbzago" class="nav-link" target="_blank">🎥 Canal YouTube</a>
-  <a href="#consultoria" class="nav-link">📌 Consultorias</a>
-  <a href="#contatos" class="nav-link">📞 Suporte</a>
+<a class="nav-link" href="index.html">🏠 Início</a>
+<a class="nav-link" href="privacy.html">🔒 Privacidade</a>
+<a class="nav-link" href="updates.html">📝 Atualizações</a>
+<a class="nav-link" href="#planos">💳 Planos</a>
+<a class="nav-link" href="https://www.youtube.com/@gabrielbzago" target="_blank">🎥 Canal YouTube</a>
+<a class="nav-link" href="#consultoria">📌 Consultorias</a>
+<a class="nav-link" href="#contatos">📞 Suporte</a>
 </div>
-  <!-- Logo gigante no fundo -->
-  <img src="logo.png" class="bg-logo" alt="Logo ⚡TubeX">
 
-  <div class="header">
-    <img src="logo.png" alt="Logo ⚡TubeX">
-    <h1>⚡TubeX — Descubra, Otimize e Domine o YouTube</h1>
-    <p>Extensão de SEO + IA para YouTube • Desenvolvido por Gabriel B. Zago</p>
-   <a class="youtube-link" href="https://www.youtube.com/@gabrielbzago" target="_blank">Meu Canal no YouTube</a>
-<a class="btn-plano" href="https://chromewebstore.google.com/detail/zbee-seo-analyzer-for-you/lgddmmhnmkmkfhaodogcoecdecegemgk?authuser=0&hl=pt-PT" target="_blank" style="margin-left:18px;font-size:1.06em;padding:8px 32px;box-shadow:0 2px 8px #FFD70055;">
-  🚀 Comece Grátis
+<section class="hero">
+
+<img src="logo.png">
+
+<h1>⚡TubeX — Descubra, Otimize e Domine o YouTube</h1>
+
+<p>
+Extensão de SEO + Inteligência Artificial para criadores.
+</p>
+
+<a class="btn" href="https://chromewebstore.google.com/detail/zbee-seo-analyzer-for-you/lgddmmhnmkmkfhaodogcoecdecegemgk" target="_blank">
+🚀 Comece Grátis
 </a>
-  </div>
-<div style="text-align:center;margin:40px auto;">
-<iframe width="420" height="236" src="https://www.youtube.com/embed/Is3DhxpOsXU?start=3" title="Demonstração ⚡TubeX" frameborder="0" style="border-radius:14px;box-shadow:0 2px 18px #FFD70033;" allowfullscreen></iframe>
-  <div style="color:#FFD700;margin-top:9px;font-weight:bold;">Veja o ⚡TubeX em ação!</div>
-</div>
-  <div class="table-container" id="planos" style="scroll-margin-top:80px;">
-    <h2>Compare os Planos ⚡TubeX</h2>
-    <table>
-      <tr>
-        <th>Plano</th>
-        <th>Valor</th>
-        <th>Consultas SEO/dia</th>
-        <th>Painel Summary</th>
-        <th>Painel SEO Explorer</th>
-        <th>Aba Roteiros</th>
-        <th>Shorts & Vlogs</th>
-	<th>Aba Tendências</th>
-        <th>Aba IA</th>
-        <th>Afiliado</th>
-        <th></th>
-      </tr>
-      <tr>
-       <tr>
-  <td>Free <span class="badge">Grátis</span></td>
-  <td class="price">R$0</td>
-  <td>
-    <div class="grafico-barra"><span style="width:13%"></span></div>
-    10
-  </td>
-  <td>10 consultas</td>
-  <td>Parcial</td>
-  <td><span class="simbol-sim">✓</span></td>
-  <td><span class="simbol-nao">✗</span></td>
-  <td><span class="simbol-nao">✗</span></td>
-  <td><span class="simbol-nao">✗</span></td>
-  <td><span class="simbol-nao">✗</span></td>
-  <td>
-    <a class="btn-plano" href="https://www.youtube.com/@gabrielbzago?sub_confirmation=1" target="_blank">Inscreva-se</a>
-  </td>
-</tr>
-<tr>
-  <td>Start</td>
-  <td class="price">R$9,90/mês</td>
-  <td>
-    <div class="grafico-barra"><span style="width:30%"></span></div>
-    25
-  </td>
-  <td>25 consultas</td>
-  <td>Parcial</td>
-  <td><span class="simbol-sim">✓</span></td>
-  <td><span class="simbol-nao">✗</span></td>
-  <td><span class="simbol-nao">✗</span></td>
-  <td><span class="simbol-nao">✗</span></td>
-   <td><span class="simbol-nao">✗</span></td>
-  <td>
-    <a class="btn-plano" href="https://buy.stripe.com/aFa00i1FL2q57bf2nIgjC00" target="_blank">Assinar Start</a>
-  </td>
-</tr>
-<tr>
-  <td>Membro</td>
-  <td class="price">R$14,90/mês</td>
-  <td>
-    <div class="grafico-barra"><span style="width:50%"></span></div>
-    30
-  </td>
-  <td>30 consultas</td>
-  <td><span class="highlight">Completo</span></td>
-  <td><span class="simbol-sim">✓</span></td>
-  <td><span class="simbol-sim">✓</span></td>
-  <td><span class="simbol-nao">✗</span></td>
-  <td><span class="simbol-nao">✗</span></td>
-<td><span class="simbol-nao">✗</span></td>
-  <td>
-    <a class="btn-plano" href="https://www.youtube.com/@gabrielbzago/join" target="_blank">Ser Membro</a>
-  </td>
-</tr>
-<tr>
-  <td>Pro <span class="badge">Popular</span></td>
-  <td class="price">R$29,90/mês</td>
-  <td>
-    <div class="grafico-barra"><span style="width:90%"></span></div>
-    50
-  </td>
-  <td>50 Consultas</td>
-  <td><span class="highlight">Completo</span></td>
-  <td><span class="simbol-sim">✓</span></td>
-  <td><span class="simbol-sim">✓</span></td>
-  <td><span class="simbol-sim">✓</span></td>
-  <td><span class="simbol-nao">✗</span></td>
-  <td>20%</td>
-  <td>
-    <a class="btn-plano" href="https://buy.stripe.com/3cI7sK7058OtdzDaUegjC01" target="_blank">Assinar Pro</a>
-  </td>
-</tr>
-<tr>
-  <td>Expert <span class="badge">Profissional</span></td>
-  <td class="price">R$59,90/mês</td>
-  <td>
-    <div class="grafico-barra"><span style="width:100%"></span></div>
-    Ilimitado
-  </td>
-  <td>Ilimitado</td>
-  <td><span class="highlight">Completo</span></td>
-  <td><span class="simbol-sim">✓</span></td>
-  <td><span class="simbol-sim">✓</span></td>
-  <td><span class="simbol-sim">✓</span></td>
-<td><span class="simbol-sim">✓</span></td>
-  <td>20%</td>
-  <td>
-    <a class="btn-plano" href="https://buy.stripe.com/dRmaEW98dggV3Z3d2mgjC02" target="_blank">Assinar Expert</a>
-  </td>
-</tr>
-    </table>
-    <p style="color:#fff; text-align:center; font-size:1.05em; margin-top:18px;">
-      <b>⚡ Todos os planos Pro e Expert dão direito a comissões de afiliado ⚡TubeX!</b>
-    </p>
-  </div>
-<div style="background:#282828;color:#fff;padding:18px 16px 13px 16px;border-radius:12px;margin:24px auto 18px auto;max-width:730px;box-shadow:0 2px 14px #FFD70022;text-align:center;font-size:1.07em;">
-  <b>Aviso importante sobre o sistema de afiliados:</b><br>
-  <span style="color:#FFD700;">
-    O sistema de código de afiliado ⚡TubeX está em fase final de testes e será ativado para rastreamento automático em breve. 
-   </span>
-</div>
-<div class="faq-bloco" style="background:#232323;border-radius:14px;box-shadow:0 2px 14px #FFD70022;max-width:900px;margin:40px auto 0 auto;padding:28px 18px 18px 18px;">
-  <h2 style="text-align:center;color:#FFD700;margin-bottom:24px;">Perguntas Frequentes (FAQ)</h2>
-  <div style="margin-bottom:18px;">
-    <b style="color:#FFD700;">Preciso pagar para usar o ⚡TubeX?</b><br>
-    Não! Você pode usar o plano Free apenas estando inscrito no canal do Gabriel. Funções avançadas exigem assinatura.
-  </div>
-  <div style="margin-bottom:18px;">
-    <b style="color:#FFD700;">Como cancelo minha assinatura?</b><br>
-    O cancelamento é imediato, direto pelo Mercado Pago, Stripe ou pela Chrome Web Store. Sem burocracia.
-  </div>
-  <div style="margin-bottom:18px;">
-    <b style="color:#FFD700;">Posso instalar no celular?</b><br>
-    No momento, a extensão ⚡TubeX funciona apenas no Google Chrome para computador. App mobile em breve!
-  </div>
-  <div style="margin-bottom:18px;">
-    <b style="color:#FFD700;">Quais dados meus são usados?</b><br>
-    Apenas seu e-mail (para validar planos). Nenhum dado sensível é armazenado ou compartilhado. <a href="privacy.html" style="color:#FFD700;">Veja a Política de Privacidade</a>.
-  </div>
-  <div>
-    <b style="color:#FFD700;">Funciona com Shorts, Vlogs e Tendências?</b><br>
-    Sim! O ⚡TubeX é otimizado para todos os tipos de vídeo no YouTube, inclusive Shorts e análises de tendências.
-  </div>
+
+</section>
+
+<section class="section">
+
+<h2 style="text-align:center;color:#FFD700">Recursos do TubeX</h2>
+
+<div class="features">
+
+<div class="feature"><h3>SEO Explorer</h3><p>Volume e concorrência de palavras‑chave.</p></div>
+<div class="feature"><h3>Summary</h3><p>Métricas completas de vídeos.</p></div>
+<div class="feature"><h3>IA</h3><p>Criação de títulos e descrições.</p></div>
+<div class="feature"><h3>Tendências</h3><p>Descubra vídeos virais.</p></div>
+<div class="feature"><h3>Shorts</h3><p>Ferramentas para vídeos curtos.</p></div>
+<div class="feature"><h3>Tags</h3><p>Sugestões baseadas em dados reais.</p></div>
+
 </div>
 
-<div class="depoimentos" style="max-width:900px;margin:36px auto 0 auto;padding:24px 14px 15px 14px;background:#232323;border-radius:14px;box-shadow:0 2px 14px #FFD70022;">
-  <h2 style="text-align:center;color:#FFD700;margin-bottom:20px;">O que dizem os criadores</h2>
-  <div style="display:flex;flex-wrap:wrap;gap:22px;justify-content:center;">
+</section>
 
-    <!-- Depoimento real da comunidade -->
-    <div style="background:#181818;border-radius:12px;padding:20px 18px;max-width:320px;min-width:230px;box-shadow:0 2px 8px #FFD70012;">
-      <div style="font-size:1.02em;color:#fff;">“Super indico o ⚡TubeX! A ferramenta está sendo um divisor de águas: extremamente rápida para refinar ideias, mudar o rumo do roteiro e captar informações de forma simples e ágil. Atendimento humano, rápido e eficiente!”</div>
-      <div style="margin-top:11px;color:#FFD700;font-weight:bold;">– @luhevoce-r1i</div>
-    </div>
+<section class="section" id="planos">
 
-    <div style="background:#181818;border-radius:12px;padding:20px 18px;max-width:320px;min-width:230px;box-shadow:0 2px 8px #FFD70012;">
-      <div style="font-size:1.02em;color:#fff;">“O ⚡TubeX me ajudou a dobrar as visualizações dos meus vídeos! Simples e eficiente.”</div>
-      <div style="margin-top:11px;color:#FFD700;font-weight:bold;">– Canal de Tutoriais</div>
-    </div>
+<h2 style="text-align:center;color:#FFD700">Planos</h2>
 
-    <div style="background:#181818;border-radius:12px;padding:20px 18px;max-width:320px;min-width:230px;box-shadow:0 2px 8px #FFD70012;">
-      <div style="font-size:1.02em;color:#fff;">“Nunca vi análise de SEO tão prática para YouTube. Recomendo para todo criador sério!”</div>
-      <div style="margin-top:11px;color:#FFD700;font-weight:bold;">– Canal Educativo</div>
-    </div>
+<div class="plan-grid">
 
-    <div style="background:#181818;border-radius:12px;padding:20px 18px;max-width:320px;min-width:230px;box-shadow:0 2px 8px #FFD70012;">
-      <div style="font-size:1.02em;color:#fff;">“Facilitou muito minha rotina de produção. O painel é muito intuitivo.”</div>
-      <div style="margin-top:11px;color:#FFD700;font-weight:bold;">– Criador de Vlogs</div>
-    </div>
-
-    <!-- Extra -->
-    <div style="background:#181818;border-radius:12px;padding:20px 18px;max-width:320px;min-width:230px;box-shadow:0 2px 8px #FFD70012;">
-      <div style="font-size:1.02em;color:#fff;">“Com o ⚡TubeX consegui entender o que estava travando meu crescimento. Hoje meus vídeos têm muito mais alcance.”</div>
-      <div style="margin-top:11px;color:#FFD700;font-weight:bold;">– Canal de Notícias</div>
-    </div>
-
-    <!-- Extra -->
-    <div style="background:#181818;border-radius:12px;padding:20px 18px;max-width:320px;min-width:230px;box-shadow:0 2px 8px #FFD70012;">
-      <div style="font-size:1.02em;color:#fff;">“Finalmente uma ferramenta que une IA e dados reais do YouTube. Não fico mais sem o ⚡TubeX!”</div>
-      <div style="margin-top:11px;color:#FFD700;font-weight:bold;">– Canal de Games</div>
-    </div>
-
-  </div>
-</div>
-  <div class="diferenciais">
-    <h3>Diferenciais do ⚡TubeX:</h3>
-    <ul>
-      <li>Desenvolvido por um especialista em YouTube e SEO (<a style="color:#FFD700;" href="https://www.youtube.com/@gabrielbzago" target="_blank">Gabriel B. Zago</a>).</li>
-      <li>Extensão 100% segura e atualizada com as tendências do YouTube em 2025.</li>
-      <li>Checklists, IA, gráficos de concorrência e volume, sugestões de títulos e tags, e muito mais.</li>
-      <li>Painéis exclusivos de Shorts, Vlogs e Resumo do vídeo.</li>
-      <li>Receba comissões de 20% como afiliado dos planos Pro/Expert.</li>
-      <li>Plano Free: basta estar inscrito no canal para usar as funções básicas.</li>
-      <li>Atendimento direto e suporte prioritário nos planos Pro e Expert.</li>
-      <li>Novos recursos e integrações liberados primeiro para assinantes Expert.</li>
-      <li>Pagamentos seguros via Mercado Pago e YouTube.</li>
-    </ul>
-  </div>
-
-<div class="consultoria-section" id="consultoria">
-  <h2>🚀 Consultoria e Mentoria YouTube com Gabriel Zago</h2>
-  <p style="color:#fff;font-size:1.15em;max-width:700px;margin:0 auto 20px auto;">
-    Está pronto para transformar seu canal em um projeto de sucesso?<br>
-    Com a <strong>mentoria personalizada</strong> do Gabriel Zago, você vai receber:
-    <ul style="color:#fff;list-style-type:disc;padding-left:20px;margin:15px 0;">
-      <li>Análise estratégica completa do seu canal</li>
-      <li>Plano de ação sob medida para o seu nicho</li>
-      <li>Acompanhamento direto via WhatsApp</li>
-      <li>Dicas práticas de otimização e crescimento orgânico</li>
-    </ul>
-    <span style="color:#FFD700;font-weight:bold;">Bônus exclusivo:</span> Nos planos PRO, você ainda recebe <strong>1 mês de acesso ao ⚡TubeX Pro</strong>, a ferramenta que vai turbinar suas publicações e análises!
-  </p>
-
-  <div class="consultoria-cards">
-    <div class="consultoria-card">
-      <h3>Sessão Única</h3>
-      <p>Encontro de 1h ao vivo com diagnóstico completo + plano de ação prático</p>
-      <div class="valor">R$ 120</div>
-      <a href="https://wa.me/19992036896?text=Quero%20sessao%20unica%20YouTube" target="_blank" class="btn-plano">Agendar sessão</a>
-    </div>
-
-    <div class="consultoria-card">
-      <h3>Pacote 3 Sessões</h3>
-      <p>Três sessões de 1h com acompanhamento contínuo via WhatsApp</p>
-      <div class="valor">R$ 320</div>
-      <a href="https://wa.me/19992036896?text=Quero%20pacote%20consultoria%20YouTube" target="_blank" class="btn-plano">Agendar pacote</a>
-    </div>
-
-    <div class="consultoria-card">
-      <h3>Consultoria PRO + ⚡TubeX Pro</h3>
-      <p>Mentoria premium com suporte intensivo + 1 mês de ⚡TubeX Pro incluso</p>
-      <div class="valor">R$ 480</div>
-      <a href="https://wa.me/19992036896?text=Quero%20consultoria%20PRO%20YouTube%20com%20⚡TubeX" target="_blank" class="btn-plano">Agendar PRO</a>
-    </div>
-  </div>
+<div class="plan-card">
+<h3>Free</h3>
+<div class="price">R$0</div>
+<p>5 SEO/dia</p>
+<p>10 consultas Summary</p>
+<p>SEO Explorer parcial</p>
+<a class="btn" href="https://www.youtube.com/@gabrielbzago?sub_confirmation=1" target="_blank">Começar</a>
 </div>
 
-  <div class="contatos" id="contatos">
-    <h3 style="color:#FFD700;">Contato e Suporte</h3>
-    <p>
-      <b>Suporte ⚡TubeX:</b> 
-      <a href="mailto:gabrielbzago@gmail.com">gabrielbzago@gmail.com</a>
-      &nbsp;|&nbsp;
-      <a href="https://wa.me/19992036896?text=Suporte%20⚡TubeX" target="_blank">WhatsApp</a>
-    </p>
-    <p>
-      <b>Consultorias:</b> 
-      <a href="mailto:gabrielbzago@gmail.com">gabriebzago@gmail.com</a>
-      &nbsp;|&nbsp;
-      <a href="https://wa.me/19992036896?text=Consultoria%20YouTube" target="_blank">WhatsApp</a>
-    </p>
-  </div>
+<div class="plan-card">
+<h3>Start</h3>
+<div class="price">R$9,90</div>
+<p>15 SEO/dia</p>
+<p>IA liberada</p>
+<a class="btn" href="https://buy.stripe.com/aFa00i1FL2q57bf2nIgjC00" target="_blank">Assinar</a>
+</div>
 
-<footer style="text-align:center; color:#FFD700; font-size:0.99em; margin-top:30px; margin-bottom:22px;position:relative;z-index:3;">
-  ⚡TubeX — Otimize e Domine o YouTube • Desenvolvido por Gabriel Zago — 
-  <a href="https://www.youtube.com/@gabrielbzago" style="color:#FFD700;">@gabrielbzago</a>
-  &nbsp;|&nbsp;
-  <a href="privacy.html" style="color:#FFD700;text-decoration:underline dotted;">Política de Privacidade</a>
+<div class="plan-card">
+<h3>Member</h3>
+<div class="price">R$14,90</div>
+<p>25 SEO/dia</p>
+<p>Tendências</p>
+<p>Roteiros</p>
+<a class="btn" href="https://www.youtube.com/@gabrielbzago/join" target="_blank">Assinar</a>
+</div>
+
+<div class="plan-card">
+<h3>Pro ⭐</h3>
+<div class="price">R$29,90</div>
+<p>50 SEO/dia</p>
+<p>Todas funções</p>
+<p>20% afiliado</p>
+<a class="btn" href="https://buy.stripe.com/3cI7sK7058OtdzDaUegjC01" target="_blank">Assinar</a>
+</div>
+
+<div class="plan-card">
+<h3>Expert</h3>
+<div class="price">R$59,90</div>
+<p>Ilimitado</p>
+<p>Todas funcionalidades</p>
+<a class="btn" href="https://buy.stripe.com/dRmaEW98dggV3Z3d2mgjC02" target="_blank">Assinar</a>
+</div>
+
+</div>
+
+</section>
+
+<section class="section" id="consultoria">
+
+<h2 style="text-align:center;color:#FFD700">Consultoria YouTube</h2>
+
+<div class="cards">
+
+<div class="card">
+<h3>Sessão Única</h3>
+<div class="price">R$120</div>
+<a class="btn" href="https://wa.me/19992036896?text=Quero%20sessao%20unica%20YouTube">Agendar</a>
+</div>
+
+<div class="card">
+<h3>Pacote 3 Sessões</h3>
+<div class="price">R$320</div>
+<a class="btn" href="https://wa.me/19992036896?text=Quero%20pacote%20consultoria%20YouTube">Agendar</a>
+</div>
+
+<div class="card">
+<h3>Consultoria PRO</h3>
+<div class="price">R$480</div>
+<a class="btn" href="https://wa.me/19992036896?text=Quero%20consultoria%20PRO%20YouTube">Agendar</a>
+</div>
+
+</div>
+
+</section>
+
+<section class="section">
+
+<div class="faq">
+
+<h2 style="color:#FFD700;text-align:center">FAQ</h2>
+
+<p><b>Preciso pagar para usar?</b><br>Existe plano gratuito.</p>
+<p><b>Funciona no celular?</b><br>Funciona no Chrome para computador.</p>
+<p><b>Quais dados são usados?</b><br>Apenas email para validar plano.</p>
+
+</div>
+
+</section>
+
+<section class="section" id="contatos">
+
+<h2 style="text-align:center;color:#FFD700">Contato</h2>
+
+<p style="text-align:center">
+Suporte: gabrielbzago@gmail.com<br>
+WhatsApp: 19 99203‑6896
+</p>
+
+</section>
+
+<footer>
+
+⚡TubeX — Desenvolvido por Gabriel Zago
+
 </footer>
+
 </body>
 </html>
