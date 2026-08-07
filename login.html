@@ -1,0 +1,149 @@
+<!DOCTYPE html><html lang="pt-BR"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>TubeX • Login</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"><style>*{margin:0;padding:0;box-sizing:border-box}body{font-family:Inter,sans-serif;background:linear-gradient(135deg,#08101F,#111827,#0F172A);color:#fff;min-height:100vh;display:flex;align-items:center;justify-content:center;padding:40px}.container{display:grid;grid-template-columns:1.2fr .9fr;gap:60px;max-width:1200px;width:100%}.left h1{font-size:58px;font-weight:800}.left h1 span{color:#facc15}.left p{margin-top:16px;color:#cbd5e1;line-height:1.8}.grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:40px}.cardf{background:rgba(255,255,255,.05);padding:20px;border-radius:16px;border:1px solid rgba(255,255,255,.08)}.login{background:#fff;color:#111827;border-radius:24px;padding:36px;box-shadow:0 30px 80px rgba(0,0,0,.35)}label{display:flex;gap:10px;align-items:flex-start;margin:14px 0;font-size:14px}button{width:100%;height:54px;border:none;border-radius:14px;background:#facc15;font-weight:700}button:disabled{background:#ddd;color:#777}.note,.footer{margin-top:18px;font-size:13px;color:#666;line-height:1.7}a{color:#2563eb}</style></head><body><div class="container"><div class="left"><h1>Tube<span>X</span></h1><p>Conecte sua Conta Google para utilizar os recursos do TubeX através do Google OAuth e YouTube API Services.</p><div class="grid"><div class="cardf">📈 SEO Inteligente</div><div class="cardf">🤖 IA</div><div class="cardf">🔥 Tendências</div><div class="cardf">🎯 Otimização</div></div></div><div class="login"><h2>Continuar com Google</h2><label><input id=t1 type=checkbox>Li e concordo com os <a href="/terms">Termos</a></label><label><input id=t2 type=checkbox>Li e concordo com a <a href="/privacy">Política</a></label><label><input id=t3 type=checkbox>Concordo com os <a href="https://www.youtube.com/t/terms">Termos do YouTube</a></label><button id=googleLogin disabled>Continuar com Google</button><div class=note>O TubeX acessa apenas os dados necessários após sua autorização.</div><div class=footer>🔒 Login seguro via Google OAuth.</div></div></div><script>
+
+const ids = [
+    "t1",
+    "t2",
+    "t3"
+];
+
+const btn =
+document.getElementById(
+    "googleLogin"
+);
+
+// ===========================================
+// HABILITA BOTÃO
+// ===========================================
+
+function validateConsent(){
+
+    btn.disabled = !ids.every(id =>
+        document
+            .getElementById(id)
+            .checked
+    );
+
+}
+
+ids.forEach(id=>{
+
+    document
+        .getElementById(id)
+        .addEventListener(
+            "change",
+            validateConsent
+        );
+
+});
+
+// ===========================================
+// LOGIN
+// ===========================================
+
+btn.addEventListener(
+"click",
+()=>{
+
+    btn.disabled = true;
+
+    btn.innerHTML =
+        "Conectando...";
+
+    // =======================================
+    // CHAMA O BACKGROUND
+    // =======================================
+
+    chrome.runtime.sendMessage(
+
+        {
+            action:"loginOAuth"
+        },
+
+        (response)=>{
+
+            // ===================================
+            // RUNTIME ERROR
+            // ===================================
+
+            if(
+                chrome.runtime.lastError
+            ){
+
+                console.error(
+                    chrome.runtime.lastError
+                );
+
+                alert(
+                    "Erro ao iniciar o login."
+                );
+
+                btn.disabled = false;
+
+                btn.innerHTML =
+                    "Continuar com Google";
+
+                return;
+
+            }
+
+            // ===================================
+            // LOGIN FAIL
+            // ===================================
+
+            if(
+                !response ||
+                !response.success
+            ){
+
+                console.error(
+                    response
+                );
+
+                alert(
+                    "Falha ao realizar login."
+                );
+
+                btn.disabled = false;
+
+                btn.innerHTML =
+                    "Continuar com Google";
+
+                return;
+
+            }
+
+            console.log(
+                "✅ LOGIN OK",
+                response
+            );
+
+            // ===================================
+            // SUCESSO
+            // ===================================
+
+            btn.innerHTML =
+                "Login realizado ✔";
+
+            // Aguarda um instante
+            // para o usuário visualizar
+
+            setTimeout(()=>{
+
+                // Se tiver success.html
+
+                window.location.href =
+                    "success.html";
+
+                // OU simplesmente:
+                // window.close();
+
+            },800);
+
+        }
+
+    );
+
+});
+
+</script>
+</body></html>
