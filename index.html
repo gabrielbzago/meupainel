@@ -10,8 +10,15 @@
 <style>
 
 /* BASE */
+html,body{overflow-x:hidden;}
+*,*::before,*::after{box-sizing:border-box;}
+
 body{
-background:#0b0f14;
+box-sizing:border-box;
+background:
+radial-gradient(circle at top left, rgba(168,85,247,.12), transparent 30%),
+radial-gradient(circle at top right, rgba(250,204,21,.08), transparent 30%),
+linear-gradient(180deg,#050816,#0b1020 40%, #070b14);
 color:#e5e7eb;
 font-family:Inter,Arial,sans-serif;
 margin:0;
@@ -19,7 +26,11 @@ margin:0;
 
 /* NAVBAR */
 .navbar{
-background:#0b0f14;
+background:rgba(8,12,24,.72);
+backdrop-filter:blur(14px);
+-webkit-backdrop-filter:blur(14px);
+border-bottom:1px solid rgba(255,255,255,.06);
+box-shadow:0 10px 40px rgba(0,0,0,.35);
 display:flex;
 justify-content:center;
 gap:18px;
@@ -28,6 +39,19 @@ border-bottom:1px solid #1f2937;
 position:sticky;
 top:0;
 z-index:20;
+}
+
+.main-logo{
+width:320px;
+max-width:90%;
+filter:
+drop-shadow(0 0 25px rgba(168,85,247,.35))
+drop-shadow(0 0 40px rgba(250,204,21,.18));
+transition:.4s;
+}
+
+.main-logo:hover{
+transform:scale(1.03);
 }
 
 .nav-link{
@@ -51,6 +75,11 @@ radial-gradient(circle at 50% 0%, rgba(250,204,21,0.08), transparent 60%),
 linear-gradient(180deg,#0b0f14,#111827);
 }
 
+.hero{
+position:relative;
+overflow:hidden;
+}
+
 .hero img{
 width:110px;
 border-radius:10px;
@@ -68,21 +97,55 @@ margin:auto;
 color:#9ca3af;
 }
 
+.hero::before{
+content:"";
+position:absolute;
+width:500px;
+height:500px;
+background:rgba(168,85,247,.18);
+filter:blur(120px);
+top:-200px;
+left:-150px;
+z-index:0;
+}
+
+.hero::after{
+content:"";
+position:absolute;
+width:500px;
+height:500px;
+background:rgba(250,204,21,.10);
+filter:blur(120px);
+bottom:-200px;
+right:-150px;
+z-index:0;
+}
+
+.hero *{
+position:relative;
+z-index:2;
+}
+
 .btn{
-background:#facc15;
+background:linear-gradient(135deg,#facc15,#f59e0b);
 color:#111;
-padding:12px 26px;
-border-radius:10px;
-font-weight:bold;
+padding:14px 28px;
+border-radius:14px;
+font-weight:800;
 text-decoration:none;
 display:inline-block;
 margin:10px;
-box-shadow:0 10px 25px rgba(250,204,21,0.2);
+transition:.25s;
+box-shadow:
+0 10px 25px rgba(250,204,21,.25),
+0 0 40px rgba(250,204,21,.15);
 }
 
 .btn:hover{
-transform:translateY(-2px);
-box-shadow:0 15px 30px rgba(250,204,21,0.3);
+transform:translateY(-4px) scale(1.02);
+box-shadow:
+0 20px 40px rgba(250,204,21,.35),
+0 0 50px rgba(250,204,21,.22);
 }
 
 /* SECTION */
@@ -113,8 +176,13 @@ color:#facc15;
 /* PLANOS */
 .plan-grid{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+grid-template-columns:repeat(3,minmax(0,1fr));
 gap:28px;
+align-items:stretch;
+}
+@media(max-width:900px){
+.plan-grid{grid-template-columns:1fr;}
+.plan-card.pro{transform:none;}
 }
 
 .plan-card{
@@ -141,7 +209,7 @@ z-index:2;
 }
 
 .plan-card.pro::before{
-content:"MAIS ESCOLHIDO";
+content:"";
 position:absolute;
 top:-12px;
 left:50%;
@@ -169,17 +237,17 @@ color:#facc15;
 font-weight:700;
 }
 
-/* PROMO SaaS */
-.promo{
+/* MAIS POPULAR */
+.popular-badge{
 background:#1f2937;
 color:#facc15;
-border:1px solid #374151;
+border:1px solid rgba(250,204,21,.35);
 font-size:.7rem;
 padding:5px 12px;
 border-radius:20px;
 display:inline-block;
 margin-bottom:10px;
-font-weight:600;
+font-weight:700;
 }
 
 /* CARDS */
@@ -202,6 +270,8 @@ color:#9ca3af;
 
 </style>
 </head>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
 <body>
 
@@ -219,9 +289,16 @@ color:#9ca3af;
 
 <section class="hero">
 
-<img src="logo.png">
+<img src="logo-premium.png" class="main-logo">
 
-<h1>⚡TubeX — Descubra, Otimize e Domine o YouTube</h1>
+<p>
+Descubra palavras-chave virais, gere títulos com IA,
+analise concorrentes e encontre tendências antes dos outros criadores.
+</p>
+
+<h1>
+A Plataforma Completa de SEO e IA para YouTube
+</h1>
 
 <p>
 Extensão de SEO + Inteligência Artificial para criadores.
@@ -293,7 +370,11 @@ Aumente o alcance dos seus vídeos e apareça nas buscas e vídeos sugeridos.
 
 <section class="section" id="planos">
 
-<h2 style="text-align:center;color:#FFD700">Planos</h2>
+<h2 style="text-align:center;color:#FFD700">Escolha seu plano</h2>
+
+<p style="text-align:center;color:#9ca3af;max-width:720px;margin:10px auto 30px">
+Comece grátis e evolua quando precisar. No anual, você economiza o equivalente a <b>2 meses</b> de assinatura.
+</p>
 
 <div class="plan-grid">
 
@@ -306,90 +387,68 @@ Aumente o alcance dos seus vídeos e apareça nas buscas e vídeos sugeridos.
 <p><b>10 consultas no Summary</b></p>
 <p><b>SEO Explorer parcial</b></p>
 
-<p style="opacity:.8">Ideal para testar a ferramenta.</p>
+<p style="opacity:.8">Ideal para conhecer o TubeX e testar seus principais recursos.</p>
 
-<a class="btn" href="https://chromewebstore.google.com/detail/tubex-seo-analyzer-for-yo/lgddmmhnmkmkfhaodogcoecdecegemgk" target="_blank">Começar</a>
+<a class="btn" href="https://chromewebstore.google.com/detail/tubex-seo-analyzer-for-yo/lgddmmhnmkmkfhaodogcoecdecegemgk" target="_blank">Começar Grátis</a>
 </div>
 
 <div class="plan-card">
-<span class="promo">OFERTA DE LANÇAMENTO</span>
-<h3>Start</h3>
 
-<span class="old-price">De R$19,90</span>
-<div class="price">R$9,90 <span class="discount">-50%</span></div>
+<h3>Pro</h3>
 
-<p><b>10 análises SEO por dia</b> para pesquisar várias ideias de conteúdo diariamente.</p>
-
-<p style="opacity:.8">Ideal para quem quer inciar no Youtube do Jeito Certo.</p>
-
-<a class="btn" href="https://buy.stripe.com/aFa00i1FL2q57bf2nIgjC00" target="_blank">Assinar</a>
-</div>
-
-
-
-<div class="plan-card">
-<span class="promo">OFERTA DE LANÇAMENTO</span>
-<h3>Member</h3>
-
-<span class="old-price">De R$39,90</span>
-<div class="price">R$19,90 <span class="discount">-50%</span></div>
-
-<p><b>25 análises SEO por dia</b> para pesquisar várias ideias de conteúdo diariamente.</p>
-
-<p style="opacity:.8">Ideal para quem já publica vídeos e quer aumentar visualizações.</p>
-
-<a class="btn" href="https://www.youtube.com/@gabrielbzago/join" target="_blank">Assinar</a>
-</div>
-
-
-
-<!-- ALTERAÇÃO 2: PRO AGORA É O MAIS ESCOLHIDO -->
-<div class="plan-card pro">
-
-<span class="promo">OFERTA DE LANÇAMENTO</span>
-<h3>Pro ⭐</h3>
-
-<span class="old-price">De R$79,90</span>
-<div class="price">R$49,90 <span class="discount">-37%</span></div>
+<div class="price">R$29,99 <span style="font-size:.9rem">/mês</span></div>
 
 <p><b>50 análises SEO por dia</b></p>
-
-<p><b>Acesso completo</b> (SEO + IA + Tendências + Tags)</p>
-
+<p><b>Acesso completo</b> a SEO, IA, Tendências e Tags.</p>
 <p><b>Aba de Tendências</b> para descobrir vídeos e temas que estão crescendo no YouTube.</p>
+<p><b>Ferramentas avançadas para creators</b> para pesquisar, otimizar e planejar conteúdos.</p>
 
-<p style="opacity:.8"><b>Plano mais escolhido</b> por quem quer crescer rápido</p>
-
-<a class="btn" href="https://buy.stripe.com/3cI7sK7058OtdzDaUegjC01" target="_blank">Assinar</a>
+<div style="margin:20px 0;padding:15px;border:1px solid #374151;border-radius:12px;background:#0b1220">
+<div style="color:#9ca3af;font-size:.8rem">OU ESCOLHA O ANUAL</div>
+<div style="margin-top:6px"><span style="text-decoration:line-through;color:#6b7280">R$359,88</span></div>
+<div class="price" style="font-size:1.8rem">R$299,90 <span style="font-size:.85rem">/ano</span></div>
+<div style="color:#facc15;font-weight:800">🔥 ECONOMIZE R$59,98</div>
+<div style="font-size:.8rem;color:#9ca3af;margin-top:4px">Equivale a R$24,99/mês • 2 meses grátis</div>
 </div>
 
+<p style="opacity:.8"><b>Para creators que querem crescer com estratégia e mais recursos.</b></p>
 
-<div class="plan-card">
-<span class="promo">OFERTA DE LANÇAMENTO</span>
+<a class="btn" href="https://buy.stripe.com/3cI7sK7058OtdzDaUegjC01" target="_blank">Assinar Pro Mensal</a>
+<a class="btn" style="background:transparent;color:#facc15;border:1px solid #facc15;box-shadow:none" href="https://buy.stripe.com/28E3cudote8NgLPd2mgjC03" target="_blank">🔥 Assinar Pro Anual</a>
+</div>
+
+<div class="plan-card pro">
+
+<span class="popular-badge">⭐ MAIS POPULAR</span>
 <h3>Expert</h3>
 
-<span class="old-price">De R$149,90</span>
-<div class="price">R$99,90 <span class="discount">-33%</span></div>
+<div class="price">R$49,99 <span style="font-size:.9rem">/mês</span></div>
 
 <p><b>Análises SEO ilimitadas</b> para pesquisar quantas palavras-chave quiser.</p>
-
-<p><b>Todas as funcionalidades desbloqueadas</b> para análise completa do YouTube.</p>
-
+<p><b>Todas as funcionalidades desbloqueadas</b> para uma experiência completa do TubeX.</p>
+<p><b>Creator Workspace</b> com recursos avançados para criação, análise e otimização de conteúdo.</p>
 <p><b>Gerador de Roteiros com IA</b> para estruturar vídeos mais rápido e melhorar retenção.</p>
-
 <p><b>Acesso antecipado a novos recursos</b> e prioridade em atualizações.</p>
 
-<p style="opacity:.8">Plano profissional para criadores e agências que vivem de YouTube.</p>
-
-<a class="btn" href="https://buy.stripe.com/dRmaEW98dggV3Z3d2mgjC02" target="_blank">Assinar</a>
+<div style="margin:20px 0;padding:15px;border:1px solid #facc15;border-radius:12px;background:rgba(250,204,21,.06)">
+<div style="color:#facc15;font-size:.8rem;font-weight:800">🔥 MELHOR CUSTO-BENEFÍCIO</div>
+<div style="margin-top:6px"><span style="text-decoration:line-through;color:#6b7280">R$599,88</span></div>
+<div class="price" style="font-size:1.8rem">R$499,90 <span style="font-size:.85rem">/ano</span></div>
+<div style="color:#facc15;font-weight:800">ECONOMIZE R$99,98</div>
+<div style="font-size:.8rem;color:#9ca3af;margin-top:4px">Equivale a R$41,66/mês • 2 meses grátis</div>
 </div>
 
+<p style="opacity:.8"><b>Para creators que querem extrair o máximo do TubeX.</b></p>
 
+<a class="btn" href="https://buy.stripe.com/dRmaEW98dggV3Z3d2mgjC02" target="_blank">Assinar Expert Mensal</a>
+<a class="btn" style="background:transparent;color:#111;background:linear-gradient(135deg,#facc15,#fde68a);box-shadow:0 15px 35px rgba(250,204,21,.35)" href="https://buy.stripe.com/28E8wO3NTe8N67b2nIgjC04" target="_blank">🔥 Assinar Expert Anual</a>
+</div>
 
+</div>
 
-
-
-
+<p style="text-align:center;color:#9ca3af;font-size:.85rem;margin-top:25px">
+💳 Pagamento seguro • 🔄 Renovação automática • Cancele quando quiser
+</p>
 
 </section>
 
@@ -400,7 +459,7 @@ Aumente o alcance dos seus vídeos e apareça nas buscas e vídeos sugeridos.
 <div class="depo-grid">
 
 <p style="color:#9ca3af;font-size:.85rem">
-Assinatura recorrente mensal com renovação automática.
+Planos recorrentes com renovação automática. Escolha mensal ou anual.
 </p>
 
 <div class="depo-card">
@@ -451,7 +510,7 @@ Só entrar no vídeo, faz uma analise de SEO muito legal. Gera títulos, descri�
 <li>⭐ Plano Free disponível para inscritos.</li>
 <li>⭐ Suporte prioritário nos planos Pro e Expert.</li>
 <li>⭐ Novos recursos liberados primeiro para assinantes Expert.</li>
-<li>⭐ Pagamentos seguros via Mercado Pago e YouTube.</li>
+<li>⭐ Pagamentos seguros e recorrentes.</li>
 
 </ul>
 
@@ -527,7 +586,7 @@ WhatsApp: 19 99203‑6896
 ">
 
 <p>
-Ao assinar qualquer plano do TubeX você concorda com a cobrança recorrente mensal automática.
+Ao assinar qualquer plano do TubeX você concorda com a cobrança recorrente automática conforme o período escolhido.
 </p>
 
 <p style="
