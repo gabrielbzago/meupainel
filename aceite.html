@@ -1,0 +1,1421 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#070a12">
+<title>TubeX — Login seguro</title>
+<meta name="description" content="Login seguro do TubeX com autenticação Google e aceite dos documentos legais.">
+<link rel="icon" href="logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+body{
+
+margin:0;
+
+font-family:
+Inter,
+system-ui,
+sans-serif;
+
+background:
+
+linear-gradient(
+135deg,
+#0b1020 0%,
+#111827 40%,
+#0f172a 100%
+);
+
+min-height:100vh;
+
+color:#fff;
+
+overflow-x:hidden;
+
+}
+
+.tbx-page{
+
+display:flex;
+
+min-height:100vh;
+
+align-items:center;
+
+justify-content:center;
+
+padding:60px;
+
+gap:80px;
+
+}
+
+/* ======================================================
+LEFT
+====================================================== */
+
+.tbx-left{
+
+width:560px;
+
+}
+
+.tbx-brand{
+
+margin-bottom:60px;
+
+}
+
+.tbx-logo{
+
+width:72px;
+
+margin-bottom:20px;
+
+}
+
+.tbx-brand h1{
+
+margin:0;
+
+font-size:56px;
+
+font-weight:800;
+
+letter-spacing:-2px;
+
+}
+
+.tbx-brand p{
+
+margin-top:10px;
+
+font-size:18px;
+
+color:#9ca3af;
+
+}
+
+.tbx-hero h2{
+
+font-size:48px;
+
+line-height:1.1;
+
+margin-bottom:25px;
+
+font-weight:800;
+
+}
+
+.tbx-hero p{
+
+font-size:20px;
+
+line-height:1.8;
+
+color:#cbd5e1;
+
+max-width:520px;
+
+margin-bottom:50px;
+
+}
+
+/* ======================================================
+FEATURES
+====================================================== */
+
+.tbx-features{
+
+display:grid;
+
+grid-template-columns:
+
+1fr
+1fr;
+
+gap:22px;
+
+}
+
+.feature{
+
+display:flex;
+
+gap:18px;
+
+align-items:flex-start;
+
+padding:22px;
+
+border-radius:18px;
+
+background:
+
+rgba(255,255,255,.04);
+
+border:
+
+1px solid
+rgba(255,255,255,.06);
+
+backdrop-filter:
+
+blur(12px);
+
+transition:.25s;
+
+}
+
+.feature:hover{
+
+transform:
+
+translateY(-4px);
+
+background:
+
+rgba(255,255,255,.07);
+
+}
+
+.feature .icon{
+
+font-size:32px;
+
+width:54px;
+height:54px;
+
+display:flex;
+
+align-items:center;
+justify-content:center;
+
+border-radius:14px;
+
+background:
+
+rgba(255,196,0,.10);
+
+}
+
+.feature strong{
+
+display:block;
+
+font-size:17px;
+
+margin-bottom:8px;
+
+}
+
+.feature span{
+
+font-size:14px;
+
+color:#b6becd;
+
+line-height:1.6;
+
+}
+
+/* ======================================================
+RIGHT
+====================================================== */
+
+.tbx-right{
+
+width:460px;
+
+display:flex;
+
+justify-content:center;
+
+}
+
+.login-card{
+
+width:100%;
+
+background:#fff;
+
+border-radius:26px;
+
+padding:42px;
+
+box-shadow:
+
+0 40px 100px
+rgba(0,0,0,.35);
+
+color:#111827;
+
+}
+
+.login-card small{
+
+display:inline-block;
+
+padding:8px 14px;
+
+border-radius:999px;
+
+background:#FEF3C7;
+
+color:#92400E;
+
+font-weight:700;
+
+font-size:12px;
+
+letter-spacing:.3px;
+
+margin-bottom:18px;
+
+}
+
+.login-card h2{
+
+margin:0;
+
+font-size:34px;
+
+font-weight:800;
+
+color:#111827;
+
+margin-bottom:18px;
+
+}
+
+.login-card p{
+
+font-size:15px;
+
+line-height:1.8;
+
+color:#6B7280;
+
+margin-bottom:32px;
+
+}
+
+.login-card strong{
+
+color:#111827;
+
+}
+
+/* ======================================================
+CONSENT
+====================================================== */
+
+.tbx-consent-group{
+
+display:flex;
+
+flex-direction:column;
+
+gap:18px;
+
+margin-bottom:32px;
+
+}
+
+.tbx-check{
+
+display:flex;
+
+align-items:flex-start;
+
+gap:14px;
+
+cursor:pointer;
+
+font-size:14px;
+
+line-height:1.7;
+
+color:#374151;
+
+}
+
+.tbx-check input{
+
+margin-top:4px;
+
+width:18px;
+height:18px;
+
+accent-color:#F59E0B;
+
+cursor:pointer;
+
+}
+
+.tbx-check a{
+
+color:#2563EB;
+
+font-weight:600;
+
+text-decoration:none;
+
+}
+
+.tbx-check a:hover{
+
+text-decoration:underline;
+
+}
+
+/* ======================================================
+GOOGLE BUTTON
+====================================================== */
+
+.google-btn{
+
+width:100%;
+
+height:58px;
+
+border:none;
+
+border-radius:14px;
+
+background:
+
+linear-gradient(
+180deg,
+#FBBF24,
+#F59E0B
+);
+
+color:#111827;
+
+font-size:16px;
+
+font-weight:700;
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+gap:12px;
+
+cursor:pointer;
+
+transition:.25s;
+
+box-shadow:
+
+0 12px 30px
+rgba(245,158,11,.25);
+
+}
+
+.google-btn:hover{
+
+transform:
+
+translateY(-2px);
+
+box-shadow:
+
+0 20px 40px
+rgba(245,158,11,.35);
+
+}
+
+.google-btn:disabled{
+
+background:#E5E7EB;
+
+color:#9CA3AF;
+
+cursor:not-allowed;
+
+box-shadow:none;
+
+transform:none;
+
+}
+
+.google-icon{
+
+width:22px;
+height:22px;
+
+object-fit:contain;
+
+}
+
+/* ======================================================
+FOOTER
+====================================================== */
+
+.login-note{
+
+margin-top:22px;
+
+padding:16px;
+
+border-radius:14px;
+
+background:
+
+#F9FAFB;
+
+border:
+
+1px solid
+#E5E7EB;
+
+font-size:13px;
+
+line-height:1.7;
+
+color:#6B7280;
+
+}
+
+.security{
+
+margin-top:14px;
+
+display:flex;
+
+align-items:center;
+
+gap:10px;
+
+font-size:13px;
+
+color:#6B7280;
+
+}
+
+.security:first-of-type{
+
+margin-top:24px;
+
+}
+
+/* ======================================================
+RESPONSIVE
+====================================================== */
+
+@media(max-width:1200px){
+
+.tbx-page{
+
+flex-direction:column;
+
+padding:50px 24px;
+
+gap:50px;
+
+}
+
+.tbx-left{
+
+width:100%;
+max-width:720px;
+
+text-align:center;
+
+}
+
+.tbx-right{
+
+width:100%;
+max-width:520px;
+
+}
+
+.tbx-hero p{
+
+margin-left:auto;
+margin-right:auto;
+
+}
+
+.tbx-features{
+
+grid-template-columns:1fr 1fr;
+
+}
+
+}
+
+@media(max-width:768px){
+
+.tbx-brand h1{
+
+font-size:44px;
+
+}
+
+.tbx-hero h2{
+
+font-size:34px;
+
+}
+
+.tbx-hero p{
+
+font-size:17px;
+
+}
+
+.tbx-features{
+
+grid-template-columns:1fr;
+
+}
+
+.login-card{
+
+padding:30px;
+
+}
+
+.login-card h2{
+
+font-size:28px;
+
+}
+
+}
+
+@media(max-width:480px){
+
+body{
+
+padding:0;
+
+}
+
+.tbx-page{
+
+padding:25px 16px;
+
+}
+
+.tbx-brand{
+
+margin-bottom:35px;
+
+}
+
+.tbx-brand h1{
+
+font-size:36px;
+
+}
+
+.tbx-brand p{
+
+font-size:16px;
+
+}
+
+.tbx-hero h2{
+
+font-size:28px;
+
+}
+
+.tbx-hero p{
+
+font-size:15px;
+
+line-height:1.7;
+
+}
+
+.login-card{
+
+padding:24px;
+
+border-radius:20px;
+
+}
+
+.login-card h2{
+
+font-size:24px;
+
+}
+
+.google-btn{
+
+height:54px;
+
+font-size:15px;
+
+}
+
+}
+
+/* ======================================================
+LOADING
+====================================================== */
+
+.google-btn.loading{
+
+pointer-events:none;
+
+opacity:.8;
+
+}
+
+.google-btn.loading::after{
+
+content:"";
+
+width:18px;
+height:18px;
+
+margin-left:12px;
+
+border-radius:50%;
+
+border:
+
+2px solid
+rgba(255,255,255,.5);
+
+border-top-color:#111827;
+
+animation:
+
+spin .7s linear infinite;
+
+}
+
+@keyframes spin{
+
+to{
+
+transform:rotate(360deg);
+
+}
+
+}
+
+/* ======================================================
+SUCCESS
+====================================================== */
+
+.login-success{
+
+display:none;
+
+margin-top:25px;
+
+padding:18px;
+
+border-radius:14px;
+
+background:
+
+#ECFDF5;
+
+border:
+
+1px solid
+#10B981;
+
+color:
+
+#065F46;
+
+font-size:14px;
+
+line-height:1.7;
+
+}
+
+.login-success.show{
+
+display:block;
+
+animation:
+
+fadeSuccess .35s ease;
+
+}
+
+@keyframes fadeSuccess{
+
+from{
+
+opacity:0;
+
+transform:translateY(8px);
+
+}
+
+to{
+
+opacity:1;
+
+transform:translateY(0);
+
+}
+
+}
+
+
+.tbx-legalbar{position:fixed;top:0;left:0;right:0;z-index:9999;display:flex;justify-content:space-between;align-items:center;padding:12px 28px;background:rgba(7,10,18,.9);backdrop-filter:blur(16px);border-bottom:1px solid rgba(255,255,255,.08);font-family:Inter,Arial,sans-serif}
+.tbx-legalbar a{color:#aeb7c7;text-decoration:none;font-size:12px;font-weight:800;margin-left:16px}.tbx-legalbar a:hover{color:#fff}.tbx-legalbrand{color:#fff!important;font-size:22px!important;letter-spacing:-.05em;margin-left:0!important}.tbx-legalbrand::first-letter{color:#facc15}
+@media(max-width:700px){.tbx-legalbar{padding:10px 14px}.tbx-legalbar nav a{font-size:10px;margin-left:8px}.tbx-legalbar nav a:nth-child(n+3){display:none}}
+
+</style>
+</head>
+<body>
+
+<div class="tbx-legalbar">
+  <a href="https://www.tubex.app.br" class="tbx-legalbrand">TubeX</a>
+  <nav aria-label="Políticas e documentos">
+    <a href="https://www.tubex.app.br/privacy.html">🔒 Privacidade</a>
+    <a href="https://www.tubex.app.br/termos.html">Termos</a>
+    <a href="https://www.tubex.app.br/reembolso.html">Reembolso</a>
+    <a href="https://www.tubex.app.br/cancelamento.html">Cancelamento</a>
+  </nav>
+</div>
+
+<!-- =======================================================
+TUBEX LOGIN PAGE
+======================================================= -->
+
+<div class="tbx-page">
+
+    <!-- LEFT -->
+
+    <div class="tbx-left">
+
+        <div class="tbx-brand">
+
+            <img
+                src="logo.png"
+                class="tbx-logo"
+            >
+
+            <h1>
+
+                TubeX
+
+            </h1>
+
+            <p>
+
+                SEO & AI Platform
+
+            </p>
+
+        </div>
+
+        <div class="tbx-hero">
+
+            <h2>
+
+                Domine o YouTube com Inteligência Artificial
+
+            </h2>
+
+            <p>
+
+                Analise palavras-chave, descubra tendências,
+                otimize vídeos e acelere o crescimento do seu canal
+                utilizando inteligência artificial e
+                YouTube API Services.
+
+            </p>
+
+        </div>
+
+        <div class="tbx-features">
+
+            <div class="feature">
+
+                <div class="icon">
+
+                    📈
+
+                </div>
+
+                <div>
+
+                    <strong>
+
+                        SEO Inteligente
+
+                    </strong>
+
+                    <span>
+
+                        Descubra oportunidades para crescer.
+
+                    </span>
+
+                </div>
+
+            </div>
+
+            <div class="feature">
+
+                <div class="icon">
+
+                    🤖
+
+                </div>
+
+                <div>
+
+                    <strong>
+
+                        Inteligência Artificial
+
+                    </strong>
+
+                    <span>
+
+                        Sugestões automáticas para seus vídeos.
+
+                    </span>
+
+                </div>
+
+            </div>
+
+            <div class="feature">
+
+                <div class="icon">
+
+                    🔥
+
+                </div>
+
+                <div>
+
+                    <strong>
+
+                        Tendências
+
+                    </strong>
+
+                    <span>
+
+                        Descubra assuntos antes da concorrência.
+
+                    </span>
+
+                </div>
+
+            </div>
+
+            <div class="feature">
+
+                <div class="icon">
+
+                    🎯
+
+                </div>
+
+                <div>
+
+                    <strong>
+
+                        Otimização
+
+                    </strong>
+
+                    <span>
+
+                        Títulos, tags e descrições otimizados.
+
+                    </span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- RIGHT -->
+
+    <div class="tbx-right">
+
+        <div class="login-card">
+
+            <small>
+
+                Bem-vindo ao TubeX
+
+            </small>
+
+            <h2>
+
+                Entrar com Google
+
+            </h2>
+
+            <p>
+
+                Faça login para utilizar os recursos do TubeX
+                que utilizam os
+                <strong>YouTube API Services</strong>.
+
+            </p>
+            <div class="tbx-consent-group">
+
+                <label class="tbx-check">
+
+                    <input
+                        type="checkbox"
+                        id="acceptTerms"
+                    >
+
+                    <span>
+
+                        Li e concordo com os
+
+                        <a
+                            href="https://www.tubex.app.br/termos.html"
+                            target="_blank"
+                        >
+
+                            Termos de Uso
+
+                        </a>
+
+                    </span>
+
+                </label>
+
+                <label class="tbx-check">
+
+                    <input
+                        type="checkbox"
+                        id="acceptPrivacy"
+                    >
+
+                    <span>
+
+                        Li e concordo com a
+
+                        <a
+                            href="https://www.tubex.app.br/privacy.html"
+                            target="_blank"
+                        >
+
+                            Política de Privacidade
+
+                        </a>
+
+                    </span>
+
+                </label>
+
+                <label class="tbx-check">
+
+                    <input
+                        type="checkbox"
+                        id="acceptYoutube"
+                    >
+
+                    <span>
+
+                        Entendo que o TubeX utiliza
+                        <strong>YouTube API Services</strong>
+                        e concordo em cumprir os
+
+                        <a
+                            href="https://www.youtube.com/t/terms"
+                            target="_blank"
+                        >
+
+                            Termos de Serviço do YouTube
+
+                        </a>
+
+                    </span>
+
+                </label>
+
+            </div>
+
+            <button
+                id="googleLogin"
+                class="google-btn"
+                disabled
+            >
+
+                <img
+                    src="google.svg"
+                    class="google-icon"
+                >
+
+                Continuar com Google
+
+            </button>
+
+            <div class="login-note">
+
+                Ao continuar, você autoriza o TubeX a acessar
+                apenas os dados necessários da sua Conta Google
+                e dos YouTube API Services para fornecer as
+                funcionalidades solicitadas.
+
+            </div>
+
+            <div class="security">
+
+                🔒 Login seguro via Google OAuth
+
+            </div>
+
+            <div class="security">
+
+                Nenhuma senha da sua Conta Google é armazenada pelo TubeX.
+
+            </div>
+
+            <div class="security">
+
+                O acesso poderá ser revogado a qualquer momento nas configurações da sua Conta Google.
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+/* ======================================================
+PAGE
+====================================================== */
+
+
+<script>
+
+// ======================================================
+// TUBEX LOGIN
+// ======================================================
+
+const terms =
+document.getElementById(
+"acceptTerms"
+);
+
+const privacy =
+document.getElementById(
+"acceptPrivacy"
+);
+
+const youtube =
+document.getElementById(
+"acceptYoutube"
+);
+
+const loginBtn =
+document.getElementById(
+"googleLogin");
+
+// ======================================================
+// ENABLE LOGIN
+// ======================================================
+
+function validateConsent(){
+
+loginBtn.disabled = !(
+
+terms.checked &&
+
+privacy.checked &&
+
+youtube.checked
+
+);
+
+}
+
+terms.addEventListener(
+"change",
+validateConsent
+);
+
+privacy.addEventListener(
+"change",
+validateConsent
+);
+
+youtube.addEventListener(
+"change",
+validateConsent
+);
+
+// ======================================================
+// GOOGLE LOGIN
+// ======================================================
+
+loginBtn.onclick = ()=>{
+
+loginBtn.classList.add(
+"loading"
+);
+
+loginBtn.disabled = true;
+
+loginBtn.innerHTML =
+
+"Conectando ao Google...";
+
+// =========================================
+// CHAME SEU OAUTH AQUI
+// =========================================
+
+// Exemplo:
+
+// window.location.href="/auth/google";
+
+// ou
+
+// chrome.runtime.sendMessage({
+// action:"loginOAuth"
+// });
+
+// ou
+
+// location.href="https://tubex.app.br/auth/google";
+
+};
+
+</script>
+
+<script>
+
+// =====================================================
+// GOOGLE OAUTH
+// =====================================================
+
+async function loginGoogle(){
+
+    const btn =
+    document.getElementById(
+        "googleLogin"
+    );
+
+    btn.disabled = true;
+
+    btn.classList.add(
+        "loading"
+    );
+
+    btn.innerHTML = `
+        <img src="google.svg" class="google-icon">
+        Conectando...
+    `;
+
+    try{
+
+        // ==========================================
+        // EXTENSÃO
+        // ==========================================
+
+        if(
+            window.chrome &&
+            chrome.runtime
+        ){
+
+            chrome.runtime.sendMessage(
+
+                {
+                    action:"loginOAuth"
+                },
+
+                response=>{
+
+                    if(
+                        chrome.runtime.lastError
+                    ){
+
+                        console.error(
+                            chrome.runtime.lastError
+                        );
+
+                        resetButton();
+
+                        return;
+
+                    }
+
+                    if(
+                        !response ||
+                        !response.success
+                    ){
+
+                        alert(
+                            "Falha ao autenticar."
+                        );
+
+                        resetButton();
+
+                        return;
+
+                    }
+
+                    loginSuccess();
+
+                }
+
+            );
+
+            return;
+
+        }
+
+        // ==========================================
+        // WEBSITE
+        // ==========================================
+
+        location.href =
+        "/auth/google";
+
+    }
+
+    catch(e){
+
+        console.error(e);
+
+        resetButton();
+
+    }
+
+}
+
+// =====================================================
+// BUTTON
+// =====================================================
+
+function resetButton(){
+
+    const btn =
+    document.getElementById(
+        "googleLogin"
+    );
+
+    btn.disabled = false;
+
+    btn.classList.remove(
+        "loading"
+    );
+
+    btn.innerHTML=`
+
+        <img
+            src="google.svg"
+            class="google-icon"
+        >
+
+        Continuar com Google
+
+    `;
+
+}
+
+// =====================================================
+// SUCCESS
+// =====================================================
+
+function loginSuccess(){
+
+    const card =
+    document.querySelector(
+        ".login-card"
+    );
+
+    card.innerHTML = `
+
+        <div
+            style="text-align:center"
+        >
+
+            <div
+                style="
+                font-size:70px;
+                margin-bottom:20px;
+                "
+            >
+
+                ✅
+
+            </div>
+
+            <h2>
+
+                Login realizado!
+
+            </h2>
+
+            <p>
+
+                Sua Conta Google foi conectada
+                com sucesso ao TubeX.
+
+            </p>
+
+            <p>
+
+                Agora você já pode utilizar
+                todos os recursos da extensão.
+
+            </p>
+
+            <button
+
+                class="google-btn"
+
+                onclick="window.close()"
+
+            >
+
+                Fechar
+
+            </button>
+
+        </div>
+
+    `;
+
+}
+
+// =====================================================
+
+document
+
+.getElementById(
+"googleLogin"
+)
+
+.addEventListener(
+
+"click",
+
+loginGoogle
+
+);
+
+</script>
+</body>
+</html>
