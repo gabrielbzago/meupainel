@@ -77,6 +77,10 @@
   .language-button{height:29px;min-height:29px}
 }
 
+.youtube-api-note{border-bottom:1px solid var(--line);background:rgba(255,255,255,.018)}
+.youtube-api-note-in{min-height:54px;display:flex;align-items:center;justify-content:center;gap:10px;flex-wrap:wrap;color:#aeb7c7;font-size:12px;font-weight:600;text-align:center}
+.youtube-badge{display:inline-flex;align-items:center;gap:6px;padding:6px 10px;border:1px solid rgba(255,255,255,.13);border-radius:8px;background:#fff;color:#111;font-size:11px;font-weight:800}
+@media(max-width:700px){.youtube-api-note-in{padding:10px 0;line-height:1.45}}
 </style></head><body>
 <header class="nav">
   <div class="container navin">
@@ -113,6 +117,12 @@
 </header>
 <main>
 <section class="hero"><div class="container heroGrid"><div><span class="ey"><span data-i18n="hero_eyebrow">⚡ Feito para creators que querem crescer com estratégia</span></span><h1><span data-i18n="hero_title">Seu próximo vídeo começa com <span>dados melhores.</span></span></h1><p>O TubeX reúne SEO, inteligência artificial, palavras-chave, tendências e análise de vídeos em uma única plataforma para você decidir o que criar, como otimizar e onde estão as melhores oportunidades.</p><div class="actions"><a class="btn primary" href="https://chromewebstore.google.com/detail/tubex-seo-analyzer-for-yo/lgddmmhnmkmkfhaodogcoecdecegemgk" target="_blank">🚀 <span data-i18n="cta_free"><span data-i18n="plan_free_cta">Começar grátis</span></span></a><a class="btn secondary" href="#planos"><span data-i18n="cta_plans">Ver planos</span> e recursos</a></div><div class="note">Sem compromisso no <span data-i18n="plan_free">Free</span> • Cancele assinaturas quando quiser</div></div><div class="mock"><div class="mockin"><div class="top"><div class="dots"><i></i><i></i><i></i></div><small class="muted">TUBEX / SEO ANALYZER</small></div><div class="score"><div class="scoreRow"><div><small>TubeX SEO Score</small><div style="font-weight:800;margin-top:5px">Oportunidade encontrada</div></div><strong>86</strong></div><div class="bar"><i style="width:86%"></i></div><div class="bar"><i style="width:68%"></i></div><div class="bar"><i style="width:79%"></i></div></div><div class="chips"><div class="chip"><b>Alta</b><small>Potencial</small></div><div class="chip"><b>Baixa</b><small>Concorrência</small></div><div class="chip"><b>IA</b><small>Otimização</small></div></div></div></div></div></section>
+<div class="youtube-api-note" aria-label="TubeX para YouTube">
+  <div class="container youtube-api-note-in">
+    <span class="youtube-badge">▶ YouTube</span>
+    <span data-i18n="youtube_reference">Ferramentas de SEO, análise e inteligência artificial para criadores no YouTube.</span>
+  </div>
+</div>
 <div class="trust"><div class="container trustin"><span>● SEO para YouTube</span><span>● Inteligência Artificial</span><span>● Palavras-chave</span><span>● Tendências</span><span>● Ferramentas para creators</span></div></div>
 <section class="section" id="recursos"><div class="container"><div class="head"><span class="ey"><span data-i18n="resources_eyebrow">Tudo em um só lugar</span></span><h2><span data-i18n="resources_title">Menos achismo. Mais decisões que fazem sentido.</span></h2><p>Pesquisa, análise e criação dentro do mesmo fluxo, sem ficar pulando entre várias ferramentas.</p></div><div class="grid3">
 <div class="card"><div class="icon">🔎</div><h3 data-i18n="feature_seo_title">SEO Explorer</h3><p>Descubra palavras-chave, volume, concorrência e oportunidades para encontrar temas com potencial.</p></div><div class="card"><div class="icon">📊</div><h3 data-i18n="feature_summary_title">Summary</h3><p>Analise vídeos em segundos: visualizações, engajamento, likes, comentários e indicadores de performance.</p></div><div class="card"><div class="icon">🤖</div><h3 data-i18n="feature_ai_title">IA para YouTube</h3><p>Gere títulos, descrições e roteiros com inteligência artificial orientada para o contexto do YouTube.</p></div><div class="card"><div class="icon">📈</div><h3 data-i18n="feature_trends_title">Tendências</h3><p>Identifique temas e vídeos que estão ganhando força e encontre oportunidades antes de produzir.</p></div><div class="card"><div class="icon">🎬</div><h3 data-i18n="feature_shorts_title">Shorts & Vlogs</h3><p>Recursos específicos para formatos rápidos e conteúdos que exigem decisões ágeis.</p></div><div class="card"><div class="icon">🏷️</div><h3 data-i18n="feature_tags_title">Sugestões de Tags</h3><p>Receba sugestões inteligentes de tags para complementar a otimização dos seus vídeos.</p></div>
@@ -134,6 +144,7 @@
 (function(){
   const translations = {
     "pt-br": {
+       youtube_reference:"Ferramentas de SEO, análise e inteligência artificial para criadores no YouTube.",
       nav_features:"Recursos",nav_how:"Como funciona",nav_pricing:"Planos",nav_results:"Resultados",nav_faq:"FAQ",nav_privacy:"Privacidade",nav_cta:"Entrar",
       hero_eyebrow:"⚡ Feito para creators que querem crescer com estratégia",
       hero_title:"Seu próximo vídeo começa com <span>dados melhores.</span>",
@@ -153,6 +164,7 @@
       faq_eyebrow:"Dúvidas frequentes",faq_title:"Antes de começar",final_eyebrow:"Pronto para trabalhar com mais estratégia?",final_title:"Seu próximo vídeo pode começar agora.",final_desc:"Conheça o TubeX gratuitamente e, quando precisar de mais recursos, escolha o plano que acompanha o seu momento."
     },
     "pt-pt": {
+       youtube_reference:"Ferramentas de SEO, análise e inteligência artificial para criadores no YouTube.",
       nav_features:"Funcionalidades",nav_how:"Como funciona",nav_pricing:"Planos",nav_results:"Resultados",nav_faq:"FAQ",nav_privacy:"Privacidade",nav_cta:"Entrar",
       hero_eyebrow:"⚡ Feito para criadores que querem crescer com estratégia",
       hero_title:"O seu próximo vídeo começa com <span>melhores dados.</span>",
@@ -171,6 +183,7 @@
       faq_eyebrow:"Perguntas frequentes",faq_title:"Antes de começar",final_eyebrow:"Pronto para trabalhar com mais estratégia?",final_title:"O seu próximo vídeo pode começar agora.",final_desc:"Conheça o TubeX gratuitamente e, quando precisar de mais funcionalidades, escolha o plano adequado ao seu momento."
     },
     "es": {
+       youtube_reference:"Herramientas de SEO, análisis e inteligencia artificial para creadores en YouTube.",
       nav_features:"Funciones",nav_how:"Cómo funciona",nav_pricing:"Planes",nav_results:"Resultados",nav_faq:"FAQ",nav_privacy:"Privacidad",nav_cta:"Entrar",
       hero_eyebrow:"⚡ Creado para creadores que quieren crecer con estrategia",
       hero_title:"Tu próximo vídeo empieza con <span>mejores datos.</span>",
@@ -189,6 +202,7 @@
       faq_eyebrow:"Preguntas frecuentes",faq_title:"Antes de empezar",final_eyebrow:"¿Listo para trabajar con más estrategia?",final_title:"Tu próximo vídeo puede empezar ahora.",final_desc:"Conoce TubeX gratis y, cuando necesites más recursos, elige el plan que acompaña tu momento."
     },
     "en": {
+       youtube_reference:"SEO, analytics and AI tools for creators on YouTube.",
       nav_features:"Features",nav_how:"How it works",nav_pricing:"Pricing",nav_results:"Results",nav_faq:"FAQ",nav_privacy:"Privacy",nav_cta:"Log in",
       hero_eyebrow:"⚡ Built for creators who want to grow with strategy",
       hero_title:"Your next video starts with <span>better data.</span>",
