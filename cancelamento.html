@@ -29,18 +29,21 @@ a{color:#fde68a;text-decoration:none}a:hover{text-decoration:underline}.containe
 <section class="hero"><span class="ey">↩️ Controle da sua assinatura</span><h1>Política de Cancelamento</h1><p>Como cancelar assinaturas TubeX, o que acontece com o acesso e como ficam cobranças futuras.</p><p class="small"><strong>Última atualização:</strong> 12 de agosto de 2026</p></section>
 <div class="notice"><strong>Regra principal:</strong> cancelar uma assinatura recorrente interrompe futuras renovações após a efetivação do cancelamento. O período já pago permanece sujeito às condições da contratação e aos direitos legais aplicáveis.</div>
 <section class="card"><h2>1. Como solicitar</h2><p>Você pode solicitar o cancelamento pelo canal disponibilizado pelo TubeX ou pelo mecanismo de gerenciamento de assinatura indicado no checkout/provedor de pagamento.</p>
-<form action="https://formsubmit.co/gabrielbzago@gmail.com" method="POST" style="margin-top:18px">
+<form id="cancelamentoForm" action="https://formsubmit.co/gabrielbzago@gmail.com" method="POST" style="margin-top:18px">
 <input type="hidden" name="_subject" value="Solicitação de cancelamento - TubeX">
-<input type="hidden" name="_captcha" value="false">
 <input type="hidden" name="_template" value="table">
 <input type="hidden" name="_next" value="https://www.tubex.app.br/cancelamento-sucesso.html">
-<input type="text" name="_honey" style="display:none">
+<input type="hidden" name="_captcha" value="true">
+<input type="hidden" name="_form_type" value="cancelamento">
+<input type="text" name="_honey" autocomplete="off" tabindex="-1" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0;pointer-events:none">
+<input type="hidden" id="formStartedAt" name="_started_at" value="">
 <div class="grid">
 <div><label>E-mail da assinatura *<input type="email" name="email" required placeholder="seuemail@gmail.com" style="width:100%;margin-top:6px;padding:12px;border-radius:10px;border:1px solid #263044;background:#090d16;color:#fff"></label></div>
 <div><label>Nome do titular *<input type="text" name="nome" required placeholder="Nome completo" style="width:100%;margin-top:6px;padding:12px;border-radius:10px;border:1px solid #263044;background:#090d16;color:#fff"></label></div>
 </div>
 <div style="margin-top:14px"><label>Motivo (opcional)<textarea name="observacoes" rows="5" placeholder="Se desejar, conte-nos o motivo." style="width:100%;margin-top:6px;padding:12px;border-radius:10px;border:1px solid #263044;background:#090d16;color:#fff"></textarea></label></div>
-<div class="actions"><button class="btn primary" type="submit">Solicitar cancelamento</button></div>
+<div class="actions"><button id="submitBtn" class="btn primary" type="submit">Solicitar cancelamento</button></div>
+<p id="formStatus" class="small" role="status" aria-live="polite"></p>
 <p class="small">O formulário envia os dados informados ao canal de suporte por meio do serviço de processamento de formulários utilizado pelo TubeX. Consulte a Política de Privacidade para informações sobre compartilhamento com prestadores.</p>
 </form></section>
 <section class="card"><h2>2. Efeito do cancelamento</h2><ul><li>O cancelamento não deve ser interpretado como exclusão automática da conta ou dos dados.</li><li>O acesso poderá permanecer ativo até o fim do período já pago, conforme o plano e o checkout.</li><li>Não haverá nova cobrança recorrente após a efetivação do cancelamento.</li><li>Pedidos de reembolso são tratados separadamente e conforme a legislação e a Política de Reembolso.</li></ul></section>
@@ -51,4 +54,57 @@ a{color:#fde68a;text-decoration:none}a:hover{text-decoration:underline}.containe
 <div>⚡ <strong style="color:#dce2ec">TubeX</strong> — SEO, IA e ferramentas para creators.</div>
 <div class="footLinks"><a href="privacy.html">Privacidade</a><a href="termos.html">Termos de Uso</a><a href="planos.html">Planos</a><a href="reembolso.html">Reembolso</a><a href="cancelamento.html">Cancelamento</a><a href="updates.html">Atualizações</a></div>
 </div><div class="bottom">Última atualização desta página: 12 de agosto de 2026.<br>Suporte: <a href="mailto:gabrielbzago@gmail.com">gabrielbzago@gmail.com</a> • WhatsApp: 19 99203‑6896<br>© TubeX — Desenvolvido por Gabriel Zago. TubeX é uma plataforma independente e não é afiliada, patrocinada ou endossada pelo YouTube ou pela Google LLC.</div></div></footer>
+<script>
+(function () {
+  "use strict";
+
+  const form = document.getElementById("cancelamentoForm");
+  const button = document.getElementById("submitBtn");
+  const status = document.getElementById("formStatus");
+  const startedAt = document.getElementById("formStartedAt");
+  const honey = form ? form.querySelector('input[name="_honey"]') : null;
+  const MIN_FILL_TIME = 2500;
+  const COOLDOWN_MS = 60000;
+  const STORAGE_KEY = "tubex_cancelamento_last_submit";
+
+  if (!form) return;
+
+  startedAt.value = String(Date.now());
+
+  function setStatus(message) {
+    status.textContent = message || "";
+  }
+
+  form.addEventListener("submit", function (event) {
+    if (honey && honey.value.trim() !== "") {
+      event.preventDefault();
+      return;
+    }
+
+    const started = Number(startedAt.value || 0);
+    if (!started || Date.now() - started < MIN_FILL_TIME) {
+      event.preventDefault();
+      setStatus("Aguarde alguns segundos e tente novamente.");
+      return;
+    }
+
+    try {
+      const last = Number(localStorage.getItem(STORAGE_KEY) || 0);
+      if (last && Date.now() - last < COOLDOWN_MS) {
+        event.preventDefault();
+        const remaining = Math.ceil((COOLDOWN_MS - (Date.now() - last)) / 1000);
+        setStatus("Aguarde " + remaining + " segundos antes de enviar outra solicitação.");
+        return;
+      }
+      localStorage.setItem(STORAGE_KEY, String(Date.now()));
+    } catch (_) {
+      // Se o armazenamento estiver indisponível, o envio continua normalmente.
+    }
+
+    button.disabled = true;
+    button.textContent = "Enviando...";
+    setStatus("Verificando a solicitação...");
+  });
+})();
+</script>
 </body></html>
