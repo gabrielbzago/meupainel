@@ -93,6 +93,27 @@ body:before{content:"";position:fixed;inset:0;pointer-events:none;background:rad
 @media(max-width:1000px){.navStatus{display:none}.productName{font-size:11px}.links{display:none}.heroGrid{grid-template-columns:1fr}.hero{padding-top:38px}.showcase{max-width:900px;margin:auto}.plans{grid-template-columns:1fr}.plan.pop{transform:none}}
 @media(max-width:700px){.nav{height:64px}.navin{height:64px}.productName{display:none}.logo{width:110px}.navlogin{display:none}.navcta{min-height:36px;padding:0 11px;font-size:10px}.lang select{font-size:9px;padding:8px 24px 8px 8px}.hero{padding:34px 0 30px}.hero h1{font-size:37px}.hero p{font-size:14px}.showBody{padding:10px}.showTop{height:40px}.fakeSearch{display:grid;grid-template-columns:1fr auto}.metrics{grid-template-columns:repeat(3,1fr)}.metric{padding:9px}.metric strong{font-size:14px}.section{padding:50px 0}}
 
+
+/* TubeX real product showcase */
+.productDemo .head{margin-bottom:30px}
+.demoShell{position:relative;max-width:1120px;margin:0 auto}
+.demoTabs{display:flex;gap:8px;margin-bottom:12px;overflow:auto;scrollbar-width:none}
+.demoTabs::-webkit-scrollbar{display:none}
+.demoTab{appearance:none;border:1px solid var(--line);background:#0a1019;color:#8f9bad;border-radius:11px 11px 0 0;padding:12px 17px;font:800 11px Inter,Arial,sans-serif;white-space:nowrap;cursor:pointer;transition:.2s}
+.demoTab span{margin-right:6px;filter:saturate(.8)}
+.demoTab:hover{color:#fff;background:#0e1621}
+.demoTab.active{color:#111;background:var(--y);border-color:var(--y);box-shadow:0 -4px 22px #facc1514}
+.demoViewport{position:relative;aspect-ratio:1138/640;overflow:hidden;background:#060a10;border:1px solid rgba(255,255,255,.11);border-radius:0 16px 16px 16px;box-shadow:0 28px 70px rgba(0,0,0,.38),0 0 0 1px rgba(250,204,21,.025);isolation:isolate}
+.demoViewport:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(5,8,14,.02),transparent 55%,rgba(5,8,14,.28));pointer-events:none;z-index:2}
+.demoGlow{position:absolute;inset:-20%;background:radial-gradient(circle at 50% 45%,rgba(250,204,21,.06),transparent 35%);pointer-events:none;z-index:0}
+.demoSlide{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;opacity:0;transform:scale(1.012);transition:opacity .45s ease,transform .65s ease;z-index:1;background:#060a10}
+.demoSlide.active{opacity:1;transform:scale(1)}
+.demoSlide img{width:100%;height:100%;display:block;object-fit:cover;object-position:center;image-rendering:auto}
+.demoCaption{position:absolute;left:18px;bottom:18px;z-index:4;display:flex;align-items:center;gap:9px;max-width:calc(100% - 36px);padding:10px 13px;border:1px solid rgba(255,255,255,.10);border-radius:10px;background:rgba(6,10,16,.82);backdrop-filter:blur(12px);box-shadow:0 10px 30px rgba(0,0,0,.28);font-size:10px;color:#98a4b5}
+.demoCaption strong{font-size:11px;color:#fff}.demoLive{display:inline-flex;align-items:center;gap:5px;color:var(--y);font-size:8px;font-weight:900;letter-spacing:.06em}.demoLive i{width:6px;height:6px;border-radius:50%;background:var(--g);box-shadow:0 0 10px rgba(52,211,153,.7)}
+.demoDots{display:flex;justify-content:center;gap:6px;padding-top:13px}.demoDots span{width:6px;height:6px;border-radius:50%;background:#344052;transition:.2s}.demoDots span.active{width:20px;border-radius:6px;background:var(--y)}
+.demoFeatures{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:18px}.demoFeatures>div{display:flex;align-items:center;gap:11px;padding:13px 15px;border:1px solid var(--line);background:#0a1019;border-radius:12px;color:#8996a8;font-size:10px;line-height:1.5}.demoFeatures b{display:grid;place-items:center;flex:0 0 28px;height:28px;border-radius:8px;background:#facc1512;border:1px solid #facc1530;color:var(--y);font-size:9px}.demoFeatures strong{color:#e9edf4}
+@media(max-width:800px){.demoTab{padding:11px 13px}.demoViewport{border-radius:0 12px 12px 12px}.demoCaption{left:10px;bottom:10px;padding:8px 10px}.demoCaptionText{display:none}.demoFeatures{grid-template-columns:1fr}.demoFeatures>div{padding:11px 13px}}
 </style>
 </head>
 
@@ -300,12 +321,28 @@ body:before{content:"";position:fixed;inset:0;pointer-events:none;background:rad
   </div>
 </section>
 
-<section class="section dark">
+<section class="section dark productDemo" id="demo">
   <div class="c">
-    <div class="head"><span class="badge" data-t="visual_badge">VEJA NA PRÁTICA</span><h2 data-t="visual_title">As features aparecem trabalhando — não apenas em cards.</h2><p data-t="visual_text">A demonstração acima alterna automaticamente entre recursos do TubeX. Depois, você pode substituir cada tela por um GIF ou vídeo real gravado dentro da ferramenta.</p></div>
-    <div class="split">
-      <div class="panel"><span class="badge">🎬 GIF / VIDEO</span><h3 data-t="media_title">Mostre o produto em movimento.</h3><p data-t="media_text">Para a versão final, grave pequenos trechos de 4–8 segundos de cada recurso. O ideal é usar WebM/MP4 ou GIF otimizado, sem áudio, em loop.</p><div class="checks"><div class="check"><b>✓</b><span data-t="media_1">Keyword Explorer digitando uma pesquisa e mostrando os dados.</span></div><div class="check"><b>✓</b><span data-t="media_2">SEO Explorer mostrando o score e uma otimização.</span></div><div class="check"><b>✓</b><span data-t="media_3">IA gerando uma sugestão de título.</span></div><div class="check"><b>✓</b><span data-t="media_4">Analytics mostrando uma métrica e um diagnóstico.</span></div></div></div>
-      <div class="panel"><span class="badge">📍 POSIÇÃO</span><h3 data-t="position_title">O melhor lugar é logo no topo.</h3><p data-t="position_text">A pessoa que chega procurando uma ferramenta de SEO já tem intenção. Por isso, a demonstração visual fica ao lado do CTA principal, antes de ela precisar rolar muito.</p><div class="checks"><div class="check"><b>01</b><span data-t="position_1">Headline clara para a busca.</span></div><div class="check"><b>02</b><span data-t="position_2">CTA direto para testar grátis.</span></div><div class="check"><b>03</b><span data-t="position_3">Produto visível funcionando.</span></div></div></div>
+    <div class="head"><span class="badge">VEJA NA PRÁTICA</span><h2>As features aparecem trabalhando — não apenas em cards.</h2><p>A demonstração alterna automaticamente entre recursos reais do TubeX. Você também pode clicar nas abas para explorar cada tela.</p></div>
+    <div class="demoShell">
+      <div class="demoTabs" role="tablist" aria-label="Demonstrações do TubeX">
+        <button class="demoTab active" type="button" role="tab" aria-selected="true" data-demo="keyword"><span>🔎</span> Keyword Explorer</button>
+        <button class="demoTab" type="button" role="tab" aria-selected="false" data-demo="trends"><span>📈</span> Tendências</button>
+        <button class="demoTab" type="button" role="tab" aria-selected="false" data-demo="seo"><span>🎯</span> SEO Explorer</button>
+      </div>
+      <div class="demoViewport">
+        <div class="demoGlow"></div>
+        <div class="demoSlide active" data-slide="keyword"><img src="keywordexplorer.gif" alt="TubeX Keyword Explorer em uso" loading="eager" decoding="async"></div>
+        <div class="demoSlide" data-slide="trends"><img src="trends.gif" alt="TubeX Tendências e interesse ao longo do tempo" loading="lazy" decoding="async"></div>
+        <div class="demoSlide" data-slide="seo"><img src="SEOEXPLORER.gif" alt="TubeX SEO Explorer analisando um vídeo" loading="lazy" decoding="async"></div>
+        <div class="demoCaption"><span class="demoLive"><i></i> AO VIVO</span><strong id="demoCaptionTitle">Keyword Explorer</strong><span id="demoCaptionText">Pesquise oportunidades e veja os dados antes de publicar.</span></div>
+      </div>
+      <div class="demoDots" aria-hidden="true"><span class="active"></span><span></span><span></span></div>
+    </div>
+    <div class="demoFeatures">
+      <div><b>01</b><span><strong>Pesquise</strong> palavras-chave e oportunidades.</span></div>
+      <div><b>02</b><span><strong>Compare</strong> tendências e interesse ao longo do tempo.</span></div>
+      <div><b>03</b><span><strong>Otimize</strong> títulos, descrição e SEO antes de publicar.</span></div>
     </div>
   </div>
 </section>
@@ -506,6 +543,32 @@ setInterval(()=>showScreen((current+1)%screens.length),4200);
       localStorage.setItem(k,JSON.stringify(d));
     }catch(x){}
   }));
+})();
+</script>
+
+<script>
+(function(){
+  const tabs=[...document.querySelectorAll('.demoTab')], slides=[...document.querySelectorAll('.demoSlide')], dots=[...document.querySelectorAll('.demoDots span')];
+  const title=document.getElementById('demoCaptionTitle'), text=document.getElementById('demoCaptionText');
+  if(!tabs.length||!slides.length)return;
+  const copy={
+    keyword:['Keyword Explorer','Pesquise oportunidades e veja os dados antes de publicar.'],
+    trends:['Tendências','Compare o interesse ao longo do tempo e encontre assuntos com potencial.'],
+    seo:['SEO Explorer','Analise o vídeo e encontre pontos de otimização antes de publicar.']
+  };
+  let index=0,timer;
+  function show(i){
+    index=i; const key=tabs[i].dataset.demo;
+    tabs.forEach((t,n)=>{const on=n===i;t.classList.toggle('active',on);t.setAttribute('aria-selected',on?'true':'false')});
+    slides.forEach(s=>s.classList.toggle('active',s.dataset.slide===key));
+    dots.forEach((d,n)=>d.classList.toggle('active',n===i));
+    if(title)title.textContent=copy[key][0]; if(text)text.textContent=copy[key][1];
+  }
+  function restart(){clearInterval(timer);timer=setInterval(()=>show((index+1)%tabs.length),5000)}
+  tabs.forEach((t,i)=>t.addEventListener('click',()=>{show(i);restart()}));
+  show(0);restart();
+  document.querySelector('.demoShell')?.addEventListener('mouseenter',()=>clearInterval(timer));
+  document.querySelector('.demoShell')?.addEventListener('mouseleave',restart);
 })();
 </script>
 </body>
