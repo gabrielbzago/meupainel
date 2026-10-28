@@ -4,6 +4,14 @@
 
 <html lang="pt-BR">
 <head>
+<!-- Google Tag Manager — TubeX -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-PN9DF3CN');</script>
+<!-- End Google Tag Manager -->
+
 <meta charset="utf-8"/>
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
 <meta content="#060811" name="theme-color"/>
@@ -151,6 +159,11 @@ body:before{content:"";position:fixed;inset:0;pointer-events:none;background:rad
 @media(max-width:680px){.plan-matrix-wrap{border-radius:13px}.plan-matrix{min-width:860px}.plan-matrix th,.plan-matrix td{padding:12px 13px}}
 </style></head>
 <body>
+<!-- Google Tag Manager (noscript) — TubeX -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PN9DF3CN"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
 <nav class="nav">
 <div class="c navin">
 <a href="index.html"><img alt="TubeX" class="logo" src="logo-full.png"/></a>
@@ -590,16 +603,136 @@ setInterval(()=>showScreen((current+1)%screens.length),4200);
 })();
 </script>
 <script>
-  document.querySelectorAll('[data-cta="free"]').forEach(function (el) {
-    el.addEventListener('click', function () {
-      if (typeof gtag === 'function') {
-        gtag('event', 'cta_free_click', {
-          event_category: 'conversion',
-          event_label: el.getAttribute('data-t') || 'free_cta'
-        });
-      }
-    });
+/* TubeX attribution + Google Analytics 4 events.
+   GA4 property already configured: G-LHYBM1DWPY.
+   Google Ads direct conversions activate after adding the real AW-ID and labels below. */
+(function () {
+  'use strict';
+  var GA4_ID = 'G-LHYBM1DWPY';
+  // Fill these values from Google Ads > Goals > Conversions > the conversion action's tag setup.
+  // Leave blank until the Ads team supplies the exact values; no fake conversion is sent.
+  var GOOGLE_ADS_CONVERSION_ID = '';
+  var GOOGLE_ADS_CONVERSION_LABELS = {
+    free: '',
+    pro: '',
+    expert: '',
+    consult: ''
+  };
+  var ATTR_KEY = 'tubex_campaign_attribution_v1';
+  var CLICK_KEY = 'tubex_lp_clicks';
+  var params = new URLSearchParams(window.location.search);
+  var campaignKeys = ['utm_source','utm_medium','utm_campaign','utm_term','utm_content','gclid','gbraid','wbraid','dclid'];
+  var incoming = {};
+  campaignKeys.forEach(function (key) {
+    var value = params.get(key);
+    if (value) incoming[key] = value.slice(0, 500);
   });
+  function readJSON(key) {
+    try { return JSON.parse(localStorage.getItem(key) || '{}'); } catch (_) { return {}; }
+  }
+  function writeJSON(key, value) {
+    try { localStorage.setItem(key, JSON.stringify(value)); } catch (_) {}
+  }
+  var attribution = readJSON(ATTR_KEY);
+  var hasCampaign = Object.keys(incoming).length > 0;
+  if (hasCampaign) {
+    if (!attribution.first_touch) {
+      attribution.first_touch = Object.assign({landing_page: location.href, captured_at: new Date().toISOString()}, incoming);
+    }
+    attribution.last_touch = Object.assign({landing_page: location.href, captured_at: new Date().toISOString()}, incoming);
+    writeJSON(ATTR_KEY, attribution);
+  }
+  function campaignData() {
+    var a = readJSON(ATTR_KEY);
+    var first = a.first_touch || {};
+    var last = a.last_touch || {};
+    var data = {};
+    ['utm_source','utm_medium','utm_campaign','utm_term','utm_content','gclid','gbraid','wbraid','dclid'].forEach(function (k) {
+      if (last[k]) data[k] = last[k];
+      if (first[k]) data['first_' + k] = first[k];
+    });
+    return data;
+  }
+  function sendEvent(name, details) {
+    if (typeof window.gtag !== 'function') return;
+    window.gtag('event', name, Object.assign({
+      page_location: window.location.href,
+      page_title: document.title,
+      page_path: window.location.pathname,
+      page_language: document.documentElement.lang || 'pt-BR'
+    }, campaignData(), details || {}));
+  }
+  function sendAdsConversion(action) {
+    var label = GOOGLE_ADS_CONVERSION_LABELS[action];
+    if (!GOOGLE_ADS_CONVERSION_ID || !label || typeof window.gtag !== 'function') return;
+    window.gtag('event', 'conversion', {
+      send_to: GOOGLE_ADS_CONVERSION_ID + '/' + label,
+      value: action === 'pro' ? 29.99 : action === 'expert' ? 49.99 : 0,
+      currency: 'BRL',
+      transaction_id: ''
+    });
+  }
+  // Make the Ads conversion ID available for the Google Ads team to verify in the source.
+  window.tubeXTracking = {sendEvent: sendEvent, getAttribution: campaignData};
+
+  // Explicit CTA events: free install, paid plan checkout, and consultation contact.
+  document.querySelectorAll('[data-cta]').forEach(function (el) {
+    el.addEventListener('click', function () {
+      var type = (el.getAttribute('data-cta') || 'unknown').toLowerCase();
+      var href = el.href || '';
+      var eventName = type === 'free' ? 'cta_free_click' : (type === 'pro' || type === 'expert') ? 'begin_checkout' : 'cta_click';
+      var details = {
+        cta_type: type,
+        cta_text: (el.innerText || el.getAttribute('aria-label') || '').trim().slice(0, 120),
+        link_url: href,
+        link_domain: (function(){try{return new URL(href).hostname;}catch(_){return '';}})()
+      };
+      sendEvent(eventName, details);
+      if (type === 'free' || type === 'pro' || type === 'expert') sendAdsConversion(type);
+      var clicks = readJSON(CLICK_KEY);
+      clicks[type] = (clicks[type] || 0) + 1;
+      clicks.last = Object.assign({type:type, time:new Date().toISOString(), landing_page:location.href}, campaignData());
+      writeJSON(CLICK_KEY, clicks);
+    }, {capture: true});
+  });
+
+  // Track Stripe checkout links even if a particular link has no data-cta attribute.
+  document.querySelectorAll('a[href*="buy.stripe.com"]').forEach(function (el) {
+    el.addEventListener('click', function () {
+      var type = (el.getAttribute('data-cta') || '').toLowerCase();
+      // Plan CTAs are already tracked by the general data-cta listener above.
+      if (type === 'pro' || type === 'expert') return;
+      sendEvent('begin_checkout', {
+        checkout_provider: 'stripe',
+        plan_type: type || 'unspecified',
+        link_url: el.href,
+        link_domain: 'buy.stripe.com'
+      });
+    }, {capture: true});
+  });
+
+  // Track other outbound actions (Chrome Web Store, login, WhatsApp, etc.) without treating them as sales.
+  document.querySelectorAll('a[href^="https://"]').forEach(function (el) {
+    el.addEventListener('click', function () {
+      var host;
+      try { host = new URL(el.href).hostname; } catch (_) { return; }
+      if (host === location.hostname || host === 'buy.stripe.com') return;
+      sendEvent('outbound_click', {
+        link_url: el.href,
+        link_domain: host,
+        link_text: (el.innerText || '').trim().slice(0, 120)
+      });
+      if (host === 'wa.me') sendEvent('generate_lead', {lead_method:'whatsapp', link_url:el.href});
+    }, {capture: true});
+  });
+
+  // Helpful campaign diagnostics in GA4. No PII is collected by this code.
+  sendEvent('tubex_landing_view', {
+    landing_page: location.href,
+    has_campaign_parameters: hasCampaign,
+    campaign_source_present: !!(incoming.utm_source || incoming.gclid || incoming.gbraid || incoming.wbraid)
+  });
+})();
 </script>
 </body>
 </html>
