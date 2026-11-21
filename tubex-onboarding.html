@@ -29,7 +29,44 @@ h1{font:800 clamp(35px,4.5vw,54px)/1.08 Manrope;letter-spacing:-.055em;margin:14
 footer{border-top:1px solid var(--line);padding:19px 0;color:#6f7d91;font-size:9px}.footer{display:flex;justify-content:space-between;gap:15px;flex-wrap:wrap}.footerlinks{display:flex;gap:16px;flex-wrap:wrap}.footer a{color:#94a2b5;text-decoration:none}
 @media(max-width:850px){.shell{grid-template-columns:1fr}.showcase{border-right:0;border-bottom:1px solid var(--line)}.below{grid-template-columns:1fr}}
 @media(max-width:560px){.wrap{width:calc(100% - 26px)}header{height:65px}.logo{font-size:25px}.nav-right>a:first-child{display:none}main{padding:35px 0 52px}.intro p{font-size:12px}.showcase{padding:19px}.product-title{font-size:24px;margin-top:27px}.previewbody{grid-template-columns:78px 1fr}.side div{font-size:7px;padding:7px 4px}.side{padding:12px 5px}.dash{padding:12px 8px}.metric{padding:8px 5px}.metric strong{font-size:13px}.right{padding:22px 19px}}
-</style></head><body>
+</style>
+<style id="tubex-onboarding-upgrade">
+/* Compact upgrade panel — aligned with the TubeX onboarding visual system */
+.right{gap:0}
+.upgrade{margin:2px 0 18px;padding:17px 15px 14px;border:1px solid rgba(243,201,79,.22);border-radius:12px;background:linear-gradient(145deg,rgba(38,43,51,.72),rgba(17,25,37,.92));box-shadow:0 12px 32px rgba(0,0,0,.16)}
+.upgrade-kicker{display:flex;align-items:center;gap:7px;color:#e6c96f;font-size:8px;font-weight:800;letter-spacing:.14em}
+.upgrade-spark{display:grid;place-items:center;width:18px;height:18px;border-radius:6px;background:rgba(243,201,79,.12);font-size:12px}
+.upgrade h3{margin:10px 0 5px;font:800 16px/1.25 Manrope;letter-spacing:-.025em;color:#f6f7fa}
+.upgrade-intro{margin:0 0 13px;color:#9eacbd;font-size:9px;line-height:1.65}
+.offer-list{display:grid;gap:8px}
+.offer{padding:11px 11px 10px;border:1px solid rgba(255,255,255,.09);border-radius:9px;background:rgba(7,12,20,.46)}
+.offer-expert{border-color:rgba(243,201,79,.35);background:linear-gradient(110deg,rgba(243,201,79,.075),rgba(7,12,20,.48))}
+.offer-head{display:flex;align-items:center;justify-content:space-between;gap:8px}
+.offer-head>div:first-child{display:flex;align-items:center;gap:7px;flex-wrap:wrap}
+.offer-name{font:800 11px Manrope;letter-spacing:.08em;color:#f4f6fa}
+.offer-tag{padding:3px 6px;border-radius:4px;background:rgba(255,255,255,.06);color:#9baabd;font-size:6px;font-weight:800;letter-spacing:.08em}
+.offer-expert .offer-tag{background:rgba(243,201,79,.12);color:#efd98f}
+.offer-price{font:800 19px Manrope;letter-spacing:-.04em;color:#fff;white-space:nowrap}
+.offer-price span{font:600 8px "DM Sans";color:#96a4b5;letter-spacing:0;margin-left:3px}
+.offer>p{margin:5px 0 9px;color:#9ba9bb;font-size:8px;line-height:1.5}
+.offer-actions{display:flex;align-items:center;gap:11px;flex-wrap:wrap}
+.offer-buy{display:inline-flex;align-items:center;justify-content:center;gap:9px;min-height:29px;padding:0 11px;border-radius:6px;background:#397cff;color:#fff;text-decoration:none;font-size:8px;font-weight:800;transition:.2s}
+.offer-buy:hover{filter:brightness(1.12);transform:translateY(-1px)}
+.offer-expert .offer-buy{background:linear-gradient(110deg,#f3d779,#dfb84e);color:#171a20}
+.offer-annual{color:#c2cedd;text-decoration:none;font-size:8px;font-weight:700}
+.offer-annual:hover{color:#fff;text-decoration:underline}
+.decision-copy{margin:11px 1px 0;color:#8997aa;font-size:8px;line-height:1.6;text-align:center}
+.youtube-block{padding-top:2px}
+.youtube-cta{min-height:48px;border-radius:8px;font-size:10px;background:linear-gradient(110deg,#4b8cff,#2866df);box-shadow:0 10px 26px rgba(40,102,223,.26)}
+.youtube-cta:hover{box-shadow:0 13px 30px rgba(40,102,223,.34)}
+.youtube-cta span{font-size:13px}
+.youtube-block .secondary{margin-top:10px}
+.right .disclaimer{margin-top:15px;padding-top:13px;border-top:1px solid rgba(255,255,255,.07)}
+@media(max-width:850px){.upgrade{margin-top:3px}.offer{padding:12px}}
+@media(max-width:560px){.upgrade{padding:15px 12px}.upgrade h3{font-size:15px}.offer-price{font-size:18px}.youtube-cta{font-size:9px}}
+</style>
+
+</head><body>
 <div class="topline"></div><header><div class="wrap nav"><a class="logo" href="https://www.tubexai.com.br">Tube<span>X</span></a><a class="navbtn" href="https://www.tubexai.com.br">Acessar painel&nbsp; ↗</a></div></header>
 <main class="wrap">
 <section class="intro"><div class="overline">TUBEX · CREATOR INTELLIGENCE</div><h1>Você está pronto para <span>ir além.</span></h1><p>Bem-vindo ao TubeX. Sua central de análise, SEO e inteligência para tomar decisões mais estratégicas no YouTube.</p></section>
@@ -44,11 +81,33 @@ footer{border-top:1px solid var(--line);padding:19px 0;color:#6f7d91;font-size:9
 <div class="chart"><div>Indicadores de tendência</div><svg viewBox="0 0 360 55" preserveAspectRatio="none"><defs><linearGradient id="fill" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#5c94ff" stop-opacity=".3"/><stop offset="1" stop-color="#5c94ff" stop-opacity="0"/></linearGradient></defs><path d="M0 45 C30 42 34 30 62 35 S100 39 125 25 S160 31 187 19 S221 27 247 13 S286 21 310 8 S338 14 360 5 L360 55 L0 55Z" fill="url(#fill)"/><path d="M0 45 C30 42 34 30 62 35 S100 39 125 25 S160 31 187 19 S221 27 247 13 S286 21 310 8 S338 14 360 5" fill="none" stroke="#78a7ff" stroke-width="2" vector-effect="non-scaling-stroke"/></svg></div></div></div>
 <div class="features"><div class="feature"><b>SEO & Pesquisa</b><span>Encontre temas para investigar</span></div><div class="feature"><b>Channel Intelligence</b><span>Entenda seu cenário competitivo</span></div><div class="feature"><b>IA & Performance</b><span>Otimize seu processo criativo</span></div></div>
 </div>
+</div>
 <aside class="right"><div class="righttop">CONFIGURAÇÃO INICIAL <span>◆ &nbsp; AMBIENTE TUBEX</span></div><div class="check">✓</div><h2>Instalação concluída.</h2><p class="desc">A extensão TubeX foi instalada no navegador. Agora, abra o YouTube para carregar a experiência e começar a explorar os recursos disponíveis.</p>
 <div class="status"><div class="statushead">Próximos passos <span>Para começar</span></div><div class="statusrow"><i>1</i> Abrir o YouTube <small>Agora</small></div><div class="statusrow"><i>2</i> Atualizar a página, se necessário <small>Recomendado</small></div><div class="statusrow"><i>3</i> Explorar os módulos TubeX <small>Comece aqui</small></div></div>
-<div class="next">COMECE A UTILIZAR</div><a class="primary" href="https://www.youtube.com/" target="_blank" rel="noopener">Abrir YouTube&nbsp; ↗</a><a class="secondary" href="https://www.tubexai.com.br">Ir para o painel TubeX</a>
-<div class="divider"></div><div class="up-title">Explore todo o potencial do TubeX.</div><p class="up-copy">Compare os recursos e limites de cada plano antes de escolher a experiência ideal para sua rotina.</p><a class="up-link" href="https://www.tubexai.com.br/planos.html">Comparar planos e funcionalidades&nbsp; →</a>
-<p class="disclaimer">A disponibilidade dos recursos depende do plano, das permissões e do contexto da página do YouTube. A interface e os indicadores à esquerda são ilustrativos.</p></aside>
+<div class="upgrade">
+ <div class="upgrade-kicker"><span class="upgrade-spark">✦</span> AMPLIE SUA EXPERIÊNCIA</div>
+ <h3>Seu próximo nível começa com mais inteligência.</h3>
+ <p class="upgrade-intro">Desbloqueie recursos avançados do TubeX e tenha mais ferramentas para pesquisar, analisar e otimizar seu conteúdo.</p>
+ <div class="offer-list">
+  <article class="offer offer-pro">
+   <div class="offer-head"><div><span class="offer-name">PRO</span><span class="offer-tag">MAIS CAPACIDADE</span></div><div class="offer-price">R$29,99<span>/mês</span></div></div>
+   <p>50 análises SEO por dia, tendências, palavras-chave e recursos de IA.</p>
+   <div class="offer-actions"><a class="offer-buy" href="https://buy.stripe.com/3cI7sK7058OtdzDaUegjC01" target="_blank" rel="noopener">Assinar Pro <span>↗</span></a><a class="offer-annual" href="https://buy.stripe.com/28E3cudote8NgLPd2mgjC03" target="_blank" rel="noopener">Anual: R$299,90</a></div>
+  </article>
+  <article class="offer offer-expert">
+   <div class="offer-head"><div><span class="offer-name">EXPERT</span><span class="offer-tag">EXPERIÊNCIA COMPLETA</span></div><div class="offer-price">R$49,99<span>/mês</span></div></div>
+   <p>Análises ilimitadas, Creator Workspace completo e todos os recursos avançados.</p>
+   <div class="offer-actions"><a class="offer-buy" href="https://buy.stripe.com/dRmaEW98dggV3Z3d2mgjC02" target="_blank" rel="noopener">Quero ser Expert <span>↗</span></a><a class="offer-annual" href="https://buy.stripe.com/28E8wO3NTe8N67b2nIgjC04" target="_blank" rel="noopener">Anual: R$499,90</a></div>
+  </article>
+ </div>
+ <div class="decision-copy">Não precisa decidir agora. Conheça o TubeX primeiro e faça upgrade quando quiser.</div>
+</div>
+<div class="youtube-block">
+ <div class="next">PREFERE COMEÇAR AGORA?</div>
+ <a class="primary youtube-cta" href="https://www.youtube.com/" target="_blank" rel="noopener">Abrir o YouTube e explorar o TubeX <span>↗</span></a>
+ <a class="secondary" href="https://www.tubexai.com.br">Acessar o painel TubeX</a>
+</div>
+<p class="disclaimer">A contratação é opcional. Os recursos disponíveis dependem do plano escolhido, das permissões e do contexto da página do YouTube.</p></aside>
 </section>
 <section class="below"><article><b>01 — Abra o YouTube</b><p>A extensão funciona em páginas compatíveis. Se já estiver aberto, atualize a aba.</p></article><article><b>02 — Faça login, se solicitado</b><p>Use a conta Google vinculada ao canal ou à assinatura que deseja verificar.</p></article><article><b>03 — Explore seus módulos</b><p>Comece pelo SEO Explorer e conheça as ferramentas disponíveis no seu plano.</p></article></section>
 </main>
