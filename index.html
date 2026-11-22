@@ -147,7 +147,55 @@ body:before{content:"";position:fixed;inset:0;pointer-events:none;background:rad
 .plan-matrix .expert{background:rgba(250,204,21,.025);}
 .matrix-note{font-size:.88rem;line-height:1.7;opacity:.84;margin-top:14px;}
 @media(max-width:680px){.plan-matrix-wrap{border-radius:13px}.plan-matrix{min-width:860px}.plan-matrix th,.plan-matrix td{padding:12px 13px}}
-</style></head>
+</style><style id="tubex-site-menu">
+.navin{position:relative}.navDrop{position:static}.links a,.navDropBtn{white-space:nowrap}
+@media(max-width:1240px){.links a[href="privacy.html"]{display:none}}
+.navDropBtn{padding:9px 10px;border:0;background:transparent;color:#aeb7c7;font:700 12px Inter,Arial,sans-serif;border-radius:9px;cursor:pointer}
+.navDropBtn i{font-style:normal;font-size:10px;opacity:.8}
+.navDropBtn:hover,.navDrop.open .navDropBtn{background:#ffffff0d;color:#fff}
+.mega{position:absolute;top:calc(100% + 10px);left:50%;transform:translateX(-50%);width:min(860px,92vw);padding:18px;border:1px solid var(--line);border-radius:18px;background:rgba(10,14,24,.98);backdrop-filter:blur(18px);box-shadow:0 24px 70px rgba(0,0,0,.55);display:none;z-index:120}
+.navDrop.open .mega{display:block}
+@media (hover:hover){.navDrop:hover .mega,.navDrop:focus-within .mega{display:block}}
+.mega::before{content:"";position:absolute;top:-12px;left:0;right:0;height:12px}
+.megaGrid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.megaH{font-size:10px;font-weight:900;letter-spacing:.12em;text-transform:uppercase;color:var(--y);margin:0 0 8px}
+.megaCol a,.mmGroup a{display:flex;align-items:center;gap:6px;padding:7px 8px;margin:0 -8px;border-radius:9px;color:#d3d9e3;text-decoration:none;font-size:12.5px;font-weight:600;line-height:1.3}
+.megaCol a:hover,.mmGroup a:hover{background:#ffffff0d;color:#fff}
+.megaCol em,.navNew em,.mmLinks em,.mmGroup em,.newTag{font-style:normal;font-size:9px;font-weight:900;letter-spacing:.06em;padding:2px 6px;border-radius:999px;background:var(--y);color:#0b0d12}
+.megaFoot{display:flex;gap:16px;flex-wrap:wrap;margin-top:14px;padding-top:12px;border-top:1px solid var(--line)}
+.megaFoot a{color:#aeb7c7;text-decoration:none;font-size:12px;font-weight:700}.megaFoot a:hover{color:var(--y)}
+.links .navNew{display:inline-flex;align-items:center;gap:6px}
+.menuBtn{display:none;width:40px;height:40px;border:1px solid var(--line);border-radius:10px;background:#ffffff08;cursor:pointer;flex-direction:column;justify-content:center;align-items:center;gap:4px;padding:0}
+.menuBtn span{display:block;width:17px;height:2px;border-radius:2px;background:#e5e9f0;transition:.2s}
+.menuBtn[aria-expanded="true"] span:nth-child(1){transform:translateY(6px) rotate(45deg)}
+.menuBtn[aria-expanded="true"] span:nth-child(2){opacity:0}
+.menuBtn[aria-expanded="true"] span:nth-child(3){transform:translateY(-6px) rotate(-45deg)}
+.mobileMenu{position:absolute;left:0;right:0;top:100%;border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:#060811;box-shadow:0 24px 50px rgba(0,0,0,.6);max-height:calc(100vh - 64px);overflow:auto;padding:12px 0 18px}
+.mobileMenu[hidden]{display:none}
+.mobileMenu .c{width:calc(100% - 26px);max-width:none}.mmLinks{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:6px;margin-bottom:10px}
+.mmLinks a{display:flex;align-items:center;gap:6px;padding:11px 12px;border:1px solid var(--line);border-radius:11px;color:#e5e9f0;text-decoration:none;font-size:13px;font-weight:700;background:#ffffff05}
+.mmGroup{border:1px solid var(--line);border-radius:12px;margin-top:7px;padding:4px 14px;background:#ffffff04}
+.mmGroup summary{cursor:pointer;padding:10px 0;font-size:13px;font-weight:800;color:var(--y);list-style:none}
+.mmGroup summary::-webkit-details-marker{display:none}
+.mmGroup summary::after{content:"▾";float:right;color:#aeb7c7}
+.mmGroup[open] summary::after{content:"▴"}
+.mmGroup a{margin:0 -8px 4px}
+.launches{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.launch{display:grid;grid-template-columns:42px minmax(0,1fr) 14px;gap:12px;align-items:start;padding:18px;border:1px solid var(--line);border-radius:18px;background:#ffffff06;text-decoration:none;color:inherit;transition:.2s}
+.launch:hover{transform:translateY(-2px);border-color:#facc1555}
+.launch.hot{border-color:#facc1540;background:linear-gradient(135deg,#facc150d,#ffffff05)}
+.lIcon{width:42px;height:42px;display:grid;place-items:center;border-radius:12px;background:#facc1514;border:1px solid #facc1526;font-size:19px}
+.lMeta{font-size:9.5px;font-weight:900;letter-spacing:.1em;color:var(--y)}
+.launch h3{margin:6px 0 5px;font-size:16px}
+.launch p{margin:0;color:var(--muted);font-size:13px;line-height:1.6}
+.lGo{color:var(--y);font-size:22px;line-height:1;align-self:center}
+.launchMore{text-align:center;margin:22px 0 0}.launchMore a{color:var(--y);font-weight:800;text-decoration:none;font-size:13px}
+.card.isNew{position:relative;border-color:#facc1540;background:linear-gradient(135deg,#facc150a,#ffffff05)}
+.card .newTag{position:absolute;top:18px;right:18px}
+@media(max-width:1000px){.menuBtn{display:flex}.launches{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:700px){.launches{grid-template-columns:1fr}}
+</style>
+</head>
 <body>
 <!-- Google Tag Manager (noscript) — TubeX -->
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PN9DF3CN"
@@ -159,7 +207,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <a href="index.html"><img alt="TubeX" class="logo" src="logo-full.png"/></a>
 <span class="productName">Explorador de Palavras-Chave</span>
 <div class="links">
-<a data-t="nav_features" href="#recursos">Recursos</a>
+<div class="navDrop"><button type="button" class="navDropBtn" aria-expanded="false" aria-haspopup="true"><span data-t="nav_features">Recursos</span> <i>▾</i></button>
+<div class="mega" role="menu"><div class="megaGrid"><div class="megaCol"><div class="megaH">Pesquisa e ideias</div><a href="#rec-keyword-explorer">Keyword Explorer</a><a href="#rec-keyword-trends">Keyword Trends</a><a href="#rec-outliers">Outliers</a><a href="#rec-watchlist-de-concorrentes">Watchlist de Concorrentes <em>NOVO</em></a><a href="#rec-ideias-do-dia">Ideias do Dia <em>NOVO</em></a></div><div class="megaCol"><div class="megaH">Análise do canal</div><a href="#rec-tubex-insight">TubeX Insight</a><a href="#rec-radar-de-concorrentes">Radar de Concorrentes</a><a href="#rec-intelligence-coach-e-oportunidades">Intelligence — coach e oportunidades</a><a href="#rec-summary-analise-de-video">Summary — análise de vídeo</a><a href="#rec-views-engajadas-no-youtube-studio">Views engajadas no YouTube Studio</a></div><div class="megaCol"><div class="megaH">Otimização no Studio</div><a href="#rec-seo-explorer">SEO Explorer</a><a href="#rec-scorecard-de-shorts">Scorecard de Shorts <em>NOVO</em></a><a href="#rec-tags-editor">Tags Editor</a><a href="#rec-video-optimizer-e-diagnostico">Video Optimizer e diagnóstico</a></div><div class="megaCol"><div class="megaH">Criação com IA</div><a href="#rec-ia-para-titulos">IA para títulos</a><a href="#rec-ia-para-descricoes">IA para descrições</a><a href="#rec-thumbnail-ai">Thumbnail AI</a><a href="#rec-creator-workspace">Creator Workspace</a><a href="#rec-ia-para-video-e-lista-de-videos">IA para vídeo e lista de vídeos</a></div></div>
+<div class="megaFoot"><a href="#novidades">✨ Novidades e lançamentos</a><a href="#recursos">Ver todos os recursos ›</a><a href="updates.html">Histórico de atualizações ›</a></div></div></div>
+<a href="#novidades" class="navNew">Novidades <em>NOVO</em></a>
 <a data-t="nav_how" href="#como">Como funciona</a>
 <a data-t="nav_plans" href="#planos">Planos</a>
 <a data-t="nav_results" href="#resultados">Resultados</a>
@@ -170,6 +221,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <div class="lang"><select aria-label="Language" id="language"><option value="pt">🇧🇷 PT-BR</option><option value="ptpt">🇵🇹 PT-PT</option><option value="en">🇺🇸 EN</option><option value="es">🇪🇸 ES</option></select></div>
 <a class="navlogin" data-t="nav_login" href="https://www.tubexai.com.br" rel="noopener" target="_blank">ENTRAR</a>
 <a class="navcta" data-cta="free" data-t="nav_cta" href="https://chromewebstore.google.com/detail/tubex-seo-analyzer-for-yo/lgddmmhnmkmkfhaodogcoecdecegemgk" rel="noopener" target="_blank">COMEÇAR GRÁTIS</a>
+<button type="button" class="menuBtn" aria-label="Abrir menu" aria-expanded="false"><span></span><span></span><span></span></button>
+</div>
+<div class="mobileMenu" hidden>
+<div class="c">
+<div class="mmLinks"><a href="#novidades">✨ Novidades <em>NOVO</em></a><a href="#recursos">Recursos</a><a href="#como">Como funciona</a><a href="#planos">Planos</a><a href="#resultados">Resultados</a><a href="#faq">FAQ</a><a href="privacy.html">Privacidade</a><a href="https://www.tubexai.com.br" target="_blank" rel="noopener">Entrar</a></div>
+<details class="mmGroup"><summary>Pesquisa e ideias</summary><a href="#rec-keyword-explorer">Keyword Explorer</a><a href="#rec-keyword-trends">Keyword Trends</a><a href="#rec-outliers">Outliers</a><a href="#rec-watchlist-de-concorrentes">Watchlist de Concorrentes <em>NOVO</em></a><a href="#rec-ideias-do-dia">Ideias do Dia <em>NOVO</em></a></details><details class="mmGroup"><summary>Análise do canal</summary><a href="#rec-tubex-insight">TubeX Insight</a><a href="#rec-radar-de-concorrentes">Radar de Concorrentes</a><a href="#rec-intelligence-coach-e-oportunidades">Intelligence — coach e oportunidades</a><a href="#rec-summary-analise-de-video">Summary — análise de vídeo</a><a href="#rec-views-engajadas-no-youtube-studio">Views engajadas no YouTube Studio</a></details><details class="mmGroup"><summary>Otimização no Studio</summary><a href="#rec-seo-explorer">SEO Explorer</a><a href="#rec-scorecard-de-shorts">Scorecard de Shorts <em>NOVO</em></a><a href="#rec-tags-editor">Tags Editor</a><a href="#rec-video-optimizer-e-diagnostico">Video Optimizer e diagnóstico</a></details><details class="mmGroup"><summary>Criação com IA</summary><a href="#rec-ia-para-titulos">IA para títulos</a><a href="#rec-ia-para-descricoes">IA para descrições</a><a href="#rec-thumbnail-ai">Thumbnail AI</a><a href="#rec-creator-workspace">Creator Workspace</a><a href="#rec-ia-para-video-e-lista-de-videos">IA para vídeo e lista de vídeos</a></details>
+</div>
 </div>
 </nav>
 <main>
@@ -365,7 +423,25 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <div class="panel"><span class="badge" data-t="after_badge">DEPOIS DE PRODUZIR</span><h3 data-t="after_title">Otimize antes de apertar Publicar.</h3><p data-t="after_text">Use SEO, análise e IA para revisar elementos que você consegue controlar.</p><div class="checks"><div class="check"><b>✓</b><span data-t="after_1">Analise título e descrição.</span></div><div class="check"><b>✓</b><span data-t="after_2">Veja seu SEO Score e pontos de melhoria.</span></div><div class="check"><b>✓</b><span data-t="after_3">Use IA para gerar e refinar ideias.</span></div></div></div>
 </div>
 </div>
-</section><section class="section" id="recursos">
+</section><section class="section dark" id="novidades">
+<div class="c">
+<div class="head">
+<span class="badge">NOVIDADES E LANÇAMENTOS</span>
+<h2>O que chegou de novo no TubeX</h2>
+<p>Os recursos mais recentes da extensão. Todos usam dados das APIs oficiais do YouTube e do Google; quando algo é estimativa, o TubeX mostra isso.</p>
+</div>
+<div class="launches">
+<a class="launch hot" href="#rec-watchlist-de-concorrentes" ><div class="lIcon">🔔</div><div><div class="lMeta">NOVO LANÇAMENTO · NOV 2026</div><h3>Watchlist de Concorrentes</h3><p>Alertas quando um concorrente dispara ou um tema do nicho começa a subir.</p></div><span class="lGo">›</span></a>
+<a class="launch hot" href="#rec-ideias-do-dia" ><div class="lIcon">💡</div><div><div class="lMeta">NOVO LANÇAMENTO · NOV 2026</div><h3>Ideias do Dia</h3><p>Ideias diárias baseadas em vídeos reais acima da média, com estimativa de views.</p></div><span class="lGo">›</span></a>
+<a class="launch hot" href="#rec-scorecard-de-shorts" ><div class="lIcon">▮</div><div><div class="lMeta">NOVO LANÇAMENTO · NOV 2026</div><h3>Scorecard de Shorts</h3><p>Nota e checklist específicos para Shorts no YouTube Studio.</p></div><span class="lGo">›</span></a>
+<a class="launch" href="#rec-radar-de-concorrentes" ><div class="lIcon">⚡</div><div><div class="lMeta">LANÇAMENTO · NOV 2026</div><h3>Channel Intelligence</h3><p>Compare seu canal com qualquer canal que você visita, com gráficos de evolução diária.</p></div><span class="lGo">›</span></a>
+<a class="launch" href="#rec-views-engajadas-no-youtube-studio" ><div class="lIcon">👀</div><div><div class="lMeta">LANÇAMENTO · NOV 2026</div><h3>Visualizações Engajadas</h3><p>Views engajadas e indicadores de retenção integrados ao YouTube Studio.</p></div><span class="lGo">›</span></a>
+<a class="launch" href="#rec-outliers" ><div class="lIcon">🚀</div><div><div class="lMeta">LANÇAMENTO</div><h3>Outliers do Nicho</h3><p>Vídeos acima do desempenho habitual, VPH e padrões de títulos.</p></div><span class="lGo">›</span></a>
+</div>
+<p class="launchMore"><a href="updates.html">Ver histórico completo de atualizações ›</a></p>
+</div>
+</section>
+<section class="section" id="recursos">
 <div class="c">
 <div class="head">
 <span class="badge">RECURSOS DO TUBEX</span>
@@ -373,21 +449,25 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <p>O TubeX reúne módulos dentro do YouTube e do YouTube Studio para reduzir a troca entre ferramentas. Descubra oportunidades, compare canais, interprete seus próprios dados e transforme a análise em próximos passos práticos.</p>
 </div>
 <div class="grid">
-<article class="card"><div class="icon">🔎</div><h3>Keyword Explorer</h3><p>Pesquisa palavras-chave e termos relacionados para explorar ideias de vídeos. Exibe sugestões e sinais de potencial, concorrência e oportunidade; no nível Expert, libera análise ponderada pelo perfil de desempenho do canal conectado. O acesso e a quantidade de consultas variam por plano.</p><p><strong>Diferencial:</strong> ajuda a sair de uma ideia genérica e comparar termos antes de investir tempo na produção.</p></article>
-<article class="card"><div class="icon">📈</div><h3>Keyword Trends</h3><p>Explora termos por nicho e utiliza sugestões de pesquisa e sinais de tendência para encontrar assuntos que merecem investigação. Ajuda a expandir um tema em consultas relacionadas e a identificar possibilidades de pauta.</p><p><strong>Diferencial:</strong> aproxima a pesquisa de palavras-chave do planejamento editorial, em vez de depender apenas de brainstorming.</p></article>
-<article class="card"><div class="icon">🎯</div><h3>SEO Explorer</h3><p>Abre ferramentas de otimização no fluxo de edição do YouTube Studio. Avalia elementos de SEO do vídeo e reúne sinais de otimização para ajudar a revisar título, descrição e outros campos antes de publicar.</p><p><strong>Diferencial:</strong> coloca a análise junto ao editor onde o criador já trabalha, sem exigir que todo o processo aconteça em outra plataforma.</p></article>
-<article class="card"><div class="icon">🧠</div><h3>TubeX Insight</h3><p>Gera um diagnóstico orientado pelos dados disponíveis do canal conectado. Destaca o que está funcionando, gargalos prováveis, vídeos acima ou abaixo do padrão do canal, padrões observados, evidências e ações prioritárias para testar nos próximos vídeos. CTR e retenção dependem da autorização e da disponibilidade das métricas privadas.</p><p><strong>Diferencial:</strong> transforma indicadores do próprio canal em hipóteses e próximos passos, em vez de mostrar somente números isolados.</p></article>
-<article class="card"><div class="icon">🛰️</div><h3>Radar de Concorrentes</h3><p>Identifica o nicho ou micronicho do canal e monta uma comparação com até 10 canais concorrentes relevantes. Organiza ranking competitivo, assuntos dominantes, abordagens, médias de visualizações, pontos em que o canal se destaca, lacunas dos concorrentes e oportunidades que podem ser exploradas. Também pode gerar um plano de ação com IA.</p><p><strong>Diferencial:</strong> ajuda a enxergar padrões e espaços editoriais no mesmo micronicho, não apenas comparar inscritos.</p><p><strong>Acesso:</strong> disponível a partir do nível Member/Pro; o nome comercial exibido pode variar conforme a conta.</p></article>
-<article class="card"><div class="icon">🚀</div><h3>Outliers</h3><p>Ajuda a encontrar vídeos que se destacam em relação ao desempenho habitual, para estudar assuntos, formatos e abordagens que podem merecer uma nova pauta. A interface diferencia limites de resultados por plano e oferece análise com IA nos níveis pagos elegíveis.</p><p><strong>Diferencial:</strong> direciona a pesquisa para conteúdos fora do padrão, que podem revelar sinais úteis de oportunidade — sem prometer que um resultado viral será repetido.</p><p><strong>Limites documentados no módulo:</strong> até 10 resultados no nível gratuito, 50 no nível Pro e 100 no Expert; recursos de IA exigem plano pago elegível e têm limites próprios.</p></article>
-<article class="card"><div class="icon">📊</div><h3>Summary — análise de vídeo</h3><p>Apresenta um resumo de métricas disponíveis do vídeo, como visualizações, likes, comentários e sinais de engajamento, para facilitar uma leitura rápida da performance. O limite diário de consultas varia conforme o plano.</p><p><strong>Diferencial:</strong> oferece uma visão resumida para comparar vídeos e orientar a investigação antes de mergulhar em análises mais profundas.</p></article>
-<article class="card"><div class="icon">👀</div><h3>Views engajadas no YouTube Studio</h3><p>Acrescenta o indicador de visualizações engajadas aos cartões de desempenho do Studio quando o dado está disponível, ajudando a distinguir visualizações totais de uma métrica de consumo mais qualificado, especialmente útil em análises de Shorts.</p><p><strong>Diferencial:</strong> aproxima o indicador da tela de analytics em que o criador já acompanha o canal. A disponibilidade depende dos dados fornecidos pelo YouTube.</p></article>
-<article class="card"><div class="icon">🧭</div><h3>Intelligence — coach e oportunidades</h3><p>Camada de inteligência que reúne funções de diagnóstico e orientação do canal, incluindo coaching de canal com IA, identificação de oportunidades de vídeo e recursos de progresso de receita quando habilitados. O acesso é condicionado ao plano e aos dados que a conta disponibiliza.</p><p><strong>Diferencial:</strong> conecta leitura de desempenho a oportunidades e orientações personalizadas, em vez de limitar a experiência a métricas descritivas.</p></article><article class="card"><div class="icon">🤖</div><h3>IA para títulos</h3><p>Gera alternativas de título para o vídeo em edição, com foco em clareza, interesse e contexto do conteúdo. O módulo trabalha dentro do fluxo do YouTube Studio e aplica limites de uso por plano.</p><p><strong>Diferencial:</strong> acelera a criação e a comparação de opções sem precisar copiar o contexto do vídeo para outra ferramenta.</p></article>
-<article class="card"><div class="icon">✍️</div><h3>IA para descrições</h3><p>Ajuda a redigir descrições para o vídeo em edição, organizando o texto para comunicar o tema e apoiar a otimização. O criador pode revisar o resultado antes de aplicá-lo; os limites de geração variam por plano.</p><p><strong>Diferencial:</strong> encurta o trabalho operacional de preparar metadados, mantendo a revisão final nas mãos do criador.</p></article>
-<article class="card"><div class="icon">🏷️</div><h3>Tags Editor</h3><p>Gera e apresenta sugestões de tags relacionadas ao vídeo e permite trabalhar com as tags no editor do YouTube. A versão completa das sugestões é liberada nos planos Pro e Expert.</p><p><strong>Diferencial:</strong> mantém a etapa de tags junto à publicação e oferece sugestões como complemento — tags não garantem, por si só, posicionamento ou visualizações.</p></article>
-<article class="card"><div class="icon">🖼️</div><h3>Thumbnail AI</h3><p>Disponibiliza assistência de IA para trabalhar com thumbnails durante a edição, com limites de uso por plano. O criador deve avaliar se a imagem representa corretamente o vídeo e respeita direitos e políticas aplicáveis.</p><p><strong>Diferencial:</strong> integra a etapa visual ao fluxo de otimização, em vez de tratar título, descrição e miniatura como tarefas totalmente separadas.</p></article>
-<article class="card"><div class="icon">🧩</div><h3>Video Optimizer e diagnóstico</h3><p>Reúne uma pontuação de otimização, resumo do estado do vídeo, gargalo provável, oportunidade, impacto estimado quando disponível e ações recomendadas. Os diagnósticos dependem dos dados e respostas disponíveis para o vídeo.</p><p><strong>Diferencial:</strong> organiza os sinais em prioridades práticas, para ajudar a decidir o que revisar primeiro.</p></article>
-<article class="card"><div class="icon">📋</div><h3>Creator Workspace</h3><p>Área de trabalho para apoiar a organização da produção de conteúdo, com recursos de planejamento e organização editorial, calendário e ferramentas auxiliares para creators. Alguns recursos dependem do plano Expert.</p><p><strong>Diferencial:</strong> conecta a análise à organização do trabalho que vem depois da escolha da pauta.</p></article>
-<article class="card"><div class="icon">🎬</div><h3>IA para vídeo e lista de vídeos</h3><p>Permite acionar análises e assistência do TubeX a partir das telas de vídeos e analytics do Studio, levando o usuário do painel do canal para a análise do vídeo selecionado.</p><p><strong>Diferencial:</strong> reduz etapas entre localizar um vídeo no Studio e abrir ferramentas de diagnóstico.</p></article>
+<article class="card isNew" id="rec-watchlist-de-concorrentes"><span class="newTag">NOVO</span><div class="icon">🔔</div><h3>Watchlist de Concorrentes</h3><p>Acompanhe os canais que disputam o seu público e os temas do seu nicho. O TubeX confere tudo a cada 3 horas e avisa, com notificação do Chrome, quando um vídeo de concorrente passa de 2x a mediana do próprio canal ou quando um tema começa a subir no Google Trends.</p><p><strong>Diferencial:</strong> você fica sabendo do que está funcionando no nicho enquanto ainda dá tempo de reagir.</p></article>
+<article class="card isNew" id="rec-ideias-do-dia"><span class="newTag">NOVO</span><div class="icon">💡</div><h3>Ideias do Dia</h3><p>Todo dia, até 5 ideias de vídeo ligadas a vídeos reais que estão acima da média no seu nicho, com ângulo, gancho para os primeiros segundos e conceito de miniatura. Cada ideia mostra uma estimativa de views calculada a partir da mediana do seu canal, sempre identificada como estimativa.</p><p><strong>Diferencial:</strong> a pauta sai de evidência real do nicho, não de um palpite.</p></article>
+<article class="card isNew" id="rec-scorecard-de-shorts"><span class="newTag">NOVO</span><div class="icon">▮</div><h3>Scorecard de Shorts</h3><p>Nota e checklist próprios para Shorts direto no editor do YouTube Studio: título curto, gancho, hashtags, descrição e duração. Depois de publicado, mostra retenção, views engajadas e engajamento reais da YouTube Analytics.</p><p><strong>Diferencial:</strong> Shorts têm regras diferentes de vídeos longos, e a avaliação respeita isso.</p></article>
+
+<article class="card" id="rec-keyword-explorer"><div class="icon">🔎</div><h3>Keyword Explorer</h3><p>Pesquisa palavras-chave e termos relacionados para explorar ideias de vídeos. Exibe sugestões e sinais de potencial, concorrência e oportunidade; no nível Expert, libera análise ponderada pelo perfil de desempenho do canal conectado. O acesso e a quantidade de consultas variam por plano.</p><p><strong>Diferencial:</strong> ajuda a sair de uma ideia genérica e comparar termos antes de investir tempo na produção.</p></article>
+<article class="card" id="rec-keyword-trends"><div class="icon">📈</div><h3>Keyword Trends</h3><p>Explora termos por nicho e utiliza sugestões de pesquisa e sinais de tendência para encontrar assuntos que merecem investigação. Ajuda a expandir um tema em consultas relacionadas e a identificar possibilidades de pauta.</p><p><strong>Diferencial:</strong> aproxima a pesquisa de palavras-chave do planejamento editorial, em vez de depender apenas de brainstorming.</p></article>
+<article class="card" id="rec-seo-explorer"><div class="icon">🎯</div><h3>SEO Explorer</h3><p>Abre ferramentas de otimização no fluxo de edição do YouTube Studio. Avalia elementos de SEO do vídeo e reúne sinais de otimização para ajudar a revisar título, descrição e outros campos antes de publicar.</p><p><strong>Diferencial:</strong> coloca a análise junto ao editor onde o criador já trabalha, sem exigir que todo o processo aconteça em outra plataforma.</p></article>
+<article class="card" id="rec-tubex-insight"><div class="icon">🧠</div><h3>TubeX Insight</h3><p>Gera um diagnóstico orientado pelos dados disponíveis do canal conectado. Destaca o que está funcionando, gargalos prováveis, vídeos acima ou abaixo do padrão do canal, padrões observados, evidências e ações prioritárias para testar nos próximos vídeos. CTR e retenção dependem da autorização e da disponibilidade das métricas privadas.</p><p><strong>Diferencial:</strong> transforma indicadores do próprio canal em hipóteses e próximos passos, em vez de mostrar somente números isolados.</p></article>
+<article class="card" id="rec-radar-de-concorrentes"><div class="icon">🛰️</div><h3>Radar de Concorrentes</h3><p>Identifica o nicho ou micronicho do canal e monta uma comparação com até 10 canais concorrentes relevantes. Organiza ranking competitivo, assuntos dominantes, abordagens, médias de visualizações, pontos em que o canal se destaca, lacunas dos concorrentes e oportunidades que podem ser exploradas. Também pode gerar um plano de ação com IA.</p><p><strong>Diferencial:</strong> ajuda a enxergar padrões e espaços editoriais no mesmo micronicho, não apenas comparar inscritos.</p><p><strong>Acesso:</strong> disponível a partir do nível Member/Pro; o nome comercial exibido pode variar conforme a conta.</p></article>
+<article class="card" id="rec-outliers"><div class="icon">🚀</div><h3>Outliers</h3><p>Ajuda a encontrar vídeos que se destacam em relação ao desempenho habitual, para estudar assuntos, formatos e abordagens que podem merecer uma nova pauta. A interface diferencia limites de resultados por plano e oferece análise com IA nos níveis pagos elegíveis.</p><p><strong>Diferencial:</strong> direciona a pesquisa para conteúdos fora do padrão, que podem revelar sinais úteis de oportunidade — sem prometer que um resultado viral será repetido.</p><p><strong>Limites documentados no módulo:</strong> até 10 resultados no nível gratuito, 50 no nível Pro e 100 no Expert; recursos de IA exigem plano pago elegível e têm limites próprios.</p></article>
+<article class="card" id="rec-summary-analise-de-video"><div class="icon">📊</div><h3>Summary — análise de vídeo</h3><p>Apresenta um resumo de métricas disponíveis do vídeo, como visualizações, likes, comentários e sinais de engajamento, para facilitar uma leitura rápida da performance. O limite diário de consultas varia conforme o plano.</p><p><strong>Diferencial:</strong> oferece uma visão resumida para comparar vídeos e orientar a investigação antes de mergulhar em análises mais profundas.</p></article>
+<article class="card" id="rec-views-engajadas-no-youtube-studio"><div class="icon">👀</div><h3>Views engajadas no YouTube Studio</h3><p>Acrescenta o indicador de visualizações engajadas aos cartões de desempenho do Studio quando o dado está disponível, ajudando a distinguir visualizações totais de uma métrica de consumo mais qualificado, especialmente útil em análises de Shorts.</p><p><strong>Diferencial:</strong> aproxima o indicador da tela de analytics em que o criador já acompanha o canal. A disponibilidade depende dos dados fornecidos pelo YouTube.</p></article>
+<article class="card" id="rec-intelligence-coach-e-oportunidades"><div class="icon">🧭</div><h3>Intelligence — coach e oportunidades</h3><p>Camada de inteligência que reúne funções de diagnóstico e orientação do canal, incluindo coaching de canal com IA, identificação de oportunidades de vídeo e recursos de progresso de receita quando habilitados. O acesso é condicionado ao plano e aos dados que a conta disponibiliza.</p><p><strong>Diferencial:</strong> conecta leitura de desempenho a oportunidades e orientações personalizadas, em vez de limitar a experiência a métricas descritivas.</p></article><article class="card" id="rec-ia-para-titulos"><div class="icon">🤖</div><h3>IA para títulos</h3><p>Gera alternativas de título para o vídeo em edição, com foco em clareza, interesse e contexto do conteúdo. O módulo trabalha dentro do fluxo do YouTube Studio e aplica limites de uso por plano.</p><p><strong>Diferencial:</strong> acelera a criação e a comparação de opções sem precisar copiar o contexto do vídeo para outra ferramenta.</p></article>
+<article class="card" id="rec-ia-para-descricoes"><div class="icon">✍️</div><h3>IA para descrições</h3><p>Ajuda a redigir descrições para o vídeo em edição, organizando o texto para comunicar o tema e apoiar a otimização. O criador pode revisar o resultado antes de aplicá-lo; os limites de geração variam por plano.</p><p><strong>Diferencial:</strong> encurta o trabalho operacional de preparar metadados, mantendo a revisão final nas mãos do criador.</p></article>
+<article class="card" id="rec-tags-editor"><div class="icon">🏷️</div><h3>Tags Editor</h3><p>Gera e apresenta sugestões de tags relacionadas ao vídeo e permite trabalhar com as tags no editor do YouTube. A versão completa das sugestões é liberada nos planos Pro e Expert.</p><p><strong>Diferencial:</strong> mantém a etapa de tags junto à publicação e oferece sugestões como complemento — tags não garantem, por si só, posicionamento ou visualizações.</p></article>
+<article class="card" id="rec-thumbnail-ai"><div class="icon">🖼️</div><h3>Thumbnail AI</h3><p>Disponibiliza assistência de IA para trabalhar com thumbnails durante a edição, com limites de uso por plano. O criador deve avaliar se a imagem representa corretamente o vídeo e respeita direitos e políticas aplicáveis.</p><p><strong>Diferencial:</strong> integra a etapa visual ao fluxo de otimização, em vez de tratar título, descrição e miniatura como tarefas totalmente separadas.</p></article>
+<article class="card" id="rec-video-optimizer-e-diagnostico"><div class="icon">🧩</div><h3>Video Optimizer e diagnóstico</h3><p>Reúne uma pontuação de otimização, resumo do estado do vídeo, gargalo provável, oportunidade, impacto estimado quando disponível e ações recomendadas. Os diagnósticos dependem dos dados e respostas disponíveis para o vídeo.</p><p><strong>Diferencial:</strong> organiza os sinais em prioridades práticas, para ajudar a decidir o que revisar primeiro.</p></article>
+<article class="card" id="rec-creator-workspace"><div class="icon">📋</div><h3>Creator Workspace</h3><p>Área de trabalho para apoiar a organização da produção de conteúdo, com recursos de planejamento e organização editorial, calendário e ferramentas auxiliares para creators. Alguns recursos dependem do plano Expert.</p><p><strong>Diferencial:</strong> conecta a análise à organização do trabalho que vem depois da escolha da pauta.</p></article>
+<article class="card" id="rec-ia-para-video-e-lista-de-videos"><div class="icon">🎬</div><h3>IA para vídeo e lista de vídeos</h3><p>Permite acionar análises e assistência do TubeX a partir das telas de vídeos e analytics do Studio, levando o usuário do painel do canal para a análise do vídeo selecionado.</p><p><strong>Diferencial:</strong> reduz etapas entre localizar um vídeo no Studio e abrir ferramentas de diagnóstico.</p></article>
 </div>
 <div class="head" style="margin-top:48px">
 <span class="badge">RECURSOS POR PLANO</span>
@@ -722,6 +802,18 @@ setInterval(()=>showScreen((current+1)%screens.length),4200);
     has_campaign_parameters: hasCampaign,
     campaign_source_present: !!(incoming.utm_source || incoming.gclid || incoming.gbraid || incoming.wbraid)
   });
+})();
+</script>
+<script>
+(function(){
+  var drop=document.querySelector('.navDrop'),btn=drop&&drop.querySelector('.navDropBtn');
+  if(btn){btn.addEventListener('click',function(e){e.stopPropagation();var o=drop.classList.toggle('open');btn.setAttribute('aria-expanded',o)});
+    document.addEventListener('click',function(e){if(!drop.contains(e.target)){drop.classList.remove('open');btn.setAttribute('aria-expanded','false')}});
+    drop.querySelectorAll('.mega a').forEach(function(a){a.addEventListener('click',function(){drop.classList.remove('open');btn.setAttribute('aria-expanded','false')})});}
+  var mb=document.querySelector('.menuBtn'),mm=document.querySelector('.mobileMenu');
+  if(mb&&mm){mb.addEventListener('click',function(){var o=mm.hasAttribute('hidden');if(o)mm.removeAttribute('hidden');else mm.setAttribute('hidden','');mb.setAttribute('aria-expanded',o);mb.setAttribute('aria-label',o?'Fechar menu':'Abrir menu')});
+    mm.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){mm.setAttribute('hidden','');mb.setAttribute('aria-expanded','false')})});}
+  document.addEventListener('keydown',function(e){if(e.key==='Escape'){if(drop){drop.classList.remove('open')}if(mm&&mb){mm.setAttribute('hidden','');mb.setAttribute('aria-expanded','false')}}});
 })();
 </script>
 </body>
