@@ -48,6 +48,7 @@
       text-decoration: none;
       box-shadow: 0 2px 8px #FFD70033;
       transition: background 0.2s, color 0.2s;
+      margin-top: 18px;
     }
     .btn-voltar:hover {
       background: #fff;
@@ -56,6 +57,68 @@
     .plano-nome {
       color: #FFD700;
       font-weight: bold;
+    }
+    /* Bloco de registro bonito */
+    .registro-bloco {
+      margin-top: 32px;
+      background: #222;
+      border-radius: 12px;
+      padding: 26px 24px 22px 24px;
+      max-width: 350px;
+      box-shadow: 0 0 16px #0006;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .registro-bloco p {
+      color: #FFD700;
+      font-size: 1rem;
+      margin: 0 0 14px 0;
+      line-height: 1.4;
+    }
+    .registro-bloco input {
+      padding: 10px 12px;
+      border-radius: 6px;
+      border: 1px solid #FFD700;
+      background: #111;
+      color: #FFD700;
+      width: 94%;
+      font-size: 1rem;
+      margin-bottom: 10px;
+      margin-top: 4px;
+      text-align: center;
+      outline: none;
+      transition: border 0.2s;
+    }
+    .registro-bloco input:focus {
+      border: 1.5px solid #ffea00;
+      background: #181818;
+    }
+    .registro-bloco button {
+      padding: 9px 22px;
+      border-radius: 7px;
+      background: #FFD700;
+      color: #181818;
+      font-weight: bold;
+      font-size: 1rem;
+      cursor: pointer;
+      border: none;
+      box-shadow: 0 1px 5px #FFD70033;
+      transition: background 0.2s, color 0.2s;
+    }
+    .registro-bloco button:hover {
+      background: #fffad1;
+      color: #1a1a1a;
+    }
+    #status {
+      margin-top: 9px;
+      color: #FFD700;
+      font-size: 1.04rem;
+      min-height: 24px;
+    }
+    @media (max-width: 480px) {
+      .registro-bloco { padding: 20px 5vw 18px 5vw; }
+      .btn-voltar { width: 96vw; }
     }
   </style>
 </head>
@@ -69,9 +132,18 @@
   </p>
   <a href="https://zbee.app.br" class="btn-voltar">Voltar ao site</a>
 
+  <div class="registro-bloco">
+    <p>Para ativar <b>IMEDIATAMENTE</b> seu acesso (e garantir comissionamento para o afiliado, se houver), digite o <b>e-mail Google</b> que você usa na extensão e clique em <b>Ativar</b>:</p>
+    <input type="email" id="email" placeholder="Seu e-mail Google" autocomplete="email" required>
+    <button onclick="registrarAssinatura()">Ativar</button>
+    <div id="status"></div>
+  </div>
+
   <script>
+    // Recupera plano e afiliado
     const urlParams = new URLSearchParams(window.location.search);
     const plano = urlParams.get("plano");
+    const afiliado = urlParams.get("afiliado");
 
     const nomesPlanos = {
       pro: "Zbee Pro",
@@ -80,8 +152,38 @@
       free: "Zbee Gratuito",
       default: "Zbee"
     };
-
     document.getElementById("plano").textContent = nomesPlanos[plano?.toLowerCase()] || nomesPlanos.default;
+
+    // Função para envio ao webhook
+    function registrarAssinatura() {
+      const email = document.getElementById('email').value.trim().toLowerCase();
+      if (!email || !email.includes('@') || !email.includes('.')) {
+        document.getElementById('status').textContent = 'Digite um e-mail válido!';
+        return;
+      }
+      document.getElementById('status').textContent = 'Enviando...';
+
+fetch('https://script.google.com/macros/s/AKfycbxlBIXvkYG1WTGs3-zHHADZyvSBFu0nUKLcbftuwsg793Vz9SqGhY0qr0G5-F56lLqMIQ/exec', {
+  method: 'POST',
+  headers: { 'Content-Type': 'application/json' },
+  body: JSON.stringify({
+    email: email,
+    plano: plano,
+    codigoAfiliado: afiliado
+  })
+})
+      .then(resp => resp.json())
+      .then(data => {
+        if (data.status === "ok") {
+          document.getElementById('status').textContent = '✅ Assinatura registrada! Agora volte para a extensão.';
+        } else {
+          document.getElementById('status').textContent = 'Ocorreu um erro, tente novamente.';
+        }
+      })
+      .catch(() => {
+        document.getElementById('status').textContent = 'Erro de conexão, tente novamente.';
+      });
+    }
   </script>
 </body>
 </html>

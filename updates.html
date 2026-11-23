@@ -11,10 +11,115 @@ a{color:#fde68a;text-decoration:none}a:hover{text-decoration:underline}.containe
 .btn{display:inline-flex;align-items:center;justify-content:center;padding:11px 16px;border-radius:11px;font-size:12px;font-weight:900;border:1px solid var(--line);background:rgba(255,255,255,.04);color:#fff}.btn.primary{background:linear-gradient(135deg,#fde047,#f59e0b);color:#111;border:0}.actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}
 .small{font-size:12px;color:#7f8a9d}.toc{display:flex;gap:8px;flex-wrap:wrap;margin:18px 0}.toc a{padding:7px 10px;border:1px solid var(--line);border-radius:9px;color:#cbd5e1;font-size:11px}.toc a:hover{border-color:rgba(250,204,21,.3);text-decoration:none}
 @media(max-width:850px){.links{display:none}.grid{grid-template-columns:1fr}.navin{min-height:62px}.hero{padding-top:48px}.card{padding:21px}}
+</style><style id="tubex-site-shell">
+:root{--bg:#060a0f;--card:#0b1218;--line:rgba(123,151,173,.18);--text:#eef3f7;--muted:#8998a7;--soft:#c3ccd5;--y:#facc15;--max:1040px}
+body{background:#060a0f!important;color:var(--text);font-family:Inter,Arial,sans-serif;position:relative}
+body:before{content:"";position:fixed;inset:0;pointer-events:none;background:radial-gradient(circle at 15% 0,rgba(250,204,21,.045),transparent 25%),radial-gradient(circle at 86% 0,rgba(70,110,140,.075),transparent 30%);z-index:-1}
+.c{width:min(1200px,calc(100% - 34px));margin:auto}
+.nav{position:sticky;top:0;z-index:100;height:82px;background:rgba(8,13,18,.96)!important;border-bottom:1px solid var(--line);backdrop-filter:blur(18px)}
+.nav .navin{height:82px;min-height:0;display:flex;align-items:center;justify-content:flex-start;gap:12px;position:relative}
+.nav .logo{width:126px;display:block}
+.nav .links{display:flex;gap:2px;margin-left:auto;align-items:center;flex-wrap:nowrap}
+.nav .links a{padding:8px 9px;color:#738292;font-size:10px;font-weight:700;border-radius:8px;text-decoration:none;background:none;border:0}
+.nav .links a:hover{background:#111a22;color:#dfe7ed;text-decoration:none}
+.nav .navDropBtn{font-size:10px;color:#738292}
+.navStatus{display:inline-flex;align-items:center;gap:6px;padding:8px 11px;border:1px solid rgba(250,204,21,.28);background:rgba(250,204,21,.06);border-radius:10px;color:#8e9aaa;font-size:10px;font-weight:800;white-space:nowrap}.navStatus b{color:#facc15}.navStatus i{font-style:normal;color:#596575}
+.nav .lang{position:relative}.nav .lang select{appearance:none;background:#0c141b;border:1px solid var(--line);color:#cfd8df;border-radius:10px;padding:9px 28px 9px 10px;font-weight:800;font-size:11px;cursor:pointer}.nav .lang:after{content:"⌄";position:absolute;right:9px;top:7px;color:#8e9aac;pointer-events:none}
+.nav .navlogin{display:inline-flex;align-items:center;justify-content:center;min-height:40px;padding:0 11px;border:1px solid var(--line);background:#0c141b;color:#cfd8df;text-decoration:none;font-size:11px;font-weight:900;border-radius:10px}
+.nav .navcta{display:inline-flex;align-items:center;justify-content:center;min-height:40px;padding:0 15px;background:#facc15;border:1px solid #facc15;color:#111;border-radius:10px;font-size:12px;font-weight:900;text-decoration:none;box-shadow:0 8px 24px rgba(250,204,21,.12)}
+.nav .navcta:hover,.nav .navlogin:hover{text-decoration:none}
+.footer{margin-top:40px;padding:28px 0!important;background:#070c11!important;border-top:1px solid var(--line)!important;color:#65737f;font-size:10px}
+.footer .footerIn{display:flex;justify-content:space-between;gap:15px;flex-wrap:wrap;line-height:1.8}.footer a{color:#8e9aab;text-decoration:none}.footer a:hover{color:var(--y)}
+.legacy-ids{display:none!important}
+/* conteúdo no mesmo padrão do index */
+main .hero{padding:56px 0 18px}main .hero h1{font-size:clamp(32px,4.2vw,50px);line-height:1.05;letter-spacing:-.055em;color:#f4f7f9}main .hero p{color:#8e9ba8;font-size:15px;line-height:1.65}
+.ey{padding:7px 10px!important;border-color:rgba(250,204,21,.30)!important;background:rgba(250,204,21,.06)!important;color:#e8ca58!important;border-radius:9px!important;font-size:9px!important;letter-spacing:.05em;text-transform:uppercase}
+main .card{background:#0b1218!important;border:1px solid rgba(123,151,173,.16)!important;border-radius:15px!important;box-shadow:none!important}
+main .card p,main .card li{color:#9aa7b4}main .card h2{color:#eef3f7}main .card strong{color:#eef3f7}
+main a{color:#e8ca58}
+.btn.primary{background:#facc15!important;color:#111!important;border:0}
+.notice{background:rgba(250,204,21,.05)!important;border-color:rgba(250,204,21,.2)!important}
+@media(max-width:1000px){.nav .links,.navStatus{display:none}.menuBtn{display:flex}.nav .lang{margin-left:auto}.nav .lang~.navlogin,.nav .lang~.navcta{margin-left:0}.nav .navlogin{margin-left:auto}}@media(max-width:700px){.nav .navcta{margin-left:auto}.nav .lang+.navlogin+.navcta{margin-left:0}}
+@media(max-width:700px){.nav,.nav .navin{height:64px}.nav .logo{width:110px}.nav .navlogin{display:none}.nav .navcta{min-height:36px;padding:0 10px;font-size:10px}.nav .lang select{font-size:9px;padding:8px 24px 8px 8px;max-width:104px}}
+</style><style id="tubex-site-menu">
+.navin{position:relative}.navDrop{position:static}.links a,.navDropBtn{white-space:nowrap}
+@media(max-width:1240px){.links a[href="privacy.html"]{display:none}}
+.navDropBtn{padding:9px 10px;border:0;background:transparent;color:#aeb7c7;font:700 12px Inter,Arial,sans-serif;border-radius:9px;cursor:pointer}
+.navDropBtn i{font-style:normal;font-size:10px;opacity:.8}
+.navDropBtn:hover,.navDrop.open .navDropBtn{background:#ffffff0d;color:#fff}
+.mega{position:absolute;top:calc(100% + 10px);left:50%;transform:translateX(-50%);width:min(860px,92vw);padding:18px;border:1px solid var(--line);border-radius:18px;background:rgba(10,14,24,.98);backdrop-filter:blur(18px);box-shadow:0 24px 70px rgba(0,0,0,.55);display:none;z-index:120}
+.navDrop.open .mega{display:block}
+@media (hover:hover){.navDrop:hover .mega,.navDrop:focus-within .mega{display:block}}
+.mega::before{content:"";position:absolute;top:-12px;left:0;right:0;height:12px}
+.megaGrid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.megaH{font-size:10px;font-weight:900;letter-spacing:.12em;text-transform:uppercase;color:var(--y);margin:0 0 8px}
+.megaCol a,.mmGroup a{display:flex;align-items:center;gap:6px;padding:7px 8px;margin:0 -8px;border-radius:9px;color:#d3d9e3;text-decoration:none;font-size:12.5px;font-weight:600;line-height:1.3}
+.megaCol a:hover,.mmGroup a:hover{background:#ffffff0d;color:#fff}
+.megaCol em,.navNew em,.mmLinks em,.mmGroup em,.newTag{font-style:normal;font-size:9px;font-weight:900;letter-spacing:.06em;padding:2px 6px;border-radius:999px;background:var(--y);color:#0b0d12}
+.megaFoot{display:flex;gap:16px;flex-wrap:wrap;margin-top:14px;padding-top:12px;border-top:1px solid var(--line)}
+.megaFoot a{color:#aeb7c7;text-decoration:none;font-size:12px;font-weight:700}.megaFoot a:hover{color:var(--y)}
+.links .navNew{display:inline-flex;align-items:center;gap:6px}
+.menuBtn{display:none;width:40px;height:40px;border:1px solid var(--line);border-radius:10px;background:#ffffff08;cursor:pointer;flex-direction:column;justify-content:center;align-items:center;gap:4px;padding:0}
+.menuBtn span{display:block;width:17px;height:2px;border-radius:2px;background:#e5e9f0;transition:.2s}
+.menuBtn[aria-expanded="true"] span:nth-child(1){transform:translateY(6px) rotate(45deg)}
+.menuBtn[aria-expanded="true"] span:nth-child(2){opacity:0}
+.menuBtn[aria-expanded="true"] span:nth-child(3){transform:translateY(-6px) rotate(-45deg)}
+.mobileMenu{position:absolute;left:0;right:0;top:100%;border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:#060811;box-shadow:0 24px 50px rgba(0,0,0,.6);max-height:calc(100vh - 64px);overflow:auto;padding:12px 0 18px}
+.mobileMenu[hidden]{display:none}
+.mobileMenu .c{width:calc(100% - 26px);max-width:none}.mmLinks{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:6px;margin-bottom:10px}
+.mmLinks a{display:flex;align-items:center;gap:6px;padding:11px 12px;border:1px solid var(--line);border-radius:11px;color:#e5e9f0;text-decoration:none;font-size:13px;font-weight:700;background:#ffffff05}
+.mmGroup{border:1px solid var(--line);border-radius:12px;margin-top:7px;padding:4px 14px;background:#ffffff04}
+.mmGroup summary{cursor:pointer;padding:10px 0;font-size:13px;font-weight:800;color:var(--y);list-style:none}
+.mmGroup summary::-webkit-details-marker{display:none}
+.mmGroup summary::after{content:"▾";float:right;color:#aeb7c7}
+.mmGroup[open] summary::after{content:"▴"}
+.mmGroup a{margin:0 -8px 4px}
+.launches{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.launch{display:grid;grid-template-columns:42px minmax(0,1fr) 14px;gap:12px;align-items:start;padding:18px;border:1px solid var(--line);border-radius:18px;background:#ffffff06;text-decoration:none;color:inherit;transition:.2s}
+.launch:hover{transform:translateY(-2px);border-color:#facc1555}
+.launch.hot{border-color:#facc1540;background:linear-gradient(135deg,#facc150d,#ffffff05)}
+.lIcon{width:42px;height:42px;display:grid;place-items:center;border-radius:12px;background:#facc1514;border:1px solid #facc1526;font-size:19px}
+.lMeta{font-size:9.5px;font-weight:900;letter-spacing:.1em;color:var(--y)}
+.launch h3{margin:6px 0 5px;font-size:16px}
+.launch p{margin:0;color:var(--muted);font-size:13px;line-height:1.6}
+.lGo{color:var(--y);font-size:22px;line-height:1;align-self:center}
+.launchMore{text-align:center;margin:22px 0 0}.launchMore a{color:var(--y);font-weight:800;text-decoration:none;font-size:13px}
+.card.isNew{position:relative;border-color:#facc1540;background:linear-gradient(135deg,#facc150a,#ffffff05)}
+.card .newTag{position:absolute;top:18px;right:18px}
+@media(max-width:1000px){.menuBtn{display:flex}.launches{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:700px){.launches{grid-template-columns:1fr}}
 </style></head><body>
-<header class="nav"><div class="container navin">
+<nav class="nav">
+<div class="c navin">
+<a href="index.html"><img alt="TubeX" class="logo" src="logo-full.png"/></a>
+
+<div class="links">
+<div class="navDrop"><button type="button" class="navDropBtn" aria-expanded="false" aria-haspopup="true"><span>Recursos</span> <i>▾</i></button>
+<div class="mega" role="menu"><div class="megaGrid"><div class="megaCol"><div class="megaH">Pesquisa e ideias</div><a href="index.html#rec-keyword-explorer">Keyword Explorer</a><a href="index.html#rec-keyword-trends-explorer">Keyword Trends Explorer <em>NOVO</em></a><a href="index.html#rec-vph-e-keywords-de-crescimento">VPH na busca <em>NOVO</em></a><a href="index.html#rec-outliers">Outliers</a><a href="index.html#rec-watchlist-de-concorrentes">Watchlist de Concorrentes <em>NOVO</em></a><a href="index.html#rec-ideias-do-dia">Ideias do Dia <em>NOVO</em></a></div><div class="megaCol"><div class="megaH">Análise do canal</div><a href="index.html#rec-tubex-insight">TubeX Insight</a><a href="index.html#rec-analise-detalhada">Análise detalhada do canal <em>NOVO</em></a><a href="index.html#rec-raio-x-de-publicacao">Raio-X de Publicação <em>NOVO</em></a><a href="index.html#rec-radar-de-concorrentes">Radar de Concorrentes</a><a href="index.html#rec-intelligence-coach-e-oportunidades">Intelligence — coach e oportunidades</a><a href="index.html#rec-views-engajadas-no-youtube-studio">Views engajadas no YouTube Studio</a></div><div class="megaCol"><div class="megaH">Otimização no Studio</div><a href="index.html#rec-ctr-por-origem">CTR por origem de tráfego <em>NOVO</em></a><a href="index.html#rec-resumo-do-video">Resumo do vídeo <em>NOVO</em></a><a href="index.html#rec-seo-explorer">SEO Explorer</a><a href="index.html#rec-scorecard-de-shorts">Scorecard de Shorts <em>NOVO</em></a><a href="index.html#rec-tags-editor">Tags Editor</a><a href="index.html#rec-video-optimizer-e-diagnostico">Video Optimizer e diagnóstico</a></div><div class="megaCol"><div class="megaH">Criação com IA</div><a href="index.html#rec-ia-para-titulos">IA para títulos</a><a href="index.html#rec-ia-para-descricoes">IA para descrições</a><a href="index.html#rec-thumbnail-ai">Thumbnail AI</a><a href="index.html#rec-creator-workspace">Creator Workspace</a><a href="index.html#rec-ia-para-video-e-lista-de-videos">IA para vídeo e lista de vídeos</a></div></div>
+<div class="megaFoot"><a href="index.html#novidades">✨ Novidades e lançamentos</a><a href="index.html#recursos">Ver todos os recursos ›</a><a href="updates.html">Histórico de atualizações ›</a></div></div></div>
+<a href="updates.html" class="navNew">Novidades <em>NOVO</em></a>
+<a href="index.html#como">Como funciona</a>
+<a href="planos.html">Planos</a>
+<a href="index.html#resultados">Resultados</a>
+<a href="index.html#faq">FAQ</a>
+<a href="privacy.html">Privacidade</a>
+</div>
+<span class="navStatus"><b>SEO</b><i>•</i> IA &amp; Analytics</span>
+
+<a class="navlogin" href="https://www.tubexai.com.br" rel="noopener" target="_blank">ENTRAR</a>
+<a class="navcta" data-cta="free" href="https://chromewebstore.google.com/detail/tubex-seo-analyzer-for-yo/lgddmmhnmkmkfhaodogcoecdecegemgk" rel="noopener" target="_blank">COMEÇAR GRÁTIS</a>
+<button type="button" class="menuBtn" aria-label="Abrir menu" aria-expanded="false"><span></span><span></span><span></span></button>
+</div>
+<div class="mobileMenu" hidden>
+<div class="c">
+<div class="mmLinks"><a href="index.html#novidades">✨ Novidades <em>NOVO</em></a><a href="index.html#recursos">Recursos</a><a href="index.html#como">Como funciona</a><a href="planos.html">Planos</a><a href="index.html#resultados">Resultados</a><a href="index.html#faq">FAQ</a><a href="privacy.html">Privacidade</a><a href="https://www.tubexai.com.br" target="_blank" rel="noopener">Entrar</a></div>
+<details class="mmGroup"><summary>Pesquisa e ideias</summary><a href="index.html#rec-keyword-explorer">Keyword Explorer</a><a href="index.html#rec-keyword-trends-explorer">Keyword Trends Explorer <em>NOVO</em></a><a href="index.html#rec-vph-e-keywords-de-crescimento">VPH na busca <em>NOVO</em></a><a href="index.html#rec-outliers">Outliers</a><a href="index.html#rec-watchlist-de-concorrentes">Watchlist de Concorrentes <em>NOVO</em></a><a href="index.html#rec-ideias-do-dia">Ideias do Dia <em>NOVO</em></a></details><details class="mmGroup"><summary>Análise do canal</summary><a href="index.html#rec-tubex-insight">TubeX Insight</a><a href="index.html#rec-analise-detalhada">Análise detalhada do canal <em>NOVO</em></a><a href="index.html#rec-raio-x-de-publicacao">Raio-X de Publicação <em>NOVO</em></a><a href="index.html#rec-radar-de-concorrentes">Radar de Concorrentes</a><a href="index.html#rec-intelligence-coach-e-oportunidades">Intelligence — coach e oportunidades</a><a href="index.html#rec-views-engajadas-no-youtube-studio">Views engajadas no YouTube Studio</a></details><details class="mmGroup"><summary>Otimização no Studio</summary><a href="index.html#rec-ctr-por-origem">CTR por origem de tráfego <em>NOVO</em></a><a href="index.html#rec-resumo-do-video">Resumo do vídeo <em>NOVO</em></a><a href="index.html#rec-seo-explorer">SEO Explorer</a><a href="index.html#rec-scorecard-de-shorts">Scorecard de Shorts <em>NOVO</em></a><a href="index.html#rec-tags-editor">Tags Editor</a><a href="index.html#rec-video-optimizer-e-diagnostico">Video Optimizer e diagnóstico</a></details><details class="mmGroup"><summary>Criação com IA</summary><a href="index.html#rec-ia-para-titulos">IA para títulos</a><a href="index.html#rec-ia-para-descricoes">IA para descrições</a><a href="index.html#rec-thumbnail-ai">Thumbnail AI</a><a href="index.html#rec-creator-workspace">Creator Workspace</a><a href="index.html#rec-ia-para-video-e-lista-de-videos">IA para vídeo e lista de vídeos</a></details>
+</div>
+</div>
+</nav>
+<div class="legacy-ids" hidden aria-hidden="true"><div class="nav"><div class="container navin">
 <a class="brand" href="index.html" aria-label="TubeX">Tube<span>X</span></a>
-<nav class="links" aria-label="Navegação legal">
+<div class="links" aria-label="Navegação legal">
 <a href="index.html">Início</a>
 <a href="privacy.html" class="important">🔒 Privacidade</a>
 <a href="termos.html">Termos</a>
@@ -22,22 +127,34 @@ a{color:#fde68a;text-decoration:none}a:hover{text-decoration:underline}.containe
 <a href="reembolso.html">Reembolso</a>
 <a href="cancelamento.html">Cancelamento</a>
 <a href="updates.html">Atualizações</a>
-</nav>
+</div>
 <a class="navcta" href="https://www.tubexai.com.br">Entrar</a>
-</div></header>
+</div></div></div>
 <main class="container">
-<section class="hero"><span class="ey">🚀 Produto</span><h1>Atualizações & Roadmap</h1><p>Principais evoluções documentadas do TubeX e direcionamento do produto.</p><p class="small"><strong>Atualização:</strong> 26 de outubro de 2026</p></section>
-
-<div class="card" style="border-color:rgba(250,204,21,.3);box-shadow:0 12px 35px rgba(0,0,0,.16)"><span class="ey">ATUALIZADO EM 26/10/2026</span><h2>🧭 Evoluções recentes — TubeX 4.3.x</h2><p>Registro das melhorias recentes documentadas no projeto. A disponibilidade de cada recurso pode variar conforme o plano e a integração necessária.</p><ul><li><strong>Central do Creator reorganizada:</strong> navegação separada por áreas para facilitar o acesso às ferramentas.</li><li><strong>Cartão de conta e licença:</strong> exibição de informações da conta e do canal no menu de ferramentas.</li><li><strong>Detecção de canal mais estável:</strong> priorização do ID presente na URL do YouTube Studio e redução de atualizações repetidas que causavam oscilação visual.</li><li><strong>Correção manual de canal:</strong> fluxo de reconexão/seleção do canal para contornar casos em que a conta Google retorna outro canal associado.</li><li><strong>Atalhos para creators:</strong> acesso ao canal de aprendizagem correto, <a href="https://www.youtube.com/@gabrielbzago" target="_blank" rel="noopener">@gabrielbzago</a>, e melhorias de acesso à conta.</li><li><strong>Site e documentação:</strong> nova página pública de recursos com visão organizada das ferramentas e dos diferenciais de fluxo de trabalho.</li></ul><p class="small">Nota: a seleção automática fora do YouTube Studio pode depender do contexto de sessão e das permissões disponíveis. A reconexão manual existe para ajudar a definir o canal desejado, sem prometer que o Google sempre exponha automaticamente o canal ativo em todos os contextos.</p></div>
-<div class="card"><h2>🚀 Versão 3.0 — Core System Upgrade</h2><ul><li>🔐 Autenticação via Google OAuth</li><li>🛡 Sistema de consentimento</li><li>⚡ Backend com validação e rate limit</li><li>🧠 IA com contexto de canal</li><li>📊 SEO baseado em dados disponibilizados pela API do YouTube</li><li>📦 Cache e otimizações de performance</li><li>🔁 Fallback e melhorias de estabilidade</li><li>🧩 Arquitetura modular</li></ul></div>
+<section class="hero"><span class="ey">🚀 Produto</span><h1>Atualizações & Roadmap</h1><p>Tudo o que chegou ao TubeX, do mais recente para o mais antigo.</p><p class="small"><strong>Atualização:</strong> 23 de novembro de 2026</p></section>
+<section class="card"><h2>💎 23/11/2026 — Planos por recurso</h2><ul><li><strong>Nova página de planos</strong> com comparação completa entre Free, Pro e Expert, recurso por recurso, e opção de cobrança mensal ou anual.</li><li><strong>Keyword Trends Explorer:</strong> 3 pesquisas por dia no Free, 50 no Pro e ilimitadas no Expert.</li><li><strong>CTR por origem:</strong> o Free vê as 2 maiores origens de tráfego; o Pro mostra todas, com a comparação com o CTR do canal.</li><li><strong>Raio-X de Publicação:</strong> ritmo de postagem e engajamento no Free; melhor dia, melhor horário, gráfico semanal e top vídeos no Pro.</li><li><strong>Análise detalhada do canal:</strong> comparativo lado a lado no Free; monetização estimada, crescimento de inscritos e insights no Pro.</li><li><strong>Aba SEO:</strong> volume do Google Ads da palavra principal e 3 palavras relacionadas no Free; lista completa no Pro.</li><li>Correção: os links de Termos de Uso e Política de Privacidade da tela de aceite abriam uma página inexistente.</li></ul></section><section class="card"><h2>🆕 23/11/2026 — Pesquisa e canal</h2><ul><li><strong>VPH e keywords nos resultados de busca:</strong> visualizações por hora direto na busca do YouTube e as palavras-chave que puxam crescimento.</li><li><strong>Keyword Trends Explorer em produção:</strong> palavras reais do nicho com volume mensal do Google Ads e tendência de 30 dias do Google Trends.</li><li><strong>Aba SEO com gráficos novos:</strong> interesse de pesquisa no Google e no YouTube (7, 30, 60 e 90 dias), volume do Google Ads com histórico mensal e palavras relacionadas com volume e concorrência.</li><li><strong>Aba Tendências</strong> integrada à análise de SEO do vídeo.</li><li><strong>Channel Intelligence:</strong> views dos últimos 28 dias também para o canal visitado e Análise detalhada com monetização estimada (52 nichos com faixa de RPM) e crescimento de inscritos.</li><li><strong>TubeX Intelligence</strong> com visual novo e o <strong>Raio-X de Publicação</strong>: melhor dia, melhor horário, ritmo de postagem e top vídeos do canal.</li><li><strong>CTR e impressões por origem de tráfego</strong> no YouTube Studio, comparados ao CTR do próprio canal nos últimos 90 dias.</li></ul></section><section class="card"><h2>📊 22/11/2026 — Análise de vídeos e Studio</h2><ul><li><strong>Resumo do vídeo</strong> com métricas completas, nota por faixa e leitura do desempenho em relação ao canal.</li><li><strong>Views engajadas</strong> no YouTube Studio com dados em tempo real, sem travar em valores antigos.</li><li><strong>SEO Explorer</strong> agora detecta cards e telas finais do vídeo.</li><li><strong>Keyword Explorer</strong> com volumes reais do Google Ads.</li></ul></section><section class="card"><h2>🔔 22/11/2026 — Novos módulos</h2><ul><li><strong>Watchlist de Concorrentes:</strong> acompanhe canais e temas do nicho e receba notificação no Chrome quando um vídeo passa de 2x a mediana do canal ou quando um tema sobe no Google Trends.</li><li><strong>Ideias do Dia:</strong> ideias de vídeo ligadas a vídeos reais que estão acima da média no nicho, com estimativa de views baseada na mediana do seu canal.</li><li><strong>Scorecard de Shorts:</strong> nota e checklist próprios para Shorts no editor do YouTube Studio, com retenção e engajamento reais depois de publicado.</li></ul></section><div class="card"><h2>🚀 Versão 3.0 — Core System Upgrade</h2><ul><li>🔐 Autenticação via Google OAuth</li><li>🛡 Sistema de consentimento</li><li>⚡ Backend com validação e rate limit</li><li>🧠 IA com contexto de canal</li><li>📊 SEO baseado em dados disponibilizados pela API do YouTube</li><li>📦 Cache e otimizações de performance</li><li>🔁 Fallback e melhorias de estabilidade</li><li>🧩 Arquitetura modular</li></ul></div>
 <div class="grid"><section class="card"><h2>🤖 Inteligência Artificial</h2><ul><li>Geração de títulos</li><li>Descrição otimizada</li><li>Diagnóstico de canal</li><li>Estratégias personalizadas</li><li>Ideias de vídeos</li></ul></section>
 <section class="card"><h2>📊 SEO Engine</h2><ul><li>Volume e concorrência</li><li>Score de SEO</li><li>Sugestões de palavras-chave</li><li>Tags baseadas em dados disponíveis</li></ul></section>
 <section class="card"><h2>💼 Planos</h2><ul><li>Validação por backend</li><li>Integração com pagamentos</li><li>Controle de acesso por plano</li></ul></section>
 <section class="card"><h2>⚙️ Performance & Segurança</h2><ul><li>Deduplicação de requisições</li><li>Proteção contra abuso</li><li>Execução assíncrona otimizada</li><li>Melhorias de performance</li></ul></section></div>
 <div class="card"><h2>📅 Próximos passos</h2><ul><li>IA personalizada por canal</li><li>Dashboard de tendências avançado</li><li>Relatórios exportáveis</li><li>Automação inteligente de conteúdo</li></ul><p class="small">Roadmap é indicativo e pode mudar conforme prioridades técnicas, disponibilidade de APIs e evolução do produto.</p></div>
+
 </main>
-<footer class="footer"><div class="container"><div class="footTop">
+<footer class="footer"><div class="c footerIn"><div>⚡ <strong style="color:#dce2ec">TubeX</strong> — <span>Ferramenta de SEO, IA e análise para creators.</span></div><div><a href="index.html">Site principal</a> • <a href="privacy.html">Privacidade</a> • <a href="termos.html">Termos de Uso</a> • <a href="planos.html">Planos</a> • <a href="reembolso.html">Reembolso</a> • <a href="cancelamento.html">Cancelamento</a> • <a href="updates.html">Atualizações</a></div></div></footer>
+<div class="legacy-ids" hidden aria-hidden="true"><div class="footer"><div class="container"><div class="footTop">
 <div>⚡ <strong style="color:#dce2ec">TubeX</strong> — SEO, IA e ferramentas para creators.</div>
 <div class="footLinks"><a href="privacy.html">Privacidade</a><a href="termos.html">Termos de Uso</a><a href="planos.html">Planos</a><a href="reembolso.html">Reembolso</a><a href="cancelamento.html">Cancelamento</a><a href="updates.html">Atualizações</a></div>
-</div><div class="bottom">Última atualização desta página: 26 de outubro de 2026.<br>Suporte: <a href="mailto:gabrielbzago@gmail.com">gabrielbzago@gmail.com</a> • WhatsApp: 19 99203‑6896<br>© TubeX — Desenvolvido por Gabriel Zago. TubeX é uma plataforma independente e não é afiliada, patrocinada ou endossada pelo YouTube ou pela Google LLC.</div></div></footer>
+</div><div class="bottom">Última atualização desta página: 12 de agosto de 2026.<br>Suporte: <a href="mailto:gabrielbzago@gmail.com">gabrielbzago@gmail.com</a> • WhatsApp: 19 99203‑6896<br>© TubeX — Desenvolvido por Gabriel Zago. TubeX é uma plataforma independente e não é afiliada, patrocinada ou endossada pelo YouTube ou pela Google LLC.</div></div></div></div>
+<script>
+(function(){
+  var drop=document.querySelector('.navDrop'),btn=drop&&drop.querySelector('.navDropBtn');
+  if(btn){btn.addEventListener('click',function(e){e.stopPropagation();var o=drop.classList.toggle('open');btn.setAttribute('aria-expanded',o)});
+    document.addEventListener('click',function(e){if(!drop.contains(e.target)){drop.classList.remove('open');btn.setAttribute('aria-expanded','false')}});
+    drop.querySelectorAll('.mega a').forEach(function(a){a.addEventListener('click',function(){drop.classList.remove('open');btn.setAttribute('aria-expanded','false')})});}
+  var mb=document.querySelector('.menuBtn'),mm=document.querySelector('.mobileMenu');
+  if(mb&&mm){mb.addEventListener('click',function(){var o=mm.hasAttribute('hidden');if(o)mm.removeAttribute('hidden');else mm.setAttribute('hidden','');mb.setAttribute('aria-expanded',o);mb.setAttribute('aria-label',o?'Fechar menu':'Abrir menu')});
+    mm.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){mm.setAttribute('hidden','');mb.setAttribute('aria-expanded','false')})});}
+  document.addEventListener('keydown',function(e){if(e.key==='Escape'){if(drop){drop.classList.remove('open')}if(mm&&mb){mm.setAttribute('hidden','');mb.setAttribute('aria-expanded','false')}}});
+})();
+</script>
 </body></html>
